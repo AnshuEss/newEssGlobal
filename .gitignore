@@ -66,3 +66,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Adroid
+/android
+
+# ios
+/ios
+
+package-lock.json
+package.json

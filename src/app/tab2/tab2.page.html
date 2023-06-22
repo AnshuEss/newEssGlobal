@@ -1,17 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
+    <ion-toolbar class="ion-padding-top ">  <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline" class="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+      <img src="assets/esslogo.png" width="150" alt="" class=""> 
+      <ion-buttons slot="end">
+        <ion-icon name="search-outline" class="chevron-back-outline"></ion-icon>
+        <ion-icon name="notifications-outline" class="chevron-back-outline"></ion-icon>
+        <ion-icon name="chatbubble-ellipses-outline" class="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
+

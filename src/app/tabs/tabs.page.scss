@@ -3,4 +3,14 @@
 .ios.tab-has-icon.tab-has-icon-only.tab-layout-icon-top.ion-activatable.ion-selectable.ion-focusable.tab-selected
 .ion-icon { border-bottom:3px solid #fff;}
 .ios.tab-has-icon ,
-.ios.tab-has-icon .ion-icon { font-size: 50px;  padding-top: 5px;padding-bottom: 5px; border-bottom:3px solid #007dc4;}
+.ios.tab-has-icon .ion-icon { font-size: 50px !important; --font-size: 50px !important; 
+     padding-top: 5px;padding-bottom: 5px; border-bottom:3px solid #007dc4;}
+     .ion-tab-button,
+     :host(.tab-layout-label-hide) ::slotted(ion-icon), 
+     :host(.tab-has-icon-only) ::slotted(ion-icon) {
+        font-size: 46px !important;
+        --font-size: 46px !important;
+    }
+    ion-card { border-radius: 30px !important;--border-radius: 30px !important;}
+    .user-img{ border-radius:50%; --border-radius:50%; --border:2px solid #027dc4;  border:2px solid #027dc4; width: 100%;
+         height: 100px;;}

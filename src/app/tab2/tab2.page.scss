@@ -21,7 +21,7 @@
             left: 0;
             right: 0;
             height: 100%;
-            width: 100%;border-radius: 50%;
+            width: 100px;border-radius: 50%;
             opacity: 1;
             transition: .3s ease;
             background-color: rgba(0, 0, 0, 0.5);
@@ -30,7 +30,7 @@
           
           .icon {
             color: white;
-            font-size: 38px;
+            font-size: 30px;
             position: absolute;
             top: 52%;
             left: 50%;
@@ -39,15 +39,15 @@
             text-align: center;
           }
           .post-text {white-space: normal; font-size: 18px;;}
-          .post-text p {font-size: 16px; margin-bottom: 20px;}
+          .post-text p {font-size: 16px; color:#333; margin-bottom: 20px;}
         .feed-item{
             --padding-end: 0px;
             --inner-padding-end: 0px;
           }
-          .heart-icon { font-size: 26px;float:left; margin-right: 5px;}
+          .heart-icon { font-size: 24px;--font-size: 24px;float:left; margin-right: 5px;}
 
-          .heart-icon1 { font-size: 26px;float:right; margin-left: 5px;}
-          .like-text ion-text { font-size: 14px; margin-top:5px; line-height: 20px;}
+          .heart-icon1 { font-size: 24px;--font-size: 24px;float:right; margin-left: 5px;}
+          .like-text ion-text { font-size: 12px; margin-top:5px;white-space: no-wrap; }
           .txt-share {float:right}
           .like-text { border-top:1px solid #eee; border-bottom:5px solid #eee;
              padding:10px 5px}

@@ -1,9 +1,9 @@
 .ios.tab-has-icon.tab-has-icon-only.tab-layout-icon-top.ion-activatable.ion-selectable.ion-focusable.tab-selected
  img,
 .ios.tab-has-icon.tab-has-icon-only.tab-layout-icon-top.ion-activatable.ion-selectable.ion-focusable.tab-selected
-.ion-icon { border-bottom:3px solid #fff;}
-.ios.tab-has-icon ,
-.ios.tab-has-icon .ion-icon { font-size: 50px !important; --font-size: 50px !important; 
+.ion-icon { border-bottom:3px solid #fff !important;}
+.ios.tab-has-icon , .ion-icon,
+.ios.tab-has-icon .ion-icon { font-size: 32px !important; --font-size: 32px !important; 
      padding-top: 5px;padding-bottom: 5px; border-bottom:3px solid #007dc4;}
      .ion-tab-button,
      :host(.tab-layout-label-hide) ::slotted(ion-icon), 

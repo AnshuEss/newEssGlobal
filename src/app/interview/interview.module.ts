@@ -8,6 +8,10 @@ import { InterviewPageRoutingModule } from './interview-routing.module';
 
 import { InterviewPage } from './interview.page';
 
+import { ChatListComponent } from './chat-list/chat-list.component';
+
+import { ChatsComponent } from './chats/chats.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +19,6 @@ import { InterviewPage } from './interview.page';
     IonicModule,
     InterviewPageRoutingModule
   ],
-  declarations: [InterviewPage]
+  declarations: [InterviewPage,ChatListComponent,ChatsComponent]
 })
 export class InterviewPageModule {}

@@ -8,6 +8,8 @@ import { StudentPageRoutingModule } from './student-routing.module';
 
 import { StudentPage } from './student.page';
 
+import { TimeLineComponent } from './time-line/time-line.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { StudentPage } from './student.page';
     IonicModule,
     StudentPageRoutingModule
   ],
-  declarations: [StudentPage]
+  declarations: [StudentPage,TimeLineComponent]
 })
 export class StudentPageModule {}

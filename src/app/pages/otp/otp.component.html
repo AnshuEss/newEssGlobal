@@ -1,3 +1,43 @@
-<p>
-  otp works!
-</p>
+<ion-content [fullscreen]="true">
+  <ion-toolbar class="ion-padding-top ion-text-center"> 
+   <ion-back-button defaultHref="/" slot="start">
+     <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-back-button>
+      
+   </ion-toolbar>
+ 
+  <ion-row >
+    <ion-col size="12" class="ion-text-center">
+       <img src="assets/otp.png"  alt="" width="90%" class="ion-margin-top">
+    </ion-col>
+    <ion-col size="12" class="ion-text-center">
+<h2 class="ion-padding-verical">OTP Verification</h2>
+<!-- <p class="otp-txt ion-padding-vertical">We will send you an <span> One Time Password </span> on this number</p> -->
+<p class="otp-txt ">Enter the OTP send to<span> +91- 8054453456</span> </p>
+<!-- <p class="otp-txt ion-padding-bottom">Enter Mobile Number</p>  -->
+    </ion-col>
+    <ion-col>
+      <ion-list  lines="none" class="ion-padding-horizontal" no-lines>
+  <ion-item class="ion-form-item ion-padding-verical ion-text-center">
+    <!-- <ion-input name="fileNo" class="ion-form-control" placeholder="+91-8054453456" required></ion-input> -->
+     <ion-input class="x" #otp1 required="true" maxLength="1">
+     </ion-input>
+     <ion-input class="x" #otp2 required="true" maxLength="1">
+     </ion-input>
+     <ion-input class="x" #otp3 required="true" maxLength="1">
+     </ion-input>
+
+     <ion-input class="x" #otp4 required="true" maxLength="1">
+    </ion-input>
+
+  </ion-item>
+<ion-item><p class="otp-txt ">Don’t Receive the OTP ?  <span color="primary"> Resend OTP</span> </p></ion-item>
+  <ion-item class="border-no-bottom ion-margin-top">
+    <ion-button color="primary" class="btn-sub" expand="block">Verify & Proceed</ion-button>
+     
+  </ion-item>
+</ion-list>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

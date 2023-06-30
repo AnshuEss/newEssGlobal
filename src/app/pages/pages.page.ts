@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesPage implements OnInit {
 
+  isAlertOpen = false;
+  public alertButtons = ['OK'];
   constructor() { }
 
   ngOnInit() {
+    this.setOpen(true);
   }
-
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
 }

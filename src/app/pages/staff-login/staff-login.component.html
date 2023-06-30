@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-row>
+    <ion-col size="12" class="ion-no-padding">
+      <img src="assets/Rectangle46.jpg" width="100%">
+    </ion-col>
+  </ion-row>
+  <form class="ion-formbg">
+    <ion-row class=" ion-padding-top ion-margin-top">
+      <ion-col size="12" class="ion-text-center ion-padding ">
+        <img src="assets/esslogo.png" alt="">
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <h2 class=" text-heading">Staff<span> Login</span></h2>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center ion-no-padding">
+        <img src="assets/Rectangle 45 (9).jpg" alt="">
+      </ion-col>
+      <ion-col size="12" class="ion-text-center ion-no-padding">
+        <ion-list lines="none" no-lines>
+          <ion-item>
+            <ion-input [(ngModel)]="email" name="email" class="ion-input" placeholder="Enter email" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="password" name="password" class="ion-input" placeholder="Enter password" required></ion-input>
+          </ion-item>
+          <ion-item class="border-no-bottom">
+            <ion-button color="primary" class="btn-sub" expand="block" (click)="staffLogin()">Login</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+    </ion-row>
+  </form>
+</ion-content>

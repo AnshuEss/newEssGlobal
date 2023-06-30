@@ -1,9 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pages</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <ion-toolbar class="ion-text-center" color="primary">
+    <ion-back-button defaultHref="/" slot="start" color="light">
+      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+    </ion-back-button>
+    <h2 class=" text-heading ion-padding-end">Choose Your <br> Login Type</h2>
+  </ion-toolbar>
+  <form class="ion-formbg">
+    <ion-row class=" ion-padding-top ion-margin-top">
+      <ion-col size="12" class="ion-text-center ion-no-padding">
+        <img src="assets/image52.png" alt="">
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-list lines="none" no-lines>
+          <ion-item class="border-no-bottom">
+            <ion-button color="primary" class="btn-sub" expand="block" [routerLink]="['/pages/student-login']">Login as
+              student</ion-button>
+          </ion-item>
+          <ion-item class="border-no-bottom">
+            <ion-button color="primary" class="btn-sub" expand="block" [routerLink]="['/pages/staff-login']">Login as
+              staff </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
 
-</ion-content>
+    </ion-row>
+  </form>

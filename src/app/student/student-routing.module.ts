@@ -5,6 +5,12 @@ import { StudentPage } from './student.page';
 
 import { TimeLineComponent } from './time-line/time-line.component';
 
+import { ProfileComponent } from './profile/profile.component';
+
+import { TestPaperComponent } from './test-paper/test-paper.component';
+
+import { MettingComponent } from './metting/metting.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +19,18 @@ const routes: Routes = [
   {
     path: 'time-line',
     component: TimeLineComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'test-paper',
+    component: TestPaperComponent
+  },
+  {
+    path: 'metting',
+    component: MettingComponent
   }
 ];
 

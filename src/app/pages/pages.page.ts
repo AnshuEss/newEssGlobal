@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { StorageService } from '../api/storage.service';
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.page.html',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesPage implements OnInit {
 
-  isAlertOpen = false;
-  public alertButtons = ['OK'];
-  constructor() { }
+  constructor(
+    private router: Router,
+    private storage:StorageService) { }
 
-  ngOnInit() {
-    this.setOpen(true);
+ async ngOnInit() {
+    let student=await this.storage.get('student');
+    let staff=await this.storage.get('staff');
+    if(student)this.router.navigate(['student']);
+    if(staff)this.router.navigate(['interview']);
+
   }
-  setOpen(isOpen: boolean) {
-    this.isAlertOpen = isOpen;
-  }
+
 }

@@ -8,8 +8,10 @@ import { PagesPageRoutingModule } from './pages-routing.module';
 
 import { PagesPage } from './pages.page';
 
-import { LoginComponent } from './login/login.component';
+
 import { OtpComponent } from './otp/otp.component';
+import { StudentLoginComponent } from './student-login/student-login.component';
+import { StaffLoginComponent } from './staff-login/staff-login.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,6 @@ import { OtpComponent } from './otp/otp.component';
     IonicModule,
     PagesPageRoutingModule
   ],
-  declarations: [PagesPage,LoginComponent,OtpComponent]
+  declarations: [PagesPage,OtpComponent,StudentLoginComponent,StaffLoginComponent]
 })
 export class PagesPageModule {}

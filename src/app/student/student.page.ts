@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./student.page.scss'],
 })
 export class StudentPage implements OnInit {
-  student:any;
+  student: any;
   constructor(
     private storage: StorageService,
-    private route:Router) { }
+    private route: Router) { }
 
   async ngOnInit() {
-   
+
   }
 
 }

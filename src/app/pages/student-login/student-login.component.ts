@@ -4,13 +4,16 @@ import { TosterService } from 'src/app/api/toster.service';
 import { CrmService } from 'src/app/api/crm.service';
 import { StorageService } from 'src/app/api/storage.service';
 import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-student-login',
+  templateUrl: './student-login.component.html',
+  styleUrls: ['./student-login.component.scss'],
 })
-export class LoginComponent  implements OnInit {
+export class StudentLoginComponent  implements OnInit {
+
   fileNo:any;
+  num:any
   constructor(
     private userService:UserService,
     private toster:TosterService,
@@ -18,7 +21,12 @@ export class LoginComponent  implements OnInit {
     private storage:StorageService,
     private router:Router) { }
 
-  ngOnInit() {}
+ async ngOnInit() {
+    let student=await this.storage.get('student');
+     if(student){
+       this.router.navigate(['student']);
+     }
+  }
 
   stuLogin(){
    this.toster.showLoading();

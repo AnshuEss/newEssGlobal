@@ -10,31 +10,43 @@ import { Router } from '@angular/router';
   templateUrl: './staff-login.component.html',
   styleUrls: ['./staff-login.component.scss'],
 })
-export class StaffLoginComponent  implements OnInit {
+export class StaffLoginComponent implements OnInit {
 
-  email:any;
-  password:any;
+  email: any;
+  password: any;
   constructor(
-    private userService:UserService,
-    private toster:TosterService,
-    private crmService:CrmService,
-    private storage:StorageService,
-    private router:Router) { }
+    private userService: UserService,
+    private toster: TosterService,
+    private crmService: CrmService,
+    private storage: StorageService,
+    private router: Router) { }
 
- async ngOnInit() {
-    let staff=await this.storage.get('staff');
-     if(staff){
-       this.router.navigate(['interview']);
-     }
+  async ngOnInit() {
+    let staff = await this.storage.get('staff');
+    if (staff) {
+      this.router.navigate(['interview']);
+    }
   }
 
 
-  staffLogin(){
-   if(this.email && this.password){
-
-   }else{
-    this.toster.error('Please fill all fields')
-   }
+  staffLogin() {
+    this.toster.showLoading();
+    if (this.email && this.password) {
+      this.userService.stflogin({ email: this.email, password: this.password }).subscribe((res:any) => {
+        this.toster.dismissLoader();
+        if(res.status==200){
+          this.storage.set('staff',res?.data);
+          this.router.navigate(['interview']);
+        }
+      },(error)=>{
+        this.toster.dismissLoader();
+        console.log('error---',error);
+        this.toster.error(error?.message);
+      });
+    } else {
+      this.toster.error('Please fill all fields')
+    }
   }
+
 
 }

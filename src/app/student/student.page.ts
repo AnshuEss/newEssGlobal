@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../api/storage-service.service';
+//import { StorageService } from '../api/storage-service.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-student',
@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
 export class StudentPage implements OnInit {
   student:any;
   constructor(
-    private storage: StorageService,
+    //private storage: StorageService,
     private route:Router) { }
 
   async ngOnInit() {
-    this.student= await this.storage.get('student');
-    if(this.student){
+    // this.student= await this.storage.get('student');
+    // if(this.student){
 
-    }else{
-      this.route.navigate(['pages']);
-    }
+    // }else{
+    //   this.route.navigate(['pages']);
+    // }
   }
 
 }

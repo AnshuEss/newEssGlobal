@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from 'src/app/api/user-service.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +7,7 @@ import { UserServiceService } from 'src/app/api/user-service.service';
 })
 export class LoginComponent  implements OnInit {
 
-  constructor(private userService:UserServiceService) { }
+  constructor() { }
 
   ngOnInit() {}
 

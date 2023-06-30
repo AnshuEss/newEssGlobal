@@ -13,6 +13,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     BrowserModule, 
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(), 
+      IonicModule.forRoot({
+      backButtonText: '' // Set an empty string to have no text next to the back icon
+    }),
     AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

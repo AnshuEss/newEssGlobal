@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../api/storage-service.service';
+import { StorageService } from '../api/storage.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-student',
@@ -13,12 +13,7 @@ export class StudentPage implements OnInit {
     private route:Router) { }
 
   async ngOnInit() {
-    this.student= await this.storage.get('student');
-    if(this.student){
-
-    }else{
-      this.route.navigate(['pages']);
-    }
+   
   }
 
 }

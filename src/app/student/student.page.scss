@@ -1,4 +1,9 @@
-
+.link-btn { text-align: center; height:80px !important; width: 100%;font-size: 22px; border-radius: 10px
+    ;
+}
+.logout-ico { font-size:28px; margin-right:10px;}
+.text-heading { font-size:20px !important; padding-right:30px; margin-bottom:20px; color:#fff !important}
+ion-toolbar  { height:60px;}
 .int-text p{ background-color: #fff; color:#333;margin-left: 10%; padding: 15px 5px ; z-index: 999;
     width: 80%; text-align: center; box-shadow: 0px 0px 10px #ccc; font-size: 16px;border-radius: 10px; 
     margin-top: -25px;  position: relative;}
@@ -6,3 +11,5 @@
     ion-card { border-radius:10px;position: relative; box-shadow: none;  padding-bottom: -20px; }
     ion-card img { width: 100%;}
     ion-toolbar{ background-color: #fff;}
+
+    .logout-ico { font-size:26px;}

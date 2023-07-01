@@ -1,13 +1,15 @@
-<ion-content [fullscreen]="true">
-  <ion-toolbar class="ion-padding-vertical ion-text-center">
-    <ion-back-button defaultHref="/" slot="start">
-      <ion-icon name="chevron-back-outline"></ion-icon>
+<ion-header  color="primary"> 
+ <ion-toolbar  color="primary"  class="ion-padding-top ">
+    <ion-back-button defaultHref="/" slot="start" color="light">
+      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
     </ion-back-button>
-    <img src="assets/esslogo.png" width="140" alt="" class="ion-margin-top">
+    <ion-title class=" text-heading ion-padding-end" color="light">Student Menu</ion-title>
+
+        <ion-icon name="notifications-outline" class="logout-ico" slot="end" color="light"></ion-icon>
+   <ion-icon class="logout-ico" name="power" slot="end" color="light"></ion-icon>
   </ion-toolbar>
-
+<ion-content [fullscreen]="true">
   <ion-row>
-
     <ion-col size="6">
       <ion-card class="ion-no-padding " [routerLink]="['/student/profile']">
         <img src="assets/Rectangle 90.jpg" width="100%">
@@ -16,8 +18,6 @@
         </ion-text>
       </ion-card>
     </ion-col>
-
-
     <ion-col size="6">
       <ion-card class="ion-no-padding" [routerLink]="['/student/metting']">
         <img src="assets/Rectangle 96.png" width="100%">
@@ -26,7 +26,6 @@
         </ion-text>
       </ion-card>
     </ion-col>
-
     <ion-col size="6">
       <ion-card class="ion-no-padding">
         <img src="assets/Rectangle 81.jpg" width="100%">
@@ -35,7 +34,6 @@
         </ion-text>
       </ion-card>
     </ion-col>
-
     <ion-col size="6">
       <ion-card class="ion-no-padding" [routerLink]="['/student/test-paper']">
         <img src="assets/Rectangle 91.jpg" width="100%">
@@ -44,7 +42,5 @@
         </ion-text>
       </ion-card>
     </ion-col>
-
-
   </ion-row>
 </ion-content>

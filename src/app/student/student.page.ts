@@ -10,10 +10,15 @@ export class StudentPage implements OnInit {
   student: any;
   constructor(
     private storage: StorageService,
-    private route: Router) { }
+    private router: Router) { }
 
   async ngOnInit() {
 
+  }
+
+  async logout(){
+    await this.storage.logout();
+    this.router.navigate(['']);
   }
 
 }

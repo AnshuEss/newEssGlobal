@@ -3,10 +3,10 @@
     <ion-back-button defaultHref="/" slot="start" color="light">
       <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
     </ion-back-button>
-    <ion-title class=" text-heading ion-padding-end" color="light">Student Menu</ion-title>
+    <!-- <ion-title class="text-heading" color="light">Student Menu</ion-title> -->
 
         <ion-icon name="notifications-outline" class="logout-ico" slot="end" color="light"></ion-icon>
-   <ion-icon class="logout-ico" name="power" slot="end" color="light"></ion-icon>
+   <ion-icon class="logout-ico" name="power" slot="end" color="light" (click)="logout()"></ion-icon>
   </ion-toolbar>
 <ion-content [fullscreen]="true">
   <ion-row>

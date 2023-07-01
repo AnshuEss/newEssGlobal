@@ -15,9 +15,17 @@ export class PagesPage implements OnInit {
  async ngOnInit() {
     let student=await this.storage.get('student');
     let staff=await this.storage.get('staff');
+    console.log('staff',staff);
     if(student)this.router.navigate(['student']);
     if(staff)this.router.navigate(['interview']);
 
+  }
+
+  async ionViewWillEnter(){
+    let student=await this.storage.get('student');
+    let staff=await this.storage.get('staff');
+    if(student)this.router.navigate(['student']);
+    if(staff)this.router.navigate(['interview']);
   }
 
 }

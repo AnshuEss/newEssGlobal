@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StorageService } from 'src/app/api/storage.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent  implements OnInit {
 
-  constructor() { }
+  student:any;
+  constructor(
+    private router:Router,
+    private storage:StorageService) { }
 
-  ngOnInit() {}
+ async ngOnInit() {
+    this.student=await this.storage.get('student');
+    console.log("student",this.student);
+  }
 
 }

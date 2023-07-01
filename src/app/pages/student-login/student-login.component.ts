@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class StudentLoginComponent  implements OnInit {
 
   fileNo:any;
-  num:any
   constructor(
     private userService:UserService,
     private toster:TosterService,

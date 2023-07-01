@@ -29,5 +29,9 @@ export class StorageService {
     return val;
   }
 
+  public async logout(){
+    await this._storage?.clear();
+  }
+
   
 }

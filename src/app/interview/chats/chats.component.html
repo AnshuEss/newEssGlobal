@@ -1,7 +1,18 @@
-<ion-header [translucent]="true" color="primary">
-  <ion-toolbar color="primary">  <ion-back-button defaultHref="/" slot="start" text="">
+<ion-header [translucent]="true" >
+  <ion-toolbar >  <ion-back-button defaultHref="/" slot="start" text="">
    <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
-    <ion-title>Chats</ion-title>
+
+
+  <ion-avatar slot="start">
+              <img src="assets/Rectangle 110.png" width="90" />
+            </ion-avatar>
+
+      <ion-label class="ion-padding-vertical">
+              <h2 class="ion-padding-start">Riya Sharma</h2>
+              <p class="chat-txt ion-padding-start">Online</p>
+            </ion-label><ion-icon name="ellipsis-horizontal" slot="end"></ion-icon>
+
+    
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -23,6 +34,13 @@
     <ion-item class="ion-padding-top" slot="end">
       <div class="chat-sec">
       <p>  those interested. </p>
+        <span class="time">11:00 am</span>
+</div>    </ion-item>
+<ion-item class="ion-padding-top" slot="end">
+      <div class="chat-sec" color="light">
+      
+              <img src="assets/Rectangle 110.png"  width="200" />
+     <br>
         <span class="time">11:00 am</span>
 </div>    </ion-item>
   </ion-list>

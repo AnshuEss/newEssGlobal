@@ -32,7 +32,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card class="ion-no-padding" [routerLink]="['/student/test-paper']">
+        <ion-card class="ion-no-padding" (click)="testpaper()">
           <img src="assets/Rectangle 91.jpg" width="100%">
           <ion-text class="int-text">
             <p>Test</p>
@@ -40,4 +40,25 @@
         </ion-card>
       </ion-col>
     </ion-row>
+
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <!-- <ion-title></ion-title> -->
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-card *ngFor="let item of TopicList">
+            <ion-card-header>
+              {{item?.topic}}
+            </ion-card-header>
+            <ion-button expand="full" shape="round" (click)="OpenTestPaper(item)">Start Test</ion-button>
+           </ion-card>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </ion-content>

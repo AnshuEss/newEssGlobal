@@ -6,6 +6,7 @@ import { ChatListComponent } from './chat-list/chat-list.component';
 
 import { ChatsComponent } from './chats/chats.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -18,6 +19,18 @@ const routes: Routes = [
   {
     path: 'chats',
     component: ChatsComponent
+  },
+  {
+    path: 'question-paper',
+    loadChildren: () => import('./question-paper/question-paper.module').then( m => m.QuestionPaperPageModule)
+  },
+  {
+    path: 'meeting',
+    loadChildren: () => import('./meeting/meeting.module').then( m => m.MeetingPageModule)
+  },
+  {
+    path: 'support',
+    loadChildren: () => import('./support/support.module').then( m => m.SupportPageModule)
   }
 ];
 

@@ -9,7 +9,7 @@
     background-color: #fff;
     border-top: 20px solid #007dc4
 }
-
+.checkbox-icon { border-radius:0px !important;--border-radius:0px !important; --white-space:normal !important; font-size:12px !important; --font-size:12px !important;white-space:normal}
 .text-heading {
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
@@ -26,8 +26,8 @@
 .ion-input {
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     width: 100%;
-    font-size: 22px;
-    color: #666;
+    font-size: 16px;
+    color: #666; margin:10px 0px 2px;
     padding: 0px;
 }
 

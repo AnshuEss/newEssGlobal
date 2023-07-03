@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MeetingPageRoutingModule } from './meeting-routing.module';
 
 import { MeetingPage } from './meeting.page';
-
+import { CreateMettingLinkComponent } from './create-metting-link/create-metting-link.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { MeetingPage } from './meeting.page';
     IonicModule,
     MeetingPageRoutingModule
   ],
-  declarations: [MeetingPage]
+  declarations: [MeetingPage,CreateMettingLinkComponent]
 })
 export class MeetingPageModule {}

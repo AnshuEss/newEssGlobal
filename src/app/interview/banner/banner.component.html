@@ -1,3 +1,29 @@
-<p>
-  banner works!
-</p>
+<ion-header  color="primary"> 
+ <ion-toolbar  color="primary"  class="ion-padding-top">
+    <ion-back-button defaultHref="/" slot="start" color="light">
+      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+    </ion-back-button>
+    <ion-title class=" text-heading ion-padding-end">Add Banner Images</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-bg ion-padding-top ion-margin-top">
+<ion-row>
+<ion-col size="12" class="file-uploader ion-padding">
+  <ion-input id="file-upload" type="file"/><ion-icon name="add-circle" class=""></ion-icon>
+  <ion-label for="file-upload" class="custom-file-upload">
+
+  <span>Choose File</span>
+  </ion-label>
+</ion-col>
+<ion-col size="12" class="ion-padding ion-text-center">
+   <ion-button  class="btn-up" >Upload</ion-button>
+</ion-col>
+<ion-col  size="12" class="ion-padding-vertical ion-text-center"> 
+  <img src="assets/post1.png" width="100%">
+  </ion-col>
+<ion-col  size="12" class="ion-padding-vertical ion-text-center"> 
+  <img src="assets/post2.png" width="100%">
+  </ion-col>
+</ion-row>
+</ion-content>

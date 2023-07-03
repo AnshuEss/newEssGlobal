@@ -1,0 +1,90 @@
+.text-heading { font-size:20px; padding-right:30px; margin-bottom:20px;}
+ion-toolbar  { height:60px;}
+.btn-up {  width: 245px;
+height: 58px;
+top: 229px; color:#000;
+left: 72px;box-shadow:0px 0px 10px 4px #ccc; font-size:20px;
+border-radius: 20px; background:#fff; --background:#fff;
+}
+
+
+.file-uploader {
+	position: relative;
+	height: 100px;
+}
+
+.file-uploader i {
+	position: absolute;
+	font-size: 40px;
+	left: 20px;
+	top: 16px;
+	color: white;
+	transition: all .2s ease-in-out;
+}
+
+ion-label {
+	padding:5px 0 20px 80px;
+	display: block;
+	width: 100%;
+	border: 1px solid #333;
+	background-color: #333;
+	cursor: pointer;
+	position: relative;
+	height: 100%;  line-height:60px;
+	color: white;
+	transition: .2s all ease-in-out;
+	border-radius: 40px; text-align:center;
+	z-index: 1; font-size:24px;
+}
+.custom-file-upload span {  margin-top:-20px;}
+ion-icon { font-size:40px; margin-top:14px;position:absolute; z-index:999; color:#fff; margin-left:110px;}
+
+ion-input[type=file] {
+	cursor: pointer;
+	position: absolute;
+	font-size: 10px;
+	text-indent: -100px;
+	left: -10px;
+	color: rgba(255,255,255,.5);
+	z-index: 3;
+	padding-top: 40px;
+	height: 100px;
+	width: 100%;
+	top: 0;
+}
+
+ion-input[type=file]:focus,
+ion-input[type=file]:active {
+	outline: transparent;
+}
+
+ion-label:hover, ion-label:focus, 
+ion-input[type=file]:focus + ion-label,
+ion-input[type=file]:hover + ion-label{
+	background-color: #244892;
+	box-shadow: 0 0 6px #244892;
+	color: rgba(255,255,255,.85	);
+}
+
+ion-input[type=file]:focus ~ ion-label i,
+ion-input[type=file]:hover ~ ion-label i{
+	transform: scale(1.05);
+}
+
+@media screen and (min--moz-device-pixel-ratio:0) {
+	ion-input[type=file] {
+		left: 80px;
+		padding-top: 30px;
+	}
+}
+
+@supports (-ms-ime-align:auto) {
+  ion-input[type=file] {
+		padding-top: 0;
+		top: 40px;
+		height: auto;
+		width: 250px;
+		left: 80px;
+		text-indent: inherit;
+	}
+}

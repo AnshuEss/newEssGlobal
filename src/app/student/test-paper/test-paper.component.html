@@ -1,14 +1,46 @@
 <ion-header>
   <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/profile/student"></ion-back-button>
+      <ion-back-button defaultHref="/student"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-title-header">Test Paper</ion-title>
   </ion-toolbar>
 </ion-header> 
   <ion-content fullscreen class="full_bg">
   
- 
-</ion-content>
+    <swiper-container  #swiper
+    (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true">
+      <swiper-slide *ngFor="let item of QuestionList">
+        <ion-card>
+          <ion-card-content>
+            <b>{{item?.question}}</b>
+          </ion-card-content>
+          <ion-list>
+            <ion-radio-group  [allowEmptySelection]="true" value="strawberries">
+            <ion-item>
+              <ion-label>{{item?.opt_a}}</ion-label>
+              <ion-radio justify="end" value="{{item?.opt_a}}" (click)="chk(item?.topic_id,item?.opt_a)"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{item?.opt_b}}</ion-label>
+              <ion-radio justify="end" value="{{item?.opt_b}}" (click)="chk(item?.topic_id,item?.opt_b)"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{item?.opt_c}}</ion-label>
+              <ion-radio justify="end" value="{{item?.opt_c}}" (click)="chk(item?.topic_id,item?.opt_c)"></ion-radio>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>{{item?.opt_d}}</ion-label>
+              <ion-radio justify="end" value="{{item?.opt_d}}" (click)="chk(item?.topic_id,item?.opt_d)"></ion-radio>
+            </ion-item>
+            </ion-radio-group>
+          </ion-list>
+         </ion-card>
+      </swiper-slide>
+    </swiper-container>
+  </ion-content>
 
   

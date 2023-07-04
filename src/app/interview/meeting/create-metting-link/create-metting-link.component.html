@@ -3,106 +3,40 @@
     <ion-back-button defaultHref="/" slot="start" color="light">
       <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
     </ion-back-button>
-    <ion-title class=" text-heading ion-padding-end">Interview Link</ion-title>
-    
+    <ion-title class=" text-heading ion-padding-end">Generate New Link</ion-title>    
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-bg ion-padding-top ion-margin-top">
 <ion-row>
 <ion-col size="12" class=" ion-padding ion-text-center">
-<img src="assets/Interview-amico.png">
-
-
+<img src="assets/new-link.png">
 </ion-col>
 
+<ion-col size="12" class="ion-text-center ion-no-padding">
+        <ion-list lines="none" no-lines>
+          <ion-item>
+            <ion-input  name="link-txt" class="ion-input" placeholder="Enter Text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="batch-name" class="ion-input" placeholder="Enter Batch Name" required></ion-input>
+          </ion-item>          
+          <ion-item class="border-no-bottom ion-text-center" >
+            <ion-button color="primary" class="btn-sub" >Create Batch</ion-button>
+          </ion-item>
+        </ion-list>
 
+         <ion-list>
+          <ion-item>
+        <ion-icon name="newspaper-outline" slot="start"></ion-icon> <ion-label>Test Batch 3 </ion-label><ion-badge slot="end" class="float-end">1</ion-badge>
+          </ion-item>
+          <ion-item>
+          <ion-icon name="reader-outline" slot="start"></ion-icon>  
+          <ion-label>Test Batch 3 </ion-label><ion-badge slot="end" class="float-end">1</ion-badge>
+          </ion-item>
 
-</ion-row>
-<ion-list>
-  <ion-item>     
-    <ion-card class="link-card">
-      <ion-row><ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">UK Students</ion-label></ion-col>
-      <ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">Jun 9, 2023</ion-label>
-    </ion-col>
-    <ion-col size="12" class="ion-padding-horizontal ion-text-center">
-      <p>https://meet.essglobal.com/168207465756674</p>
-     <ion-button color="primary" class="ion-float-end ion-no-padding ion-no-margin"><ion-icon name="documents" slot="end"  ></ion-icon>
-     </ion-button></ion-col>
-     <ion-col size="3" class=" ion-no-padding ion-text-center card-bt">
-          
-    <ion-label><ion-icon name="person"></ion-icon><ion-badge color="light"slot="end" >11</ion-badge><br> Student</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-text-center card-bt">
-        
-    <ion-label><ion-icon name="create"></ion-icon><br> Open Link</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-no-margin ion-text-center card-bt">
+      <ion-item lines="none" no-lines> <ion-button color="primary" class="btn-sub ion-margin-top" >Make New Batch</ion-button></ion-item>
 
-      <ion-toggle class="height-small" color="light"></ion-toggle>
-  
-    <ion-label> Disable Link</ion-label>
-     </ion-col>
+        </ion-list>
+      </ion-col>
   </ion-row>
-    </ion-card>
-
-  </ion-item> <ion-item>     
-    <ion-card class="link-card">
-      <ion-row><ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">UK Students</ion-label></ion-col>
-      <ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">Jun 9, 2023</ion-label>
-    </ion-col>
-    <ion-col size="12" class="ion-padding-horizontal ion-text-center">
-      <p>https://meet.essglobal.com/168207465756674</p>
-     <ion-button color="primary" class="ion-float-end ion-no-padding ion-no-margin"><ion-icon name="documents" slot="end"  ></ion-icon>
-     </ion-button></ion-col>
-     <ion-col size="3" class=" ion-no-padding ion-text-center card-bt">
-          
-    <ion-label><ion-icon name="person"></ion-icon><ion-badge color="light"slot="end" >11</ion-badge><br> Student</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-text-center card-bt">
-        
-    <ion-label><ion-icon name="create"></ion-icon><br> Open Link</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-no-margin ion-text-center card-bt">
-
-      <ion-toggle class="height-small" color="light"></ion-toggle>
-  
-    <ion-label> Disable Link</ion-label>
-     </ion-col>
-  </ion-row>
-    </ion-card>
-
-  </ion-item> <ion-item>     
-    <ion-card class="link-card">
-      <ion-row><ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">UK Students</ion-label></ion-col>
-      <ion-col size="6" class=" ion-no-padding ion-text-center">
-      <ion-label class="ion-text-h">Jun 9, 2023</ion-label>
-    </ion-col>
-    <ion-col size="12" class="ion-padding-horizontal ion-text-center">
-      <p>https://meet.essglobal.com/168207465756674</p>
-     <ion-button color="primary" class="ion-float-end ion-no-padding ion-no-margin"><ion-icon name="documents" slot="end"  ></ion-icon>
-     </ion-button></ion-col>
-     <ion-col size="3" class=" ion-no-padding ion-text-center card-bt">
-          
-    <ion-label><ion-icon name="person"></ion-icon><ion-badge color="light"slot="end" >11</ion-badge><br> Student</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-text-center card-bt">
-        
-    <ion-label><ion-icon name="create"></ion-icon><br> Open Link</ion-label>
-     </ion-col>
-     <ion-col size="4" class=" ion-no-padding ion-no-margin ion-text-center card-bt">
-
-      <ion-toggle class="height-small" color="light"></ion-toggle>
-  
-    <ion-label> Disable Link</ion-label>
-     </ion-col>
-  </ion-row>
-    </ion-card>
-
-  </ion-item>
-</ion-list>
 </ion-content>

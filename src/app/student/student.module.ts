@@ -12,15 +12,17 @@ import { TimeLineComponent } from './time-line/time-line.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TestPaperComponent } from './test-paper/test-paper.component';
 import { MettingComponent } from './metting/metting.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StudentPageRoutingModule
+    StudentPageRoutingModule,
+
   ],
-  declarations: [StudentPage,TimeLineComponent,ProfileComponent,TestPaperComponent,MettingComponent],
+  declarations: [StudentPage,TimeLineComponent,ProfileComponent,TestPaperComponent,MettingComponent,DemoComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StudentPageModule {}

@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { TestPaperComponent } from './test-paper/test-paper.component';
 
 import { MettingComponent } from './metting/metting.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'metting',
     component: MettingComponent
+  },
+  {
+    path:'demo',
+    component:DemoComponent
   }
 ];
 

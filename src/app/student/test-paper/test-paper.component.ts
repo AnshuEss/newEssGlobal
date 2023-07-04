@@ -5,7 +5,7 @@ import { TosterService } from 'src/app/api/toster.service';
 import { Swiper } from 'swiper';
 import { register } from 'swiper/element/bundle';
 import { StorageService } from 'src/app/api/storage.service';
-register();
+
 @Component({
   selector: 'app-test-paper',
   templateUrl: './test-paper.component.html',
@@ -26,7 +26,7 @@ export class TestPaperComponent implements OnInit {
     private toster: TosterService,
     private storage:StorageService
   ) {
-    this.isModalOpen=false;
+    register();
   }
 
 
@@ -51,7 +51,6 @@ export class TestPaperComponent implements OnInit {
 
   chk(id:any, opt:any) {
     this.swiper?.slideNext();
-    
   }
 
 

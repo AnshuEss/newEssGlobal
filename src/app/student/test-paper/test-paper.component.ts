@@ -20,6 +20,9 @@ export class TestPaperComponent implements OnInit {
   isModalOpen=false;
   QuestionList:any[]=[];
   NumOfQuestion:any;
+  l=1;
+  countClick: any = 0;
+  RightAns: Number = 0;
   constructor(
     private service: UserService,
     private router: Router,
@@ -30,10 +33,9 @@ export class TestPaperComponent implements OnInit {
   }
 
 
-  async ngOnInit() {
-    this.topicId=await this.storage.get('topic_id');
-    console.log(this.topicId);
-    this.service.getQuesByTopicId({ topic_id: this.topicId}).subscribe((res: any) => {
+   ngOnInit() {
+   
+    this.service.getQuesByTopicId({ topic_id: 6}).subscribe((res: any) => {
       if (res.status == 200) {
         this.QuestionList = res.data;
         this.NumOfQuestion = this.QuestionList.length;
@@ -50,8 +52,9 @@ export class TestPaperComponent implements OnInit {
   }
 
   chk(id:any, opt:any) {
-    this.swiper?.slideNext();
-    
+     setTimeout(() => {
+      this.l=this.countClick++;
+    }, 1000); 
   }
 
 

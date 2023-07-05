@@ -8,6 +8,7 @@ import { MeetingPageRoutingModule } from './meeting-routing.module';
 
 import { MeetingPage } from './meeting.page';
 import { CreateMettingLinkComponent } from './create-metting-link/create-metting-link.component';
+import { BatchDetailComponent } from './batch-detail/batch-detail.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,6 @@ import { CreateMettingLinkComponent } from './create-metting-link/create-metting
     IonicModule,
     MeetingPageRoutingModule
   ],
-  declarations: [MeetingPage,CreateMettingLinkComponent]
+  declarations: [MeetingPage,CreateMettingLinkComponent,BatchDetailComponent]
 })
 export class MeetingPageModule {}

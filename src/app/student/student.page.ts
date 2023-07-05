@@ -61,7 +61,12 @@ export class StudentPage implements OnInit {
       if(res.status==200){
        this.toster.error(res.msg);
       }else if(res.status==500){
-        this.storage.set('topic_id',this.topicId);
+        let obj={
+          topic_id:this.topicId,
+          teacher_id:this.teachId,
+          topic_name:this.topicName
+        }
+        this.storage.set('topicDetail',obj);
         this.router.navigate(['student/test-paper'])
       }
     });

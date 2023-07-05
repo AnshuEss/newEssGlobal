@@ -7,13 +7,15 @@
   </ion-toolbar>
 </ion-header> 
   <ion-content fullscreen class="full_bg">
-    <ion-card color="tertiary" *ngIf="scoreCard">
+    <ion-card color="primary" *ngIf="scoreCard">
       <ion-card-header>
         <ion-card-title class="ion-text-center">Score Card</ion-card-title>
-        <ion-card-subtitle class="ion-text-center ion-padding"><h2>{{RightAns}}/{{NumOfQuestion}}</h2></ion-card-subtitle>
+        <ion-card-subtitle class="ion-text-center score-txt ion-padding"><h2>{{RightAns}}/{{NumOfQuestion}}</h2></ion-card-subtitle>
       </ion-card-header>
     </ion-card>
-    <ion-item *ngIf="showQuestionCountDiv">{{countClick}} of /{{NumOfQuestion}} </ion-item>
+    <ion-list>
+    <ion-item  class="ion-text-end" *ngIf="showQuestionCountDiv">{{countClick}} of /{{NumOfQuestion}} </ion-item>
+  </ion-list>
     <div *ngFor="let item of QuestionList, let i=index">
     <ion-card *ngIf="i==l">
       <ion-card-content>

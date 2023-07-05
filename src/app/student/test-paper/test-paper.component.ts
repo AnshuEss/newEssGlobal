@@ -79,9 +79,9 @@ export class TestPaperComponent implements OnInit {
             count_ans: this.RightAns,
             teacher_id:this.topicDetail?.teacher_id
           }
-          this.service.addStudentScore(obj).subscribe((res: any) => {
-            console.log(res);
-          })
+          // this.service.addStudentScore(obj).subscribe((res: any) => {
+          //   console.log(res);
+          // })
         }, 1000);
     } 
   }

@@ -151,3 +151,29 @@
   border-bottom: 5px solid #eee;
   padding: 10px 5px
 }
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.btn {
+  border:0px;
+  color: gray;  --background-color: white;
+  background-color: white;
+  padding:0px 0px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper ion-input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.btn-up { width:100px; margin:auto;}
+.cross-badge { margin-top:-10px; position:absolute; width:15px; height:15px; padding:1px;}

@@ -7,24 +7,6 @@
   </ion-toolbar>
 
   <ion-row>
-    <!-- <ion-col size="3"> <div class="user-img-box">
-           <ion-img src="assets/user3.jpeg" class="user-img"></ion-img>
-           <div class="overlay">
-            <a href="#" class="icon" title="User Profile">
-              <ion-icon name="add-circle-outline"></ion-icon>
-            </a>
-          </div>
-          </div>
-        </ion-col> 
-        <ion-col size="3">
-           <ion-img src="assets/user2.jpg" class="user-img"></ion-img>
-           </ion-col>
- <ion-col size="3">
-  <ion-img src="assets/user3.jpeg" class="user-img"></ion-img>
-</ion-col>
- <ion-col size="3">
-  <ion-img src="assets/user1.jpeg" class="user-img"></ion-img> 
-</ion-col> -->
 
     <ion-col size="12" class=" ion-margin-top ion-no-padding">
 
@@ -36,9 +18,37 @@
           <ion-label>
             <ion-input name="fileNo" class=" post-input" placeholder="Write Something Here" required></ion-input>
           </ion-label>
-          <ion-icon name="image" slot="end"></ion-icon>
+                    
+
+<div class="upload-btn-wrapper">
+  <ion-button color="white" class="btn">   
+    <ion-icon name="image" slot="end"></ion-icon></ion-button>
+  <ion-input type="file" class="upload-input" name="myfile" ></ion-input>
+</div>
           <!-- <ion-icon name="ellipsis-vertical-outline" slot="end"></ion-icon> -->
         </ion-item>
+        <ion-item>
+
+    <ion-col size="7" class="ion-padding-horizontal ion-text-center">
+      <ion-row>
+        <ion-col size="3">  <ion-badge class="cross-badge" color="danger"><ion-icon name="close-outline"></ion-icon></ion-badge>
+           <ion-img src="assets/user2.jpg" class="user-img"></ion-img>
+           </ion-col>
+ <ion-col size="3">
+  <ion-badge class="cross-badge" color="danger"><ion-icon name="close-outline"></ion-icon></ion-badge>
+  <ion-img src="assets/user3.jpeg" class="user-img"></ion-img>
+</ion-col>
+ <ion-col size="3">  <ion-badge class="cross-badge" color="danger"><ion-icon name="close-outline"></ion-icon></ion-badge>
+  <ion-img src="assets/user1.jpeg" class="user-img"></ion-img> 
+</ion-col> 
+ <ion-col size="3">  <ion-badge class="cross-badge" color="danger"><ion-icon name="close-outline"></ion-icon></ion-badge>
+  <ion-img src="assets/user1.jpeg" class="user-img"></ion-img> 
+</ion-col> 
+</ion-row></ion-col>
+    <ion-col size="5" class="ion-padding ion-text-center">
+      <ion-button class="btn-up" >Upload</ion-button>
+    </ion-col>
+  </ion-item>
       </ion-list>
       <ion-list class="ion-no-padding" lines="none" no-lines>
         <ion-item>

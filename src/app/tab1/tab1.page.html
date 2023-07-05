@@ -9,8 +9,11 @@
    
    
     <ion-col size="12" class="ion-padding-horizontal">
-      <img src="assets/Rectangle 45 (3).jpg" width="100%" alt="" class="ion-margin-top">
-
+      <swiper-container #swiper [autoplay]="true" [loop]="true" Initial-slide="0" [pagination]="{type:'bullets',clickable:true}">
+        <swiper-slide *ngFor="let item of bannerimgList">
+            <img src="{{item?.images}}">
+        </swiper-slide>
+      </swiper-container>
     </ion-col>
     <ion-col size="12" class="ion-padding-horizontal">
       <h3 class="text-heading2"><b>Our Services</b></h3>

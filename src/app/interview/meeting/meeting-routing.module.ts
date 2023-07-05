@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MeetingPage } from './meeting.page';
 import { CreateMettingLinkComponent } from './create-metting-link/create-metting-link.component';
+import { BatchDetailComponent } from './batch-detail/batch-detail.component';
 const routes: Routes = [
   {
     path: '',
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'create-new-link',
     component: CreateMettingLinkComponent
+  },
+  {
+    path: 'branch-detail/:id',
+    component: BatchDetailComponent
   }
 ];
 

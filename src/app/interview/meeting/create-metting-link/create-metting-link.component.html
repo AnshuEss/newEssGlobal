@@ -1,42 +1,53 @@
-<ion-header  color="primary"> 
- <ion-toolbar  color="primary"  class="ion-padding-top">
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="ion-padding-top">
     <ion-back-button defaultHref="/" slot="start" color="light">
       <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
     </ion-back-button>
-    <ion-title class=" text-heading ion-padding-end">Generate New Link</ion-title>    
+    <ion-title class=" text-heading ion-padding-end">Generate New Link</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-bg ion-padding-top ion-margin-top">
-<ion-row>
-<ion-col size="12" class=" ion-padding ion-text-center">
-<img src="assets/new-link.png">
-</ion-col>
+  <ion-row>
+    <ion-col size="12" class=" ion-padding ion-text-center">
+      <img src="assets/new-link.png">
+    </ion-col>
 
-<ion-col size="12" class="ion-text-center ion-no-padding">
-        <ion-list lines="none" no-lines>
-          <ion-item>
-            <ion-input  name="link-txt" class="ion-input" placeholder="Enter Text" required></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input name="batch-name" class="ion-input" placeholder="Enter Batch Name" required></ion-input>
-          </ion-item>          
-          <ion-item class="border-no-bottom ion-text-center" >
-            <ion-button color="primary" class="btn-sub" >Create Batch</ion-button>
-          </ion-item>
-        </ion-list>
+    <ion-col size="12" class="ion-text-center ion-no-padding">
+      <ion-list lines="none" no-lines>
+        <ion-item>
+          <ion-input name="batch-name" [(ngModel)]="branchName" name="branchName" class="ion-input" placeholder="Enter Batch Name" required></ion-input>
+        </ion-item>
+        <ion-item class="border-no-bottom ion-text-center">
+          <ion-button color="primary" (click)="createBranch()" class="btn-sub">Create Batch</ion-button>
+        </ion-item>
+      </ion-list>
 
-         <ion-list>
-          <ion-item>
-        <ion-icon name="newspaper-outline" slot="start"></ion-icon> <ion-label>Test Batch 3 </ion-label><ion-badge slot="end" class="float-end">1</ion-badge>
-          </ion-item>
-          <ion-item>
-          <ion-icon name="reader-outline" slot="start"></ion-icon>  
-          <ion-label>Test Batch 3 </ion-label><ion-badge slot="end" class="float-end">1</ion-badge>
-          </ion-item>
-
-      <ion-item lines="none" no-lines> <ion-button color="primary" class="btn-sub ion-margin-top" >Make New Batch</ion-button></ion-item>
-
-        </ion-list>
-      </ion-col>
+      <ion-list>
+        <ion-item *ngFor="let item of myBranchList">
+          <ion-icon name="newspaper-outline" slot="start" (click)="setOpen(true,item)"></ion-icon> 
+          <ion-label (click)="viewStudentList(item)">{{item?.branch_name}} </ion-label>
+          <ion-badge slot="end" class="float-end">{{item?.student}}</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-col>
   </ion-row>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Edit batch</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false,'')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-input [(ngModel)]="batchName" name="batchName" placeholder="Enter text"></ion-input>
+        </ion-item>
+        <ion-button expand="full" shape="round" class="ion-margin-top" (click)="UpdateBtch()">Update</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

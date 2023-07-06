@@ -1,10 +1,20 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar class="ion-text-center ion-padding-top ">
-      <img src="assets/esslogo.png" alt="" class="ion-margin-top">
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="ion-padding-top">
+      <ion-back-button defaultHref="/tabs/tab1" slot="start" color="light">
+          <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+      </ion-back-button>
+      <ion-title class=" text-heading ion-padding-end" color="light">Question Papers</ion-title>
 
-    </ion-toolbar>
-  </ion-header>
+      <!-- <ion-icon class="logout-ico" name="eye" slot="end" color="light"></ion-icon> -->
+  
+      <ion-note slot="end" class="ion-text-center" color="light">
+     <ion-icon class="logout-ico " name="eye"  color="light"></ion-icon>  <br>  <ion-text class="ion-padding-end">View Score</ion-text>
+                  </ion-note>
+
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true">
   <ion-row>
 
 
@@ -27,32 +37,33 @@
     <ion-col>
       <ion-card class="ion-q-card">
         <ion-text>
-          <h3>Self Test <img src="assets/ques.png" class="ion-float-end"></h3>
+          <h2 class="ion-text-center">Komal Preet</h2>
+          <h3>Self Test </h3>
         </ion-text>
 
         <ion-item class="ion-qitem " lines="no-lines" no-lines>
           <ion-label>Add Questions</ion-label>
           <ion-badge color="light">5</ion-badge>
-          <ion-note slot="end" color="primary">
-            <ion-icon name="add-circle" class="plus-ico" color="dark"></ion-icon>
+          <ion-note slot="end" color="dark">
+<ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
           </ion-note>
         </ion-item>
         <ion-item class="ion-qitem " lines="no-lines" no-lines>
           <ion-label>Add Students</ion-label>
           <ion-badge color="light">4</ion-badge>
-          <ion-note slot="end" color="primary">
-            <ion-icon name="add-circle" class="plus-ico" color="dark"></ion-icon>
-          </ion-note>
+          <ion-note slot="end" color="dark">
+            <ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
+                      </ion-note>
         </ion-item>
         <ion-item class="ion-qitem" lines="no-lines" no-lines>
           <ion-label>View Questions</ion-label>
           <ion-badge color="light">5</ion-badge>
-          <ion-note slot="end" color="primary">
-            <ion-toggle aria-label="Dark toggle" color="dark" [checked]="true"></ion-toggle></ion-note>
+          <ion-note slot="end" color="dark">
+            <ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
+                      </ion-note>
         </ion-item>
-        <ion-item class="ion-qitem ion-no-padding" lines="no-lines" no-lines>
-          <ion-button color="white" class="btn-sub2" expand="full">Start Test</ion-button>
-        </ion-item>
+      
+          <ion-toggle aria-label="Dark toggle" color="light" class="ion-float-end ion-margin-top" [checked]="true"></ion-toggle>
       </ion-card>
     </ion-col>
     

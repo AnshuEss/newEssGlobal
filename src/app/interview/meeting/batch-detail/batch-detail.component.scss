@@ -1,0 +1,38 @@
+ion-button,
+.btn-sub {width: 162px;
+height: 46.50717544555664px;
+top: 432px; color:#333 !important;
+left: 201px;over-flow:hidden; font-weight:bold;
+border-radius: 20px;--border-radius: 20px; border: 4px solid #007CC5;background:#fff !important;
+}
+:host(.button-solid.ion-color) .button-native {
+    border-radius: 40px !important;--border-radius: 40px !important;}
+ion-radio::part(container) {
+  width: 25px;
+  height: 25px;
+  background: #eee;
+  border-radius: 25px;
+  border: 2px solid #ddd; margin-right:20px;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #007dc4;border: 2px solid #007dc4;
+} 
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}

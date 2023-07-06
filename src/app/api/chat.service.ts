@@ -120,6 +120,17 @@ export class ChatService {
     return this.httpClient.post(`${environment.chatUrl}/users/activeDeactivebannerImg`,data);
   }
 
+  posts(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/posts/post`,data);
+  }
+
+  getAllPosts(){
+    return this.httpClient.get(`${environment.chatUrl}/posts/getAllPosts`);
+  }
+
+
+
+
 
 
 }

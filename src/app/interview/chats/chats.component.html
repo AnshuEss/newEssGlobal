@@ -22,8 +22,8 @@
         <p>This book is a treatise on the theory of ethics, very popular during the Renaissance. </p>
         <span class="time">11:00 am</span>
 </div>    </ion-item>
-    <ion-item class="ion-padding-top">
-      <div class="chat-sec">
+    <ion-item class="ion-padding-top ion-text-end">
+      <div class="chat-sec" slot="end">
       <p>  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. </p>
         <span class="time">11:00 am</span>
 </div>    </ion-item>   <ion-item class="ion-padding-top">
@@ -31,17 +31,29 @@
         <p>This book is a treatise  </p>
         <span class="time">11:00 am</span>
 </div>    </ion-item>
-    <ion-item class="ion-padding-top" slot="end">
-      <div class="chat-sec">
+    <ion-item class="ion-padding-top ion-text-end" slot="end">
+      <div class="chat-sec " slot="end">
       <p>  those interested. </p>
         <span class="time">11:00 am</span>
 </div>    </ion-item>
-<ion-item class="ion-padding-top" slot="end">
-      <div class="chat-sec" color="light">
+<ion-item class="ion-padding-top ion-text-end" slot="end">
+      <div class="chat-sec " slot="end">
       
               <img src="assets/Rectangle 110.png"  width="200" />
      <br>
         <span class="time">11:00 am</span>
 </div>    </ion-item>
+
+
+
   </ion-list>
-  </ion-content>
+
+  </ion-content>  <ion-footer>
+    <ion-list class="au-form ion-padding-start"  lines="none" no-lines>
+
+      <ion-item class="ion-no-padding">
+          <ion-input type="password" class="ion-input ion-padding" placeholder="  Type Something..."></ion-input>
+          <ion-button class="plane-btn" color="primary"><ion-icon color="light"  name="paper-plane"></ion-icon></ion-button>
+      </ion-item>
+ </ion-list>
+  </ion-footer>

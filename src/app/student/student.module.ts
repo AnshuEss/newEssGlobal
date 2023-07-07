@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { TestPaperComponent } from './test-paper/test-paper.component';
 import { MettingComponent } from './metting/metting.component';
 import { DemoComponent } from './demo/demo.component';
-
+import { SupportComponent } from './support/support.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +22,7 @@ import { DemoComponent } from './demo/demo.component';
     StudentPageRoutingModule,
 
   ],
-  declarations: [StudentPage,TimeLineComponent,ProfileComponent,TestPaperComponent,MettingComponent,DemoComponent],
+  declarations: [StudentPage,TimeLineComponent,ProfileComponent,TestPaperComponent,MettingComponent,DemoComponent,SupportComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StudentPageModule {}

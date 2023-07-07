@@ -1,71 +1,43 @@
 <ion-header>
   <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/student"></ion-back-button>
+      <ion-back-button defaultHref="interview/meeting/create-new-link"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-title-header">Batch Detail</ion-title>
   </ion-toolbar>
-</ion-header> 
-  <ion-content fullscreen class="full_bg">
+</ion-header>
+<ion-content fullscreen class="full_bg">
 
-    <ion-row>
-      <ion-col>
-        <ion-img src="assets/batch.png" width="80%"></ion-img>
-      </ion-col>
-    </ion-row>
-    <ion-list>
-      <ion-item>
-                <ion-input name="fileNo" class=" ion-input" placeholder="File number" required></ion-input>
-   
-            <ion-button color="white" class="btn-sub"  >Add Student</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-img src="assets/batch.png" width="80%"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="fileNo" name="fileNo" class=" ion-input" placeholder="File number" required></ion-input>
+
+      <ion-button color="white" class="btn-sub" (click)="addStu()">Add Student</ion-button>
+
+    </ion-item>
+  </ion-list>
+  <ion-list no-lines lines="none">
+    <ion-item *ngFor="let stu of studentList">
+      <ion-label>{{stu?.app_name}} </ion-label>
+      <ion-label>{{stu?.file_no}}</ion-label>
+      <ion-radio-group value="custom-checked">
+        <ion-radio  value="{{stu?.file_no}}" (click)="chk($event,stu)" aria-label="Custom checkbox "></ion-radio>
+      </ion-radio-group>
+      <ion-note slot="end" color="primary">
+        <ion-toggle aria-label="Primary toggle" color="primary" [checked]="true" (ionChange)="removeStu($event,stu.id)"></ion-toggle></ion-note>
+    </ion-item> 
+    
      
-      </ion-item>
-    </ion-list>
-      <ion-list no-lines lines="none">
-          <ion-item>
-            <ion-label>Tamanna Rani</ion-label>
-            <ion-label>3231113</ion-label>
-            <ion-radio-group value="custom-checked">
-  <ion-radio value="custom-checked" aria-label="Custom checkbox "></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary">
-              <ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item>   <ion-item>
-            <ion-label>Roopa Rani</ion-label>
-            <ion-label>3231113</ion-label><ion-radio-group value="custom-checked">
-  <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary"><ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item> <ion-item>
-            <ion-label>Simran Kaur</ion-label>
-            <ion-label>3231113</ion-label>
-            <ion-radio-group value="custom-checked">
-  <ion-radio value="custom" aria-label="Custom checkbox "></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary">
-              <ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item>   <ion-item>
-            <ion-label>Tamanna Rani</ion-label>
-            <ion-label>3231113</ion-label><ion-radio-group value="custom-checked">
-  <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary"><ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item> <ion-item>
-            <ion-label>Simran Kaur</ion-label>
-            <ion-label>3231113</ion-label>
-            <ion-radio-group value="custom-checked">
-  <ion-radio value="custom" aria-label="Custom checkbox "></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary">
-              <ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item>   <ion-item>
-            <ion-label>Simran Kaur</ion-label>
-            <ion-label>3231113</ion-label><ion-radio-group value="custom-checked">
-  <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
-</ion-radio-group>
-            <ion-note slot="end" color="primary"><ion-toggle aria-label="Primary toggle" color="primary" [checked]="true"></ion-toggle></ion-note>
-          </ion-item>
+    
+    
+ 
+    
+   
 
-          
-        </ion-list>
-  </ion-content>
+  </ion-list>
+</ion-content>

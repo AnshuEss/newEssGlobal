@@ -47,21 +47,20 @@ export class QuestionPaperPage implements OnInit {
   }
 
   AddQus(id: any) {
-    this.service.setData(id);
-    localStorage.setItem('topic_id', id);
-    this.router.navigate(['interview/test/add-question']);
+    this.storage.set('topic_id',id);
+    this.router.navigate(['interview/question-paper/add-question']);
   }
 
   AddStu(id: any) {
     this.service.setData(id);
     localStorage.setItem('topic_id', id);
-    this.router.navigate(['interview/test/add-student']);
+    this.router.navigate(['interview/question-paper/add-student']);
   }
 
   ViewQusList(id: any) {
     this.service.setData(id);
     localStorage.setItem('topic_id', id);
-    this.router.navigate(['interview/test/question-list']);
+    this.router.navigate(['interview/question-paper/view-question']);
   }
 
   releaseTopic(ev:any, id:any) {

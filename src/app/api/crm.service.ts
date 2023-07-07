@@ -11,4 +11,23 @@ export class CrmService {
   studentLogin(data: any) {
     return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=login', data);
   }
+  updateToken(data: any) {
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=updateToken', data);
+  }
+
+  getCBUSdata(data: any) { //get country branch univercity student
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=getCBUSdata',data);
+  }
+
+  getBranchStu(data:any){
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=getBranchStu',data);
+  }
+
+  checkFileNo(data: any) {
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=checkFileNo', data);
+  }
+
+  sendPush(data: any) {
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=sendPush', data);
+  }
 }

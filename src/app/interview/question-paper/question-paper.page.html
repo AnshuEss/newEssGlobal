@@ -1,15 +1,18 @@
 <ion-header color="primary">
   <ion-toolbar color="primary" class="ion-padding-top">
-      <ion-back-button defaultHref="/tabs/tab1" slot="start" color="light">
-          <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
-      </ion-back-button>
-      <ion-title class=" text-heading ion-padding-end" color="light">Question Papers</ion-title>
+    <ion-back-button defaultHref="/tabs/tab1" slot="start" color="light">
+      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+    </ion-back-button>
+    <ion-title class=" text-heading ion-padding-end" color="light">Question Papers</ion-title>
 
-      <!-- <ion-icon class="logout-ico" name="eye" slot="end" color="light"></ion-icon> -->
-  
-      <ion-note slot="end" class="ion-text-center" color="light">
-     <ion-icon class="logout-ico " name="eye"  color="light"></ion-icon>  <br>  <ion-text class="ion-padding-end">View Score</ion-text>
-                  </ion-note>
+    <!-- <ion-icon class="logout-ico" name="eye" slot="end" color="light"></ion-icon> -->
+
+    <ion-note slot="end" class="ion-text-center" color="light">
+      <ion-icon class="logout-ico " name="eye" color="light"></ion-icon> <br> 
+      <ion-text class="ion-padding-end">View
+        Score
+      </ion-text>
+    </ion-note>
 
   </ion-toolbar>
 
@@ -25,8 +28,8 @@
   </ion-row>
   <ion-list>
     <ion-item>
-      <ion-input [(ngModel)]="topic" name="topic" class=" ion-input ion-padding-bottom" placeholder="Type Something here"
-        required></ion-input>
+      <ion-input [(ngModel)]="topic" name="topic" class="ion-input ion-padding-bottom"
+        placeholder="Type Something here" required></ion-input>
     </ion-item>
     <ion-item no-lines lines="none" class="ion-text-center">
       <ion-button color="primary" expand="block" class="btn-sub" (click)="Create()">Create</ion-button>
@@ -34,39 +37,41 @@
   </ion-list>
 
   <ion-row>
-    <ion-col>
+    <ion-col *ngFor="let item of topicList">
       <ion-card class="ion-q-card">
         <ion-text>
-          <h2 class="ion-text-center">Komal Preet</h2>
-          <h3>Self Test </h3>
+          <h2 class="ion-text-center">{{item?.name}}</h2>
+          <h3> {{item?.topic}}</h3>
         </ion-text>
 
-        <ion-item class="ion-qitem " lines="no-lines" no-lines>
+        <ion-item class="ion-qitem " lines="no-lines" no-lines (click)="AddQus(item?.id)">
           <ion-label>Add Questions</ion-label>
-          <ion-badge color="light">5</ion-badge>
+          <ion-badge color="light">{{item?.question}}</ion-badge>
           <ion-note slot="end" color="dark">
-<ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
+            <ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
           </ion-note>
         </ion-item>
-        <ion-item class="ion-qitem " lines="no-lines" no-lines>
+        <ion-item class="ion-qitem " lines="no-lines" no-lines (click)="AddStu(item?.id)">
           <ion-label>Add Students</ion-label>
-          <ion-badge color="light">4</ion-badge>
+          <ion-badge color="light">{{item?.student}}</ion-badge>
           <ion-note slot="end" color="dark">
             <ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
-                      </ion-note>
+          </ion-note>
         </ion-item>
-        <ion-item class="ion-qitem" lines="no-lines" no-lines>
+        <ion-item class="ion-qitem" lines="no-lines" no-lines (click)="ViewQusList(item?.id)">
           <ion-label>View Questions</ion-label>
-          <ion-badge color="light">5</ion-badge>
+          <ion-badge color="light">{{item?.question}}</ion-badge>
           <ion-note slot="end" color="dark">
             <ion-icon name="chevron-forward" class="plus-ico"></ion-icon>
-                      </ion-note>
+          </ion-note>
         </ion-item>
-      
-          <ion-toggle aria-label="Dark toggle" color="light" class="ion-float-end ion-margin-top" [checked]="true"></ion-toggle>
+
+        <ion-toggle aria-label="Dark toggle" color="light"  class="ion-float-end ion-margin-top"
+        [checked]="item?.status" (ionChange)="releaseTopic($event,item?.id)">
+        </ion-toggle>
       </ion-card>
     </ion-col>
-    
+
 
   </ion-row>
 </ion-content>

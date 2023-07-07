@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="interview/question-paper"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-title-header">Add Question</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  class="ion-padding" [fullscreen]="true">
+  <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
+   <ion-list>
+    <ion-item class="ion-margin-top">
+      <ion-input formControlName="question" placeholder="Enter Question"></ion-input>
+      <div slot="error" *ngIf="isSubmitted && errorControl['question'].errors?.['required']">Please Enter Question</div>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-input  formControlName="opt_a" placeholder="Enter option A"></ion-input>
+      <div slot="error" *ngIf="isSubmitted && errorControl['opt_a'].errors?.['required']">Please enter option A</div>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-input  formControlName="opt_b" placeholder="Enter option B"></ion-input>
+      <div slot="error" *ngIf="isSubmitted && errorControl['opt_b'].errors?.['required']">Please enter option B</div>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-input  formControlName="opt_c" placeholder="Enter option C"></ion-input>
+      <div slot="error" *ngIf="isSubmitted && errorControl['opt_c'].errors?.['required']">Please enter option C</div>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+      <ion-input  formControlName="opt_d"  placeholder="Enter option D"></ion-input>
+      <div slot="error" *ngIf="isSubmitted && errorControl['opt_d'].errors?.['required']">Please enter option D</div>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-select aria-label="fruit" (ionChange)="OptionSelectionChanged($event)" placeholder="Select Answe" formControlName="ans">
+        <ion-select-option value="opt_a">Option A</ion-select-option>
+        <ion-select-option value="opt_b">Option B</ion-select-option>
+        <ion-select-option value="opt_c">Option C</ion-select-option>
+        <ion-select-option value="opt_d">Option D</ion-select-option>
+      </ion-select>
+      <div slot="error" *ngIf="isSubmitted && errorControl['ans'].errors?.['required']">Please enter answer</div>
+    </ion-item>
+
+   </ion-list>
+   
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Add Question</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

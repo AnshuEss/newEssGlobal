@@ -37,7 +37,7 @@ export class StudentLoginComponent  implements OnInit {
        this.storage.set('student',res?.data);
        this.router.navigate(['student']);
      }
-    },(error)=>{
+    },(error: { message: any; })=>{
       this.toster.dismissLoader();
       console.log('error---',error);
       this.toster.error(error?.message);

@@ -84,7 +84,7 @@ export class CreateMettingLinkComponent  implements OnInit {
       mlink:item?.metting_link
     }
     this.userService.setData(obj);
-    this.router.navigate(['interview/meeting/branch-detail/'+item?.id])
+    this.router.navigate(['interview/meeting/batch-detail/'+item?.id])
   }
 
 }

@@ -1,58 +1,57 @@
-<ion-header  color="primary"> 
- <ion-toolbar  color="primary"  class="ion-padding-top">
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="ion-padding-top">
     <ion-back-button defaultHref="/" slot="start" color="light">
       <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
     </ion-back-button>
     <ion-title class=" text-heading ion-padding-end">Profile</ion-title>
-    
+
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true" class="ion-bg ion-no-padding ion-no-margin">
+<ion-content [fullscreen]="true" class="ion-bg ion-padding-top ion-no-padding ion-no-margin">
   <div class="overlay-container">
 
     <div class="overlay orange"></div>
   </div>
   <ion-row>
-   <ion-col size="12" class="ion-text-center ion-padding-top">
-  <ion-img src="assets/user3.jpeg" class="user-img"></ion-img>
-</ion-col>
-  <ion-col size="12" class="ion-text-center ion-padding-horizontal">
-        <ion-list lines="none" class="ion-no-padding" no-lines>
-          <ion-item class="border-no-bottom pro-in">
-        <p>Name - {{student?.app_name}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>DOB- {{student?.dob}} </p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>File Number - {{student?.file_no}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>Country - {{student?.country}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>Branch Name - {{student?.branch}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>Mobile Number - {{student?.phone_one}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>ESS file open date - {{student?.ess_file_open_date}}</p>
-            </ion-item>  
-            <ion-item class="border-no-bottom pro-in">
-        <p>Main Status - {{student?.main_status}}</p>
-            </ion-item>
-            <ion-item class="border-no-bottom pro-in">
-        <p>Sub Status - {{student?.sub_status}} </p>
-            </ion-item>
-            <ion-item class="border-no-bottom pro-in">
-        <p>Sub Class - {{student?.subclass}}</p>
-            </ion-item>
-            <ion-item class="border-no-bottom pro-in">
-        <p>Visa Category - {{student?.visa_cat}}</p>
-            </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
+    <ion-col size="12" class="ion-text-center">
+     <ion-button [routerLink]="['/student/time-line']" expend="full" shape="round">See Timeline</ion-button>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center ion-padding-horizontal">
+      <ion-list lines="none" class="ion-no-padding" no-lines>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Name - {{student?.app_name}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>DOB- {{student?.dob}} </p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>File Number - {{student?.file_no}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Country - {{student?.country}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Branch Name - {{student?.branch}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Mobile Number - {{student?.phone_one}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>ESS file open date - {{student?.ess_file_open_date}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Main Status - {{student?.main_status}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Sub Status - {{student?.sub_status}} </p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Sub Class - {{student?.subclass}}</p>
+        </ion-item>
+        <ion-item class="border-no-bottom pro-in">
+          <p>Visa Category - {{student?.visa_cat}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 </ion-content>
-  

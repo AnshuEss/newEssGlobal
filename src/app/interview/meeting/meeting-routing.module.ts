@@ -14,7 +14,7 @@ const routes: Routes = [
     component: CreateMettingLinkComponent
   },
   {
-    path: 'branch-detail/:id',
+    path: 'batch-detail/:id',
     component: BatchDetailComponent
   }
 ];

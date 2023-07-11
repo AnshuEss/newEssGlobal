@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/api/storage.service';
 import { ChatService } from 'src/app/api/chat.service';
-import {Howl, Howler} from 'howler';
+// import {Howl, Howler} from 'howler';
 @Component({
   selector: 'app-stu-msg',
   templateUrl: './stu-msg.component.html',
@@ -33,7 +33,7 @@ export class StuMsgComponent  implements OnInit {
         console.log('support-msg',message);
         if(this.student?.file_no==message.user_id && this.from_id==message.from_id){
           this.chatList.push(message);
-           this.playringTone();
+          // this.playringTone();
         }
       });
  }
@@ -77,15 +77,15 @@ export class StuMsgComponent  implements OnInit {
   };
 
 
-playringTone() {
-    //console.log('plau');
-    //this.streamingMedia.playAudio('/assets/noti.wav');
-    var sound = new Howl({
-      src: ['/assets/noti.wav'],
-      html5: true
-    });
+// playringTone() {
+//     //console.log('plau');
+//     //this.streamingMedia.playAudio('/assets/noti.wav');
+//     var sound = new Howl({
+//       src: ['/assets/noti.wav'],
+//       html5: true
+//     });
 
-    sound.play();
-  }
+//     sound.play();
+//   }
 
 }

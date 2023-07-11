@@ -9,11 +9,15 @@ import { AppComponent } from './app.component';
 import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+//const config: SocketIoConfig = { url: 'http://43.204.232.143:3000', options: {} };
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule, 
+    HttpClientModule,
+    SocketIoModule.forRoot(config), 
     IonicModule.forRoot(),
     IonicStorageModule.forRoot({
       driverOrder: [Drivers.SecureStorage, Drivers.IndexedDB, Drivers.LocalStorage]

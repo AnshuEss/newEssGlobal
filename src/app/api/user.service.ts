@@ -280,4 +280,9 @@ export class UserService {
     return this.httpClient.post(`${environment.apiUrl}` + 'question.php?tag=getQuesByTecherTopicId', data);
   }
 
+
+  activeDeative(data:any){
+    return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=activeDeative', data);
+  }
+
 }

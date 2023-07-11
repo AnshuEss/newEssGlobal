@@ -13,3 +13,21 @@ ion-toolbar  { height:60px;}
     ion-toolbar{ background-color: #fff;}
 
     .logout-ico { font-size:26px;}
+
+    .noti-icon{
+        margin-right: 40px;
+        font-size:26px;
+    }
+
+    .count-noti{
+        background: red;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: fixed;
+        right: 67px;
+        top: 10px;
+        text-align: center;
+        line-height: 28px;
+    }

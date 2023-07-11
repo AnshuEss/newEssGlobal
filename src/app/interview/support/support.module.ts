@@ -8,6 +8,8 @@ import { SupportPageRoutingModule } from './support-routing.module';
 
 import { SupportPage } from './support.page';
 
+import { StuMsgComponent } from './stu-msg/stu-msg.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { SupportPage } from './support.page';
     IonicModule,
     SupportPageRoutingModule
   ],
-  declarations: [SupportPage]
+  declarations: [SupportPage,StuMsgComponent]
 })
 export class SupportPageModule {}

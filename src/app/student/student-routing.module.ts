@@ -12,7 +12,7 @@ import { TestPaperComponent } from './test-paper/test-paper.component';
 import { MettingComponent } from './metting/metting.component';
 import { DemoComponent } from './demo/demo.component';
 import { SupportComponent } from './support/support.component';
-
+import { VgServiceComponent } from './vg-service/vg-service.component';
 const routes: Routes = [
   {
     path: '',
@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path:'support',
     component:SupportComponent
+  },
+  {
+    path:'services',
+    component:VgServiceComponent
   }
 ];
 

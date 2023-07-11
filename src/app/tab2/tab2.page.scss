@@ -3,7 +3,8 @@
   margin-right: 10px;
   color: #333
 }
-.post-input {  border:1px solid #ccc; padding:20px 30px !important; width:100%; border-radius:35px;}
+.post-input {  border:1px solid #ccc; margin-top: 0px; padding:8px 30px !important; 
+  width:100%; border-radius:35px;}
 .tog-bar {
   font-size: 46px;
   float: right;
@@ -60,7 +61,7 @@
   font-size: 24px;
   margin-right: 20px;
 }
-
+.user-img1 { margin-top:20px;}
 .user-img {
   border-radius: 50%;
   --border-radius: 50%;
@@ -156,7 +157,7 @@
 .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
-  display: inline-block;
+  display: inline-block; margin-top:20px;
 }
 .btn {
   border:0px;

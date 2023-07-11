@@ -4,6 +4,7 @@
             <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
         </ion-back-button>
         <ion-title class=" text-heading ion-padding-end" color="light">Interview Page</ion-title>
+
         <ion-icon class="logout-ico" name="power" slot="end" color="light" (click)="logout()"></ion-icon>
     </ion-toolbar>
 
@@ -76,6 +77,12 @@
             <ion-card class="Services-card" [routerLink]="['/interview/banner']">
                 <img src="assets/banner.png">
                 <h4>Banner Images</h4>
+            </ion-card>
+        </ion-col>
+        <ion-col size="6">
+            <ion-card class="Services-card" [routerLink]="['/interview/support']">
+                <img src="assets/banner.png">
+                <h4>Support</h4>
             </ion-card>
         </ion-col>
 

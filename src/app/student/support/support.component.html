@@ -1,52 +1,47 @@
 <ion-header [translucent]="true">
-  <ion-toolbar> <ion-back-button defaultHref="/" slot="start" text="">
+  <ion-toolbar> <ion-back-button defaultHref="/student/profile" slot="start" text="">
       <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
 
 
     <ion-avatar slot="start">
-      <img src="assets/Rectangle 110.png" width="90" />
+      <img src="assets/esslogo.png" width="90" />
     </ion-avatar>
 
     <ion-label class="ion-padding-vertical">
-      <h2 class="ion-padding-start">Riya Sharma</h2>
+      <h2 class="ion-padding-start">Ess support</h2>
       <p class="chat-txt ion-padding-start">Online</p>
     </ion-label><ion-icon name="ellipsis-horizontal" slot="end"></ion-icon>
 
 
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-list lines="none" no-lines>
-    <ion-item class="ion-padding-top">
-      <div class="chat-first">
-        <p>This book is a treatise on the theory of ethics, very popular during the Renaissance. </p>
-        <span class="time">11:00 am</span>
-      </div>
-    </ion-item>
-    <ion-item class="ion-padding-top">
-      <div class="chat-sec">
-        <p> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. </p>
-        <span class="time">11:00 am</span>
-      </div>
-    </ion-item> <ion-item class="ion-padding-top">
-      <div class="chat-first">
-        <p>This book is a treatise </p>
-        <span class="time">11:00 am</span>
-      </div>
-    </ion-item>
-    <ion-item class="ion-padding-top" slot="end">
-      <div class="chat-sec">
-        <p> those interested. </p>
-        <span class="time">11:00 am</span>
-      </div>
-    </ion-item>
-    <ion-item class="ion-padding-top" slot="end">
-      <div class="chat-sec" color="light">
 
-        <img src="assets/Rectangle 110.png" width="200" />
-        <br>
-        <span class="time">11:00 am</span>
+<ion-content class="ion-margin-top ion-padding-top">
+  <ion-list lines="none" no-lines *ngFor="let item of chatList">
+    <div>
+    <ion-item class="" *ngIf="item?.user_id==student?.file_no">
+      <div class="chat-first">
+        <p>{{item?.message}}</p>
+        <span class="time">{{item?.current_time}}</span>
       </div>
+    </ion-item>
+    <ion-item class=" ion-text-end" *ngIf="item?.user_id!==student?.file_no">
+      <div class="chat-sec" slot="end">
+         <p>{{item?.message}}</p>
+        <span class="time">{{item?.current_time}}</span>
+      </div>
+    </ion-item> 
+  </div>
+  </ion-list>
+</ion-content> 
+
+<ion-footer>
+  <ion-list class="au-form ion-padding-start" lines="none" no-lines>
+
+    <ion-item class="ion-no-padding">
+      <ion-textarea class="ion-textarea ion-padding" [(ngModel)]="message" name="message" placeholder=" Type Something..."></ion-textarea>
+      <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
+      <ion-icon name="send-outline" class="plane-btn" slot="end" (click)="sendMsg()"></ion-icon>
     </ion-item>
   </ion-list>
-</ion-content>
+</ion-footer>

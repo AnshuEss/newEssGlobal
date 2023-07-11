@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-title-header">Our Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class=" full_bg ion-margin-top ion-padding-top">
+  <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
+
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-label> Select Services</ion-label>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-primary">
+          <div class="ion-activatable ripple-parent ion-text-center ion-margin-bottom">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/004-resident.png" width="40">
+            Accommodation
+          </div>
+        </ion-item>
+      </ion-col>
+
+
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-danger">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/011-university-1.png" width="40"><br>
+            Collage change
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-success">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/014-health-insurance.png" width="40"><br>
+            Health insurance
+          </div>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-info">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/016-knowledge.png" width="40"><br>
+            Education guidance
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-purple">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/017-online-assistance.png" width="40"><br>
+            Job assistance
+          </div>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-primary">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/020-influencer.png" width="40"><br>
+            PR assistance
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-danger">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/012-insurance.png" width="40"><br>
+            Social insurance number
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-success">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/023-knowledge-1.png" width="40"><br>
+            Study permit/extensions
+          </div>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" class="ion-no-padding-start ion-text-center">
+        <ion-item class="ion-no-margin-start ion-no-padding-start box1 light-info">
+          <div class="ion-activatable ripple-parent ion-text-center ">
+            <ion-checkbox justify="start"></ion-checkbox>
+            <img src="assets/png/024-time-to-study.png" width="40"><br>
+            Post study work visa
+          </div>
+        </ion-item>
+      </ion-col>
+
+
+    </ion-row>
+    <ion-row>
+      <!-- <ion-col size="12">
+        <ion-select formControlName="services" aria-label="Fruit" class="ion-form-control" placeholder="Select Services"
+          [multiple]="true">
+          <ion-select-option value="accommodation">Accommodation</ion-select-option>
+          <ion-select-option value="social insurance number">Social insurance number</ion-select-option>
+          <ion-select-option value="collage change">Collage change</ion-select-option>
+          <ion-select-option value="health insurance">Health insurance</ion-select-option>
+          <ion-select-option value="education guidance">Education guidance</ion-select-option>
+          <ion-select-option value="job assistance">Job assistance</ion-select-option>
+          <ion-select-option value="pr assistance">PR assistance</ion-select-option>
+          <ion-select-option value="study permit">Study permit/extensions</ion-select-option>
+          <ion-select-option value="post study work visa">Post study work visa</ion-select-option>
+        </ion-select>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['services'].errors?.['required']">
+          Services is required.
+        </span>
+      </ion-col> -->
+
+      <ion-col size="12">
+        <ion-input formControlName="remarks" label="Remarks" labelPlacement="floating" class="ion-form-control"
+          placeholder="Remarks"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['remarks'].errors?.['required']">
+          Remarks is required.
+        </span>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input label="Email" formControlName="email" class="form-control form-control-sm"
+          labelPlacement="floating" class="ion-form-control" placeholder="Email"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
+          Email is required.
+        </span>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-input label="Mobile Vg" formControlName="mobile_vg" class="form-control form-control-sm"
+          labelPlacement="floating" class="ion-form-control" placeholder="Mobile Vg"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile_vg'].errors?.['required']">
+          MobileVg is required.
+        </span>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-input label="Mobile" formControlName="mobile" class="form-control form-control-sm"
+          labelPlacement="floating" class="ion-form-control" placeholder="Mobile india"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
+          Mobile is required.
+        </span>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button type="submit" color="primary" expand="block">Request call back</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

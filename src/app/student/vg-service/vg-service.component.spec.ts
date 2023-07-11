@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { StuQueryComponent } from './stu-query.component';
+import { VgServiceComponent } from './vg-service.component';
 
-describe('StuQueryComponent', () => {
-  let component: StuQueryComponent;
-  let fixture: ComponentFixture<StuQueryComponent>;
+describe('VgServiceComponent', () => {
+  let component: VgServiceComponent;
+  let fixture: ComponentFixture<VgServiceComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ StuQueryComponent ],
+      declarations: [ VgServiceComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StuQueryComponent);
+    fixture = TestBed.createComponent(VgServiceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

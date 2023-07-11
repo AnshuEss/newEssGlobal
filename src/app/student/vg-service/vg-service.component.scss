@@ -1,0 +1,27 @@
+.error{
+    color: red;
+}
+.item-native { --padding:0px !important; border-width:0px;}
+.font-20 {  font-size: 20px;}
+.toolbar-background { background: none !important;}
+.ripple-parent.primary { background: #0086ca;}
+/*.ripple-parent { width: 55px; height: 55px; font-size:25px; overflow: hidden; text-align: center; line-height: 60px;  color: #fff;
+    border-radius: 5px;} */
+.int-test { font-size: 15px;}
+.ripple-parent { font-size:15px; overflow: hidden; text-align: center;padding-bottom:10px !important; margin:0px  auto 10px !important; 
+}
+.item-native {
+  padding-left: unset;
+  padding-right: unset;
+  padding-inline-start:0px !important;
+  padding-inline-end: 0px !important;
+}
+.md.in-item.interactive.hydrated { border:0px !important; margin:10px auto 10px !important;}
+.box1 { border:1px solid #f8f8f8  ;  padding:0px 0px; border-radius:20px;}
+.md.in-item.interactive.hydrated {--border-width: 0px !important; --background :transparents}
+.md.in-item.interactive.hydrated.checkbox-checked {----background-checked :transparents; --color:#0086ca;----background-checked: transparents;
+--color: #0086ca;
+--background-checked: transparents;
+--border-color-checked: #0086ca;
+--checkmark-color: #0086ca;
+}

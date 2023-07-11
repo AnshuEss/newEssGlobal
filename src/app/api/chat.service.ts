@@ -9,7 +9,7 @@ import { Observable, Observer} from 'rxjs';
 })
 export class ChatService {
  constructor(private httpClient: HttpClient,
-  //private socket: Socket
+  private socket: Socket
   ) {}
   data:any;
   setData(data:any){
@@ -78,6 +78,22 @@ export class ChatService {
   }
   */
 
+  getSupportMessages = () => {
+    return  new Observable((observer: Observer<any>)=>{
+      this.socket.on('support-message', (message:string)=>{
+        //console.log("new-message",message);
+        observer.next(message)
+      })
+    })
+  }
+
+  sendSupportMessage(message:any) {
+    this.socket.emit('support-message', message);
+  }
+  saveSupportMsg(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/saveSupportMsg`,data);
+  }
+
   creteGb(data:any){
     return this.httpClient.post(`${environment.chatUrl}/users/createGroup`,data);
   }
@@ -126,6 +142,21 @@ export class ChatService {
 
   getAllPosts(){
     return this.httpClient.get(`${environment.chatUrl}/posts/getAllPosts`);
+  }
+
+  getAllmySupportMsg(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/getAllmySupportMsg`,data);
+  }
+
+  getAllSupportMsg(){
+    return this.httpClient.get(`${environment.chatUrl}/users/getAllSupportMsg`);
+  }
+
+  countNoti(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/countNoti`,data);
+  }
+  readAllMsg(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/readAllMsg`,data);
   }
 
 

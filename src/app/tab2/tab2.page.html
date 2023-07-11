@@ -13,10 +13,10 @@
       <ion-list class="ion-no-padding" lines="none" no-lines>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="assets/user1.jpeg" class="user-img"></ion-img>
+            <ion-img src="assets/user1.jpeg" class="user-img user-img1"></ion-img>
           </ion-avatar>
           <ion-label>
-            <ion-input name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here" required></ion-input>
+            <ion-textarea name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here" required></ion-textarea>
           </ion-label>
 
 
@@ -59,8 +59,8 @@
           </swiper-container>
         </ion-item>
         <ion-item>
-          <ion-label class="post-text">
-            <p>{{item?.posts}}</p>
+          <ion-label class="post-text"><span class="ion-float-end" slot="end">1 <ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+            <p>{{item?.posts}} </p> 
           </ion-label>
         </ion-item>
 

@@ -1,15 +1,43 @@
-.cont-ico {  margin: -30px 0px; position: relative; z-index: 99;}
-.contact-card { padding: 20px; background-color: #007dc4; color: #fff; width: 94%;}
-.ion-label { width: 100%; float: left;}
+.cont-ico {
+    margin: -30px 0px;
+    position: relative;
+    z-index: 99;
+}
 
-.ion-input {width: 100%;  height: 48px;  border-radius: 4px;background: #EFEFEF; 
-              box-shadow: 0px 0px 5px #ccc; margin-top:10px; background-color: #eee; float:left; 
-              border:1px solid #ddd;--border:1px solid #ddd;}
-              .btn-sub {
-                            width: 178px;
-                            border-radius: 10px;
-                            --border-radius: 10px;
-                            height: 53px; font-size: 20px;
-                            margin: 20px auto 10px;
-                        }
-                        
+.contact-card {
+    padding: 20px;
+    background-color: #007dc4;
+    color: #fff;
+    width: 94%;
+}
+
+.ion-label {
+    width: 100%;
+    float: left;
+}
+
+.ion-input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background: #EFEFEF;
+    box-shadow: 0px 0px 5px #ccc;
+    margin-top: 10px;
+    background-color: #eee;
+    float: left;
+    border: 1px solid #ddd;
+    --border: 1px solid #ddd;
+}
+
+.btn-sub {
+    width: 178px;
+    border-radius: 10px;
+    --border-radius: 10px;
+    height: 53px;
+    font-size: 20px;
+    margin: 20px auto 10px;
+}
+
+.error {
+    color: red;
+}

@@ -14,66 +14,22 @@
 
     <ion-col size="12" >
       <ion-list lines="none" class="ion-no-padding ion-text-center " no-lines>
-        <ion-item class="border-no-bottom pro-in">
+        <ion-item class="border-no-bottom pro-in" *ngFor="let item of attendanceList">
           <ion-thumbnail>
             <img alt="user1" src="assets/user1.png" width="40" /> 
           </ion-thumbnail>
 
-          <ion-note slot="end" class="nme ion-text-center ion-no-margin"> Tamanna Rani<br>
-          <span>3231113</span></ion-note>
+          <ion-note slot="end" class="nme ion-text-center ion-no-margin">{{item?.name}}<br>
+          <span>{{item?.file_no}}</span></ion-note>
           <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">Check In<br>
-          <span>10:25 am</span></ion-note>
+          <span>{{item?.join_time}}</span></ion-note>
         
           <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">
             Check Out<br><span>
-              06:00 pm
+              {{item?.end_time}}
             </span></ion-note>
         </ion-item> 
-        <ion-item class="border-no-bottom pro-in">
-          <ion-thumbnail>
-            <img alt="user1" src="assets/user1.png" width="40" /> 
-          </ion-thumbnail>
-
-          <ion-note slot="end" class="nme ion-text-center ion-no-margin"> Tamanna Rani<br>
-          <span>3231113</span></ion-note>
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">Check In<br>
-          <span>10:25 am</span></ion-note>
-        
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">
-            Check Out<br><span>
-              06:00 pm
-            </span></ion-note>
-        </ion-item> 
-        <ion-item class="border-no-bottom pro-in">
-          <ion-thumbnail>
-            <img alt="user1" src="assets/user1.png" width="40" /> 
-          </ion-thumbnail>
-
-          <ion-note slot="end" class="nme ion-text-center ion-no-margin"> Tamanna Rani<br>
-          <span>3231113</span></ion-note>
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">Check In<br>
-          <span>10:25 am</span></ion-note>
-        
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">
-            Check Out<br><span>
-              06:00 pm
-            </span></ion-note>
-        </ion-item> 
-        <ion-item class="border-no-bottom pro-in">
-          <ion-thumbnail>
-            <img alt="user1" src="assets/user1.png" width="40" /> 
-          </ion-thumbnail>
-
-          <ion-note slot="end" class="nme ion-text-center ion-no-margin"> Tamanna Rani<br>
-          <span>3231113</span></ion-note>
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">Check In<br>
-          <span>10:25 am</span></ion-note>
-        
-          <ion-note slot="end" class=" ion-no-margin ion-text-center " color="primary">
-            Check Out<br><span>
-              06:00 pm
-            </span></ion-note>
-        </ion-item> 
+       
 
       </ion-list>
     </ion-col>

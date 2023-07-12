@@ -81,9 +81,7 @@ export class QuestionPaperPage implements OnInit {
   }
 
   sendPushNotiFication(data:any){
-    // this.crm.sendPush(data).subscribe((res: any) => {
-      
-    // });
+    this.crm.sendPush(data).subscribe((res: any) => {});
   }
 
 

@@ -10,10 +10,10 @@
 
     <ion-col size="12" class=" ion-margin-top ion-no-padding">
 
-      <ion-list class="ion-no-padding" lines="none" no-lines>
+      <ion-list class="ion-no-padding" lines="none" no-lines *ngIf="role">
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="assets/user1.jpeg" class="user-img user-img1"></ion-img>
+            <ion-img src="assets/image 20.png" class="user-img user-img1"></ion-img>
           </ion-avatar>
           <ion-label>
             <ion-textarea name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here" required></ion-textarea>
@@ -45,13 +45,13 @@
       <ion-list class="ion-no-padding" lines="none" no-lines  *ngFor="let item of postList">
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img src="assets/user1.jpeg" class="user-img"></ion-img>
+            <ion-img src="assets/image 20.png" class="user-img"></ion-img>
           </ion-avatar>
           <ion-label>
-            <h2>Alice</h2>
+            <h2>Ess</h2>
             <p>{{ item?.createdAt | date }}</p>
           </ion-label>
-          <ion-icon name="ellipsis-vertical-outline" slot="end"></ion-icon>
+          <ion-icon name="ellipsis-vertical-outline" slot="end" *ngIf="role"></ion-icon>
         </ion-item>
         <ion-item class="ion-no-padding feed-item" no-padding>
           <swiper-container [loop]="true" #swiper Initial-slide="0" [pagination]="{type:'bullets',clickable:true}">
@@ -59,7 +59,10 @@
           </swiper-container>
         </ion-item>
         <ion-item>
-          <ion-label class="post-text"><span class="ion-float-end" slot="end">1 <ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+          <ion-label class="post-text">
+            <!-- <span (click) = "comment(item?._id)" class="ion-float-end" slot="end">1 
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            </span> -->
             <p>{{item?.posts}} </p> 
           </ion-label>
         </ion-item>
@@ -67,5 +70,34 @@
       </ion-list>
     </ion-col>
   </ion-row>
+
+
+  <ion-content class="ion-padding">
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>comments</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-avatar slot="start">
+              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-avatar>
+            <ion-label> Avatar Item </ion-label>
+          </ion-item>       
+        </ion-content>
+        <ion-footer>
+          <ion-item>
+            <ion-textarea  (keydown.enter)="saveCm($event)" placeholder="Type something here"></ion-textarea>
+          </ion-item>
+        </ion-footer>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
  
 </ion-content>

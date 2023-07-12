@@ -12,32 +12,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-margin-top ion-padding-top">
+<ion-content>
   <ion-list lines="none" no-lines *ngFor="let item of chatList">
-    <div>
-    <ion-item class="" *ngIf="item?.user_id==student?.file_no">
+
+    <ion-item  *ngIf="item?.user_id==student?.file_no">
       <div class="chat-first">
         <p>{{item?.message}}</p>
         <span class="time">{{item?.current_time}}</span>
       </div>
     </ion-item>
-    <ion-item class=" ion-text-end" *ngIf="item?.user_id!==student?.file_no">
+    <ion-item class="ion-text-end" *ngIf="item?.user_id!==student?.file_no">
       <div class="chat-sec" slot="end">
          <p>{{item?.message}}</p>
         <span class="time">{{item?.current_time}}</span>
       </div>
     </ion-item> 
-  </div>
+ 
   </ion-list>
 </ion-content> 
 
 <ion-footer>
   <ion-list class="au-form ion-padding-start" lines="none" no-lines>
 
-    <ion-item class="ion-no-padding">
-      <ion-textarea class="ion-textarea ion-padding" [(ngModel)]="message" name="message" placeholder=" Type Something..."></ion-textarea>
-      <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
-      <ion-icon name="send-outline" class="plane-btn" color="primary" slot="end" (click)="sendMsg()"></ion-icon>
-    </ion-item>
+    <!-- <ion-item class="ion-no-padding">
+      <ion-textarea type="text" class="ion-input ion-padding" [(ngModel)]="message" name="message" placeholder=" Type Something...">
+       <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> 
+      <ion-icon name="send-outline" slot="end" (click)="sendMsg()"></ion-icon>
+    </ion-item> -->
   </ion-list>
 </ion-footer>

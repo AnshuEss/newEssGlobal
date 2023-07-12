@@ -6,6 +6,7 @@ import { ChatListComponent } from './chat-list/chat-list.component';
 
 import { ChatsComponent } from './chats/chats.component';
 import { BannerComponent } from './banner/banner.component';
+import { AttendanceComponent } from './attendance/attendance.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'banner',
     component: BannerComponent
+  },
+  {
+    path: 'attendance',
+    component: AttendanceComponent
   },
   {
     path: 'question-paper',

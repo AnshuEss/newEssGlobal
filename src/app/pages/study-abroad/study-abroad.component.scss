@@ -1,0 +1,79 @@
+
+.countries-item.img-top {
+              margin-top: 25px;
+              box-shadow: 0px 10px 20px rgb(30 55 103 / 9%);
+          }
+          .countries-item {
+              background: #ffffff;
+              padding: 15px 15px 26px 15px;
+              -webkit-transition: all 0.3s ease-out 0s;
+              -moz-transition: all 0.3s ease-out 0s;
+              -ms-transition: all 0.3s ease-out 0s;
+              -o-transition: all 0.3s ease-out 0s;
+              transition: all 0.3s ease-out 0s; 
+          }
+          .countries-item.img-top .countries-item__top-img {
+              position: relative;
+              top: -20px;
+          }
+          .countries-item__top-img {
+              position: relative;
+          }
+          .countries-item__top-img-link {
+              position: absolute;
+              top: 35%;
+              left: 41%;
+          }
+          .countries-item__top-img-link a {
+              width: 50px;
+              height: 50px;
+              display: inline-block;
+              background: #fff;
+              line-height: 50px;
+              text-align: center;
+              border-radius: 50%;
+              color: #007dc4;
+              visibility: hidden;
+              margin-top: 50px;
+              opacity: 0;
+              -webkit-transition: all 0.3s ease-out 0s;
+              -moz-transition: all 0.3s ease-out 0s;
+              -ms-transition: all 0.3s ease-out 0s;
+              -o-transition: all 0.3s ease-out 0s;
+              transition: all 0.3s ease-out 0s;
+          }
+          .countries-item__bottom-content-title {
+              font-size: 18px;
+              text-transform: uppercase;
+              color: #1A1C20;
+              line-height: 28px;
+              margin-top: 2px;
+              -webkit-transition: all 0.3s ease-out 0s;
+              -moz-transition: all 0.3s ease-out 0s;
+              -ms-transition: all 0.3s ease-out 0s;
+              -o-transition: all 0.3s ease-out 0s;
+              transition: all 0.3s ease-out 0s;
+          }
+          .countries-item__bottom-content p {
+              font-size: 14px;
+              text-transform: uppercase;
+              margin-top: 0px;
+          }
+          .countries-item__bottom-img img { border:1px solid #ccc; width: 50px; border-radius: 50%; }
+          .countries-item:hover .countries-item__top-img-link a {
+              visibility: visible;
+              margin-top: 0px;
+              opacity: 1;
+          }
+          .countries-item__top-img-link a:hover {
+              background: #007dc4;
+              color: #ffffff;
+          }.align-items-center {
+              align-items: center!important;
+          }
+          
+          .d-flex {
+              display: flex!important;
+          }.me-2 {
+              margin-right: 0.5rem!important;
+          }

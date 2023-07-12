@@ -14,6 +14,8 @@ import { ChatsComponent } from './chats/chats.component';
 
 import { BannerComponent } from './banner/banner.component';
 
+import { AttendanceComponent } from './attendance/attendance.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +23,6 @@ import { BannerComponent } from './banner/banner.component';
     IonicModule,
     InterviewPageRoutingModule
   ],
-  declarations: [InterviewPage,ChatListComponent,ChatsComponent,BannerComponent]
+  declarations: [InterviewPage,ChatListComponent,ChatsComponent,BannerComponent,AttendanceComponent]
 })
 export class InterviewPageModule {}

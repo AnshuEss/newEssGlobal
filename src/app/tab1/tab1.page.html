@@ -15,10 +15,37 @@
         </swiper-slide>
       </swiper-container>
     </ion-col>
-    <ion-col size="12" class="ion-padding-horizontal">
+    <ion-col size="12" class="ion-padding-horizontal" >
       <h3 class="text-heading2"><b>Our Services</b></h3>
     </ion-col>
-    <ion-col size="6" size-md="4" class="ion-no-padding" >
+
+    <ion-col size="6" size-md="4" class="ion-no-padding"  [routerLink]="['/pages/contact-us']">
+      <ion-card class="Services-card">
+        <img src="assets/call.png" width="50">
+        <h4>Contact Us</h4>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6" size-md="4" class="ion-no-padding"  [routerLink]="['/pages/about-us']">
+      <ion-card class="Services-card">
+        <img src="assets/about-us.png" width="50">
+        <h4>About Us</h4>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6" size-md="4" class="ion-no-padding"  [routerLink]="['/pages/our-branches']">
+      <ion-card class="Services-card">
+        <img src="assets/branch.png" width="50">
+        <h4>Our Branches</h4>
+      </ion-card>
+    </ion-col>
+ 
+    <ion-col size="6" size-md="4" class="ion-no-padding"  [routerLink]="['/pages/study-abroad']">
+      <ion-card class="Services-card">
+        <img src="assets/visa.png" width="50">
+        <h4>Study Abroad</h4>
+      </ion-card>
+    </ion-col>
+    <!-- <ion-col size="6" size-md="4" class="ion-no-padding" >
       <ion-card class="Services-card">
         <img src="assets/counsellor 1.png">
         <h4>Career Counseling</h4>
@@ -58,7 +85,7 @@
         <img src="assets/airport 1.png">
         <h4>Pre Departure & Post Departure Assistance </h4>
       </ion-card>
-    </ion-col>
+    </ion-col> -->
 
   </ion-row>
 

@@ -30,8 +30,8 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter First Name :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="name" placeholder="Enter First Name"></ion-input>
-            <span class="error ion-padding" *ngIf="isSubmitted && errorControl['name'].errors?.['required']">
+            <ion-input type="text" class="ion-input" formControlName="first_name" placeholder="Enter First Name"></ion-input>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl['first_name'].errors?.['required']">
               First Name is required.
             </span>
           </ion-col>
@@ -40,8 +40,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter Last Name :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="last_name"
-              placeholder="Enter Last Name"></ion-input>
+            <ion-input type="text" class="ion-input" formControlName="last_name" placeholder="Enter Last Name"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['last_name'].errors?.['required']">
               Last Name is required.
             </span>
@@ -51,8 +50,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter Mobile Number :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="mobile"
-              placeholder="Enter Mobile Number"></ion-input>
+            <ion-input type="text" class="ion-input" formControlName="mobile" placeholder="Enter Mobile Number"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
               Mobile Number is required.
             </span>
@@ -61,7 +59,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Choose Visa Category :</ion-label>
-            <ion-select class="ion-form-control" interface="popover" name="category" formControlName="visaCat"
+            <ion-select class="ion-form-control" interface="popover" name="category" formControlName="vist_type"
               placeholder="Choose Visa Category" id="categoryDiv">
               <ion-select-option value="">--Choose Visa Category--</ion-select-option>
               <ion-select-option value="Student Visa">Student Visa</ion-select-option>
@@ -69,7 +67,7 @@
               <ion-select-option value="Citizenship By Investment">Citizenship By Investment</ion-select-option>
               <ion-select-option value="Tourist Visa">Tourist Visa</ion-select-option>
             </ion-select>
-            <span class="error ion-padding" *ngIf="isSubmitted && errorControl['visaCat'].errors?.['required']">
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl['vist_type'].errors?.['required']">
               Visa category is required.
             </span>
           </ion-col>

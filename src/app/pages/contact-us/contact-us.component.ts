@@ -9,12 +9,11 @@ import {UserService} from '../../api/user.service';
 })
 export class ContactUsComponent  implements OnInit {
   ionicForm: FormGroup = new FormGroup({
-    name: new FormControl(''),
+    first_name: new FormControl(''),
     last_name: new FormControl(''),
     mobile: new FormControl(''),
     email: new FormControl(''),
-    country: new FormControl(''),
-    visaCat: new FormControl(false),
+    vist_type: new FormControl(false),
   });
   isSubmitted = false;
   constructor( 
@@ -24,12 +23,11 @@ export class ContactUsComponent  implements OnInit {
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
+      first_name: ['', [Validators.required, Validators.minLength(2)]],
       last_name: ['', [Validators.required, Validators.minLength(2)]],
       mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      country: ['', [Validators.required]],
-      visaCat:['', [Validators.required]],
+      vist_type:['', [Validators.required]],
     });
   }
 
@@ -47,6 +45,8 @@ export class ContactUsComponent  implements OnInit {
       this.service.contact(this.ionicForm.value).subscribe((res:any) => {
         this.toster.dismissLoader();
         this.toster.success('form submitted successfully')
+      },(error:any)=>{
+        this.toster.dismissLoader();
       });
     }
     return true;

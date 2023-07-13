@@ -159,6 +159,10 @@ export class ChatService {
     return this.httpClient.post(`${environment.chatUrl}/users/readAllMsg`,data);
   }
 
+  saveComment(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/posts/saveComment`,data);
+  }
+
 
 
 

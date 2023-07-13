@@ -19,6 +19,11 @@ export class Tab2Page implements OnInit {
   postList:any[]=[];
   @ViewChild('swiper')
   swiperRef: ElementRef | undefined;
+  isModalOpen = false;
+  postId:any;
+  uid:any;
+  name:any;
+  role:boolean=false;
   constructor(
     private chat:ChatService,
     private storage:StorageService,
@@ -73,10 +78,38 @@ export class Tab2Page implements OnInit {
 
   async ionViewWillEnter(){
     this.staff=await this.storage.get('staff');
+    this.uid=this.staff?.id;
+    this.name=this.staff?.name;
+    if(this.staff?.role=='admin')this.role=true;
+    if(this.staff==undefined){
+      this.staff=await this.storage.get('student');
+      this.uid=this.staff?.file_no;
+      this.name=this.staff?.app_name;
+    }
     console.log('staff',this.staff);
   }
 
 
+  comment(item:any){
+    this.isModalOpen=true;
+    this.postId=item;
+  }
 
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+  saveCm(ev:any){
+    let obj={
+      user_id:this.uid,
+      name:this.name,
+      comment:ev.target.value
+    }
+    this.chat.saveComment(obj).subscribe((res:any)=>{
+     console.log(res);
+    })
+
+   ev.target.value='';
+
+  }
 
 }

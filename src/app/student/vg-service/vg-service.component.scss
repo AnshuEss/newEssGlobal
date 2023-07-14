@@ -8,7 +8,8 @@
 /*.ripple-parent { width: 55px; height: 55px; font-size:25px; overflow: hidden; text-align: center; line-height: 60px;  color: #fff;
     border-radius: 5px;} */
 .int-test { font-size: 15px;}
-.ripple-parent { font-size:15px; overflow: hidden; text-align: center;padding-bottom:10px !important; margin:0px  auto 10px !important; 
+.ripple-parent { font-size:15px; overflow: hidden; text-align: center;padding-bottom:10px !important; 
+  margin:0px  auto 10px !important; 
 }
 .item-native {
   padding-left: unset;
@@ -17,11 +18,48 @@
   padding-inline-end: 0px !important;
 }
 .md.in-item.interactive.hydrated { border:0px !important; margin:10px auto 10px !important;}
-.box1 { border:1px solid #f8f8f8  ;  padding:0px 0px; border-radius:20px;}
+.box1 { border:1px solid #f8f8f8  ;--border:1px solid #f8f8f8  ;  padding:0px 0px; 
+  border-radius:20px;}
 .md.in-item.interactive.hydrated {--border-width: 0px !important; --background :transparents}
-.md.in-item.interactive.hydrated.checkbox-checked {----background-checked :transparents; --color:#0086ca;----background-checked: transparents;
+.md.in-item.interactive.hydrated.checkbox-checked {----background-checked :transparents; 
+  --color:#0086ca;----background-checked: transparents;
 --color: #0086ca;
 --background-checked: transparents;
 --border-color-checked: #0086ca;
 --checkmark-color: #0086ca;
-}
+}.native-wrapper {
+  margin-top: -70px;--margin-top: -70px !important
+  display: flex;
+  margin-left: 40%;
+  align-items: center;text-align:center;}
+  .native-wrapper .checkbox-icon {--margin-top: -70px;--margin-left: -70px;
+    margin-top: -70px; --margin-left: -70px;}
+.ion-checkbox {left:0px; width: 100%; height: 100%;max-width: 100%; max-height: 100%;
+   position: fixed;padding-top: 0px;
+   padding-left: 0px; float:left}
+.checkbox-icon { width: 200px; height: 200px;}
+.ion-form-control { width: 100%; max-width: 100%;
+  height: 57px;
+  border-radius: 10px;box-shadow: 0px 0px 10px 2px #ccc;
+  }
+  .ion-img {margin-top: 20px;}
+  ion-radio-group .item-radio-checked ion-icon {
+    fill: teal;
+  }
+  
+  ion-radio-group ion-icon::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: teal;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transform: scale(0);
+  }
+  
+  ion-radio-group .item-radio-checked ion-icon::after {
+    transform: scale(1);
+  }

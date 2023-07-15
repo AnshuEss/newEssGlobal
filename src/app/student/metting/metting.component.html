@@ -1,3 +1,20 @@
-<p>
-  metting works!
-</p>
+
+  <ion-header>
+    <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-title-header">Metting</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen class=" full_bg">
+    <ion-list>
+      <ion-item *ngFor="let item of lists" lines="full">
+        <ion-button slot="end" (click)="openBrowser(item)">Join meeting
+          <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+        </ion-button>
+        <ion-label slot="start">&nbsp;&nbsp;{{item?.name}} <br><ion-note>&nbsp;&nbsp;{{item?.date | date}}</ion-note></ion-label>
+      </ion-item>
+    </ion-list>
+ </ion-content>

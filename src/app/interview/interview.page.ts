@@ -14,7 +14,7 @@ export class InterviewPage implements OnInit {
     private router:Router,
     private userService:UserService,) { }
 
-   ngOnInit() {
+  async ngOnInit() {
     
   }
 
@@ -31,5 +31,24 @@ export class InterviewPage implements OnInit {
       }
     })
   }
+
+  // async noti() {
+  //   console.log('hit-noti');
+  //   let options: ScheduleOptions = {
+  //     notifications: [
+  //       {
+  //         id:123,
+  //         title: "hello essglobal",
+  //         body: "Body",
+  //         smallIcon:'',
+  //       }
+  //     ]
+  //   }
+  //   try {
+  //     await LocalNotifications.schedule(options);
+  //   } catch (err) {
+  //     console.log(JSON.stringify(err));
+  //   }
+  // }
 
 }

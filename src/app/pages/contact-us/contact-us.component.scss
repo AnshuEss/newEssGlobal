@@ -15,9 +15,9 @@
     width: 100%;
     float: left;
 }
-
+ion-select {max-width:100%;  width:100% !important;}
 .ion-input {
-    width: 100%;
+    width: 100% !important;
     height: 48px;
     border-radius: 4px;
     background: #EFEFEF;
@@ -39,5 +39,15 @@
 }
 
 .error {
-    color: red;
+    color: red; width: 100%; float:left; background: #f7f7f7;border-radius: 5px;
+    border:1px solid #eee; margin-top:10px;padding: 5px; position: relative;}
+    .error:after {  content: "";
+        position: absolute;
+        transition: all 0.3s ease-in;
+        top: -20px;
+        left: calc(10% - 10px);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid #eee;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
 }

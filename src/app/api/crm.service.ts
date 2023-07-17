@@ -30,4 +30,8 @@ export class CrmService {
   sendPush(data: any) {
     return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=sendPush', data);
   }
+
+  timeline(data: any){
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=timeline', data);
+  }
 }

@@ -14,7 +14,13 @@ student:any
 
  async ngOnInit() {
   this.student=await this.storage.get('student');
-  //this.crm
+  this.crm.timeline({file_no:this.student?.file_no}).subscribe((res:any)=>{
+     if(res.status==200){
+
+     }else{
+      
+     }
+  })
  }
 
 }

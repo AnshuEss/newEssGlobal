@@ -1,10 +1,13 @@
-<ion-content [fullscreen]="true">
-  <ion-toolbar class="ion-text-center" color="primary">
-    <ion-back-button defaultHref="/" slot="start" color="light">
-      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
-    </ion-back-button>
-    <h2 class=" text-heading ion-padding-end">Choose Your  Login Type</h2>
+
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar color="primary" class="ion-text-center">
+    
+    <ion-back-button defaultHref="/" slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
+    <ion-title>Choose your login type </ion-title>
   </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
   <form class="ion-formbg">
     <ion-row class=" ion-padding-top ion-margin-top">
       <ion-col size="12" class="ion-text-center ion-no-padding">

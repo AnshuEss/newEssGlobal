@@ -119,47 +119,32 @@
       </ion-row>
     
     <ion-row>
-      <!-- <ion-col size="12" class="ion-padding">
-        <ion-select formControlName="services" aria-label="Fruit" class="ion-form-control ion-padding-start" placeholder="Select Services"
-          [multiple]="true">
-          <ion-select-option value="accommodation">Accommodation</ion-select-option>
-          <ion-select-option value="social insurance number">Social insurance number</ion-select-option>
-          <ion-select-option value="collage change">Collage change</ion-select-option>
-          <ion-select-option value="health insurance">Health insurance</ion-select-option>
-          <ion-select-option value="education guidance">Education guidance</ion-select-option>
-          <ion-select-option value="job assistance">Job assistance</ion-select-option>
-          <ion-select-option value="pr assistance">PR assistance</ion-select-option>
-          <ion-select-option value="study permit">Study permit/extensions</ion-select-option>
-          <ion-select-option value="post study work visa">Post study work visa</ion-select-option>
-        </ion-select>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['services'].errors?.['required']">
-          Services is required.
-        </span>
-      </ion-col> -->
-
       <ion-col size="12" class="ion-padding">
-        <ion-input formControlName="remarks" label="Remarks" labelPlacement="floating" class="ion-form-control ion-padding-start"
-          placeholder="Remarks"></ion-input>
+        <ion-input formControlName="remarks" label="Remarks" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Remarks"></ion-input>
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['remarks'].errors?.['required']">
           Remarks is required.
         </span>
       </ion-col>
       <ion-col size="12" class="ion-padding">
-        <ion-input label="Email" formControlName="email" labelPlacement="floating" class="ion-form-control ion-padding-start" placeholder="Email"></ion-input>
+        <ion-input label="Email" formControlName="email" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Email"></ion-input>
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
           Email is required.
         </span>
       </ion-col>
 
       <ion-col size="12" class="ion-padding">
-        <ion-input label="Mobile Vg" formControlName="mobile_vg" labelPlacement="floating" class="ion-form-control ion-padding-start" placeholder="Mobile Vg"></ion-input>
+        <ion-input label="Mobile Vg" formControlName="mobile_vg" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Mobile Vg"></ion-input>
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile_vg'].errors?.['required']">
           MobileVg is required.
         </span>
       </ion-col>
 
       <ion-col size="12" class="ion-padding">
-        <ion-input label="Mobile" formControlName="mobile" labelPlacement="floating" class="ion-form-control ion-padding-start" placeholder="Mobile india"></ion-input>
+        <ion-input label="Mobile" formControlName="mobile" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Mobile india"></ion-input>
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
           Mobile is required.
         </span>
@@ -167,7 +152,6 @@
       <ion-col size="12" class="ion-padding">
         <ion-button type="submit" color="primary" expand="block">Request call back</ion-button>
       </ion-col>
-
     </ion-row>
   </form>
 </ion-content>

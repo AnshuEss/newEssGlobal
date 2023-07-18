@@ -32,12 +32,11 @@
 </ion-content> 
 
 <ion-footer>
-  <ion-list class="au-form ion-padding-start" lines="none" no-lines>
-
-    <!-- <ion-item class="ion-no-padding">
-      <ion-textarea type="text" class="ion-input ion-padding" [(ngModel)]="message" name="message" placeholder=" Type Something...">
-       <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> 
-      <ion-icon name="send-outline" slot="end" (click)="sendMsg()"></ion-icon>
-    </ion-item> -->
-  </ion-list>
+  <ion-item class="ion-no-padding">
+    <ion-textarea class="ion-textarea ion-padding" [(ngModel)]="message" name="message" placeholder=" Type Something..."></ion-textarea>
+    <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
+   
+ 
+  <ion-icon name="send-outline" class="plane-btn" slot="end" (click)="sendMsg()"></ion-icon>
+ </ion-item>
 </ion-footer>

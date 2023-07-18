@@ -1,13 +1,13 @@
-<ion-header color="primary">
-  <ion-toolbar color="primary" class="ion-padding-top">
-    <ion-back-button defaultHref="/" slot="start" color="light">
-      <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-back-button defaultHref="/interview" slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-back-button>
-    <ion-title class=" text-heading ion-padding-end">Add Banner Images</ion-title>
+    <ion-title>Add banner images</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true" class="ion-bg ion-padding-top ion-margin-top">
-  <ion-row>
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-bg ion-padding-top ion-margin-top">
     <ion-col size="12" class="file-uploader ion-padding">
       <ion-input id="file-upload" type="file" (change)="onFileChange($event)"/><ion-icon name="add-circle" class=""></ion-icon>
       <ion-label for="file-upload" class="custom-file-upload">

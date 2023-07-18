@@ -1,21 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
+import { NotificationsService } from './api/notifications.service';
 import { Storage } from '@ionic/storage-angular';
 import { register } from 'swiper/element/bundle';
-
+import { Network, ConnectionStatus } from '@capacitor/network';
+import { TosterService } from './api/toster.service';
 register();
-@Component({ 
+@Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private storage: Storage) {
-    
+  constructor(
+    private storage: Storage,
+    public NotificationsService: NotificationsService,
+    private toster: TosterService) {
+    this.NotificationsService.initPush();
+    this.initializeApp()
   }
 
   async ngOnInit() {
     // If using a custom driver:
     // await this.storage.defineDriver(MyCustomDriver)
     await this.storage.create();
+  }
+
+  initializeApp() {
+    Network.addListener('networkStatusChange', status => {
+      console.log('Network status changed', status);
+      if (status.connected == false) {
+        this.toster.error('Please check your internet connection');
+      }
+    });
   }
 }

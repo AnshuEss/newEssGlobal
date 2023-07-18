@@ -9,104 +9,115 @@
 
 <ion-content fullscreen class=" full_bg ion-margin-top ion-padding-top">
   <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
-
-
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="12" class="ion-margin-bottom">
-        <ion-title color="primary"> Select Services</ion-title>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-text-center ion-no-padding-start box1 light-primary">
- 
-            <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>       
-              <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ion-padding-top ion-margin-bottom">
-                Accommodation<br><img src="assets/accomodation.png" class="ion-img" width="40">
-         
+    <ion-row class="radio-buttons ion-padding-end ion-justify-content-center">
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" checked>
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+            <img src="assets/Accommodation.png" height="120">
+            <h3 class="">Accommodation</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-
-
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-danger">
-                     <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                     <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                      Collage change  <br><img src="assets/Collage.png" class="ion-img" width="40">
-         
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+            <img src="assets/college-change.png" height="120">
+            <h3 class="">College  Change</h3>
           </div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-success">
-                      <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                      <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                        Health insurance<br>
-                          <img src="assets/health-insurance.png" class="ion-img" width="40">
-     
+        </span>
+      </label>     </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+            <img src="assets/health-insurance.png" height="120">
+            <h3 class="">Health Insurance</h3>
           </div>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-info">
-                  <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                  <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                    Education guidance<br>
-                     <img src="assets/guidance.png" class="ion-img" width="40">         
+        </span>
+      </label>     </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/education.png" height="120">
+            <h3 class="">Education Guidance</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-purple">
-                     <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                     <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                      Job assistance<br>
-                       <img src="assets/assistance.png" class="ion-img" width="40">           
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/jobassitance.png" height="120">
+            <h3 class="">Job Assistance</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-primary">
-                     <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                     <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                      PR assistance<br>
-                        <img src="assets/prassistance.png" class="ion-img" width="40">
-        
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/prassistance.png" height="120">
+            <h3 class="">Pr Assistance</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-danger">
-            <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-            <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-              Social insurance number<br>
-          <img src="assets/life-insurance.png" class="ion-img" width="40">        
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/social.png" height="120">
+            <h3 class="">Social Insurance Number</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-success">
-                  <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-                  <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-                    Study permit/extensions<br>
-                     <img src="assets/extensions.png" class="ion-img" width="40">    
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/study-permit.png" height="120">
+            <h3 class="">Study Permit/Extension</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-
-      <ion-col size="6" size-md="4" size-lg="3" class="ion-no-padding-start ion-text-center ion-no-margin">
-        <ion-card class="ion-no-margin-start ion-no-padding-start box1 light-info">
-            <ion-checkbox class="ion-checkbox" justify="start"></ion-checkbox>
-            <div class="ion-activatable ripple-parent ion-text-center ion-padding-top ion-margin-top ">
-              Post study work visa<br>
-                <img src="assets/Poststudy.png" class="ion-img" width="40">
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+      <label class="custom-radio">
+        <input type="radio" name="radio" >
+        <span class="radio-btn">
+          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+          <div class="hobbies-icon">
+             <img src="assets/workvisa.png" height="120">
+            <h3 class="">Post Study Work Visa</h3>
           </div>
-        </ion-card>
+        </span>
+      </label>
       </ion-col>
-
-
-    </ion-row>
+      </ion-row>
+    
     <ion-row>
       <!-- <ion-col size="12" class="ion-padding">
         <ion-select formControlName="services" aria-label="Fruit" class="ion-form-control ion-padding-start" placeholder="Select Services"
@@ -156,20 +167,7 @@
       <ion-col size="12" class="ion-padding">
         <ion-button type="submit" color="primary" expand="block">Request call back</ion-button>
       </ion-col>
-      <ion-col>
-        <ion-radio-group>
-          <ion-item>
-             <ion-radio slot="start" value="foo" checked></ion-radio>
-             <ion-icon slot="start" mode="ios" name="radio-button-off" />
-             <ion-label>foo</ion-label>
-          </ion-item>
-          <ion-item>
-             <ion-radio slot="start" value="bar" checked></ion-radio>
-             <ion-icon slot="start" mode="ios" name="radio-button-off" />
-             <ion-label>bar</ion-label>
-          </ion-item>
-        </ion-radio-group>
-      </ion-col>
+
     </ion-row>
   </form>
 </ion-content>

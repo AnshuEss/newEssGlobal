@@ -42,6 +42,15 @@
         </ion-card>
       </ion-col>
 
+      <ion-col size="6" *ngIf="chatDiv">
+        <ion-card class="ion-no-padding" [routerLink]="['/student/chat-list']">
+          <img src="assets/Rectangle 91.jpg" width="100%">
+          <ion-text class="int-text">
+            <p>chat</p>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
       <ion-col size="6" *ngIf="vgdiv">
         <ion-card class="ion-no-padding"  [routerLink]="['/student/services']">
           <img src="assets/Rectangle 91.jpg" width="100%">

@@ -15,6 +15,8 @@ import { MettingComponent } from './metting/metting.component';
 import { DemoComponent } from './demo/demo.component';
 import { SupportComponent } from './support/support.component';
 import { VgServiceComponent } from './vg-service/vg-service.component';
+import { ChatComponent } from './chat/chat.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +26,17 @@ import { VgServiceComponent } from './vg-service/vg-service.component';
     StudentPageRoutingModule,
 
   ],
-  declarations: [StudentPage,TimeLineComponent,ProfileComponent,TestPaperComponent,MettingComponent,DemoComponent,SupportComponent,VgServiceComponent],
+  declarations: [
+    StudentPage,
+    TimeLineComponent,
+    ProfileComponent,
+    TestPaperComponent,
+    MettingComponent,
+    DemoComponent,
+    SupportComponent,
+    VgServiceComponent,
+    ChatComponent,
+    ChatListComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StudentPageModule {}

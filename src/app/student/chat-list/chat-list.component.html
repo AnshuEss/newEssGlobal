@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar color="primary" class="ion-text-center">
+
+    <ion-back-button defaultHref="/student" slot="start" text="">
+      <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="none" no-lines>
+
+      <ion-item class="ion-item" *ngFor="let item of myStudentList"> 
+        <ion-thumbnail slot="start">
+          <img src="assets/user1.png" />
+        </ion-thumbnail>
+
+        <ion-label (click)="goToChat(item)">
+          <h2> {{item?.stu_name}} </h2>
+          <p class="chat-txt">{{item?.message}}</p>
+        </ion-label>
+        <ion-note slot="end" class="ion-text-center ion-note">{{item?.time}}</ion-note>
+        <ion-badge color="success" slot="end" *ngIf="item?.unreadyMsg">{{item?.unreadyMsg}}</ion-badge>
+      </ion-item>
+      
+
+  </ion-list>
+</ion-content>

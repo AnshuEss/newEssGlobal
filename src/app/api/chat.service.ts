@@ -36,7 +36,7 @@ export class ChatService {
     return this.httpClient.post(`${environment.chatUrl}/users/getMyMsg`,data);
   }
 
- /* sendMessage(message:any) {
+  sendMessage(message:any) {
     this.socket.emit('new-message', message);
   }
    getMessages = () => {
@@ -76,7 +76,7 @@ export class ChatService {
       })
     })
   }
-  */
+  
 
   getSupportMessages = () => {
     return  new Observable((observer: Observer<any>)=>{

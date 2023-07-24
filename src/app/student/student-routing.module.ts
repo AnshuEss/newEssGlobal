@@ -13,6 +13,8 @@ import { MettingComponent } from './metting/metting.component';
 import { DemoComponent } from './demo/demo.component';
 import { SupportComponent } from './support/support.component';
 import { VgServiceComponent } from './vg-service/vg-service.component';
+import { ChatComponent } from './chat/chat.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path:'support',
     component:SupportComponent
+  },
+  {
+    path:'chat-list',
+    component:ChatListComponent
+  },
+  {
+    path:'chat/:id',
+    component:ChatComponent
   },
   {
     path:'services',

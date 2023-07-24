@@ -42,6 +42,15 @@
         </ion-card>
       </ion-col>
 
+      <ion-col size="6" *ngIf="chatDiv">
+        <ion-card class="ion-no-padding" [routerLink]="['/student/chat-list']">
+          <img src="assets/Rectangle 91.jpg" width="100%">
+          <ion-text class="int-text">
+            <p>chat</p>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+
       <ion-col size="6" *ngIf="vgdiv">
         <ion-card class="ion-no-padding"  [routerLink]="['/student/services']">
           <img src="assets/Rectangle 91.jpg" width="100%">
@@ -57,7 +66,9 @@
       <ng-template>
         <ion-header>
           <ion-toolbar color="primary">
-            <!-- <ion-title></ion-title> -->
+            <ion-back-button (click)="setOpen(false)" slot="start" color="light">
+              <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
+            </ion-back-button>
             <ion-buttons slot="end">
               <ion-button (click)="setOpen(false)">Close</ion-button>
             </ion-buttons>

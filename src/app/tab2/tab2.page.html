@@ -15,12 +15,12 @@
           <ion-avatar slot="start">
             <ion-img src="assets/ess-ico.png" class="user-img user-img1"></ion-img>
           </ion-avatar>
-          <ion-label>
-            <ion-textarea name="post" [(ngModel)]="post" class="post-input" placeholder="Write Something Here" required></ion-textarea>
-          </ion-label>
+          <ion-note class="label-text-area ion-float-end">
+            <ion-textarea name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here" required></ion-textarea>
+          </ion-note>
 
 
-          <div class="upload-btn-wrapper">
+          <div class="upload-btn-wrapper" slot="end">
             <ion-button color="white" class="btn">
               <ion-icon name="image" slot="end"></ion-icon></ion-button>
             <ion-input type="file" (change)="onFileChange($event)" class="upload-input" name="myfile"></ion-input>

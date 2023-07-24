@@ -1,60 +1,74 @@
 <ion-header [translucent]="true">
-  <ion-toolbar> <ion-back-button defaultHref="/" slot="start" text="">
+  <ion-toolbar color="primary"  *ngIf="primaryHeader"> 
+    <ion-back-button defaultHref="/" slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
 
-
     <ion-avatar slot="start">
-      <img src="assets/Rectangle 110.png" width="90" />
+      <img src="assets/user1.png" width="90" />
     </ion-avatar>
 
     <ion-label class="ion-padding-vertical">
-      <h2 class="ion-padding-start">Riya Sharma</h2>
-      <p class="chat-txt ion-padding-start">Online</p>
+      <h2 class="ion-padding-start">{{name}}</h2>
+      <p class="chat-txt ion-padding-start">
+        <ion-note *ngIf="OnlineDiv">Online</ion-note>
+        <ion-note *ngIf="TypingDiv">Typing...</ion-note>
+      </p>
     </ion-label><ion-icon name="ellipsis-horizontal" slot="end"></ion-icon>
 
-
+  </ion-toolbar>
+  <ion-toolbar color="success" *ngIf="secondryHeader">
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="arrow-back-outline" (click)="backButton()"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{countdelMsg}}</ion-title>
+    <ion-buttons slot="secondary"  (click)="forword()">
+      <ion-button>
+        <ion-icon  slot="icon-only" name="arrow-redo-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary"  (click)="DelMsg()">
+      <ion-button>
+        <ion-icon  slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-list lines="none" no-lines>
-    <ion-item class="ion-padding-top">
-      <div class="chat-first">
-        <p>This book is a treatise on the theory of ethics, very popular during the Renaissance. </p>
-        <span class="time">11:00 am</span>
-</div>    </ion-item>
-    <ion-item class="ion-padding-top ion-text-end">
-      <div class="chat-sec" slot="end">
-      <p>  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. </p>
-        <span class="time">11:00 am</span>
+<ion-content [scrollEvents]="true" #IonContent>
+  <ion-list lines="none" no-lines  *ngFor="let item of messageList">
+    <ion-item class="ion-padding-top" (click)="addDelMsg(item)">
+      <div class="chat-first" *ngIf="item?.user_id==staff?.id">
+        <p>{{item?.message}} </p>
+        <span class="time">{{item?.current_time}}</span>
+      </div> 
+    </ion-item>
+    <ion-item class="ion-padding-top ion-text-end" (click)="addDelMsg(item)">
+      <div class="chat-sec" slot="end" *ngIf="item?.user_id!==staff?.id">
+        <p> {{item?.message}}</p>
+        <!-- <img src="assets/Rectangle 110.png" width="200" /> -->
+        <br>
+        <span class="time">{{item?.current_time}}</span>
       </div>
-    </ion-item> <ion-item class="ion-padding-top">
-      <div class="chat-first">
-        <p>This book is a treatise </p>
-        <span class="time">11:00 am</span>
-</div>    </ion-item>
+    </ion-item> 
+    
+<!--    
     <ion-item class="ion-padding-top ion-text-end" slot="end">
       <div class="chat-sec " slot="end">
-      <p>  those interested. </p>
-        <span class="time">11:00 am</span>
-</div>    </ion-item>
-<ion-item class="ion-padding-top ion-text-end" slot="end">
-      <div class="chat-sec " slot="end">
-      
-              <img src="assets/Rectangle 110.png"  width="200" />
-     <br>
-        <span class="time">11:00 am</span>
-</div>    </ion-item>
 
-
+        <img src="assets/Rectangle 110.png" width="200" />
+        <br>
+        <span class="time">11:00 am</span>
+      </div> 
+    </ion-item> -->
 
   </ion-list>
 
-  </ion-content>  <ion-footer>
-    <ion-list class="au-form ion-padding-start"  lines="none" no-lines>
+</ion-content> 
 
-      <ion-item class="ion-no-padding">
-          <ion-input type="password" class="ion-input ion-padding" placeholder="  Type Something..."></ion-input>
-          <ion-button class="plane-btn" color="primary"><ion-icon color="light"  name="paper-plane"></ion-icon></ion-button>
-      </ion-item>
- </ion-list>
-  </ion-footer>
+
+<ion-footer>
+  <ion-item class="ion-no-padding">
+    <ion-textarea class="ion-textarea ion-padding" [(ngModel)]="newMessage"  (keyup)="onKeyUp(1)" name="message" placeholder=" Type Something..."></ion-textarea>
+    <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
+  <ion-icon name="send-outline" class="plane-btn" slot="end"  (click)="sendMessage()"></ion-icon>
+ </ion-item>
+</ion-footer>

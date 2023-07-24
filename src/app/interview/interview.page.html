@@ -1,17 +1,16 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary" class="ion-padding-top">
-        <ion-back-button defaultHref="/tabs/tab1" slot="start" color="light">
-            <ion-icon class="back-ico" name="arrow-back-outline" color="light"></ion-icon>
-        </ion-back-button>
-        <ion-title class=" text-heading ion-padding-end" color="light">Interview Page</ion-title>
+<ion-header [translucent]="true" color="primary">
+    <ion-toolbar color="primary" class="ion-text-center">
 
+        <ion-back-button defaultHref="/interview" slot="start">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-back-button>
+        <ion-title>Interview section</ion-title>
         <ion-icon class="logout-ico" name="power" slot="end" color="light" (click)="logout()"></ion-icon>
     </ion-toolbar>
-
 </ion-header>
 <ion-content [fullscreen]="true">
 
-    <ion-row class=" ion-justify-content-center">
+    <ion-row class="ion-justify-content-center">
         <ion-col class="ion-padding-horizontal" [routerLink]="['/interview/meeting/create-new-link']">
             <ion-button class="link-btn">
                 <img src="assets/Group 103.png"> &nbsp; Generate New Link
@@ -33,7 +32,7 @@
         </ion-col> -->
 
         <ion-col size="6">
-            <ion-card class="Services-card">
+            <ion-card class="Services-card" [routerLink]="['/interview/chat-list']">
                 <img src="assets/bubble-chat.png">
                 <h4>Chat</h4>
             </ion-card>
@@ -86,7 +85,7 @@
             </ion-card>
         </ion-col>
 
-        
+
 
     </ion-row>
 

@@ -3,7 +3,7 @@
 
     <ion-back-button defaultHref="/interview" slot="start" text="">
       <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
-    <ion-title>Contact Us</ion-title>
+    <ion-title>Contact Us </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
@@ -25,22 +25,23 @@
 
       </ion-card>
     </ion-col>
+    <ion-col size="12">
     <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
       <ion-list lines="none" no-lines>
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter First Name :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="first_name" placeholder="Enter First Name"></ion-input>
+            <ion-input type="text" class="ion-input ion-padding-start" formControlName="first_name" placeholder="Enter First Name"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['first_name'].errors?.['required']">
               First Name is required.
             </span>
           </ion-col>
-        </ion-item>
+         </ion-item>
 
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter Last Name :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="last_name" placeholder="Enter Last Name"></ion-input>
+            <ion-input type="text" class="ion-input ion-padding-start" formControlName="last_name" placeholder="Enter Last Name"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['last_name'].errors?.['required']">
               Last Name is required.
             </span>
@@ -50,7 +51,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter Mobile Number :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="mobile" placeholder="Enter Mobile Number"></ion-input>
+            <ion-input type="text" class="ion-input ion-padding-start" formControlName="mobile" placeholder="Enter Mobile Number"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
               Mobile Number is required.
             </span>
@@ -59,7 +60,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Choose Visa Category :</ion-label>
-            <ion-select class="ion-form-control" interface="popover" name="category" formControlName="vist_type"
+            <ion-select class="ion-input ion-padding-start" interface="popover" name="category" formControlName="vist_type"
               placeholder="Choose Visa Category" id="categoryDiv">
               <ion-select-option value="">--Choose Visa Category--</ion-select-option>
               <ion-select-option value="Student Visa">Student Visa</ion-select-option>
@@ -75,7 +76,7 @@
         <ion-item>
           <ion-col size="12" class=" ion-no-padding ion-margin-top">
             <ion-label class="ion-label ion-margin-top" color="primary">Enter Email Address :</ion-label>
-            <ion-input type="text" class="ion-input" formControlName="email"
+            <ion-input type="text" class="ion-input ion-padding-start" formControlName="email"
               placeholder="Enter Email Address"></ion-input>
             <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
               Email is required.
@@ -87,5 +88,6 @@
         </ion-item>
       </ion-list>
     </form>
+  </ion-col>
   </ion-row>
 </ion-content>

@@ -1,27 +1,112 @@
 .error{
     color: red;
 }
-.item-native { --padding:0px !important; border-width:0px;}
-.font-20 {  font-size: 20px;}
-.toolbar-background { background: none !important;}
-.ripple-parent.primary { background: #0086ca;}
-/*.ripple-parent { width: 55px; height: 55px; font-size:25px; overflow: hidden; text-align: center; line-height: 60px;  color: #fff;
-    border-radius: 5px;} */
-.int-test { font-size: 15px;}
-.ripple-parent { font-size:15px; overflow: hidden; text-align: center;padding-bottom:10px !important; margin:0px  auto 10px !important; 
+.ion-form-control { width: 100%; max-width: 100%;
+  height: 57px;
+  border-radius: 10px;box-shadow: 0px 0px 10px 2px #ccc;
+  }
+  .ion-img {margin-top: 20px;}
+  ion-radio-group .item-radio-checked ion-icon {
+    fill: teal;
+  }
+  
+  ion-radio-group ion-icon::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: teal;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transform: scale(0);
+  }
+  
+  ion-radio-group .item-radio-checked ion-icon::after {
+    transform: scale(1);
+  }
+
+  
+.radio-buttons 
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
-.item-native {
-  padding-left: unset;
-  padding-right: unset;
-  padding-inline-start:0px !important;
-  padding-inline-end: 0px !important;
+
+.custom-radio input 
+{
+  display: none;
 }
-.md.in-item.interactive.hydrated { border:0px !important; margin:10px auto 10px !important;}
-.box1 { border:1px solid #f8f8f8  ;  padding:0px 0px; border-radius:20px;}
-.md.in-item.interactive.hydrated {--border-width: 0px !important; --background :transparents}
-.md.in-item.interactive.hydrated.checkbox-checked {----background-checked :transparents; --color:#0086ca;----background-checked: transparents;
---color: #0086ca;
---background-checked: transparents;
---border-color-checked: #0086ca;
---checkmark-color: #0086ca;
+
+.radio-btn 
+{
+  margin: 10px;
+  width: 100%;
+  min-height: 210px;
+  border: 3px solid transparent;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;padding: 0px 10px 10px;
+  box-shadow: 0 0 20px #c3c3c367;
+  cursor: pointer;
+}
+
+.radio-btn > .ion-icon {
+  color: #ffffff;
+  background-color: #007dc4;
+  font-size: 20px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(2);
+  border-radius: 50px;
+  padding: 3px;
+  transition: 0.5s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.radio-btn .hobbies-icon 
+{
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.radio-btn .hobbies-icon img
+{
+  display:block;
+  width:100%;
+  margin-bottom:20px;
+  
+}
+.radio-btn .hobbies-icon .ion-icon
+{
+  color: #007dc4;
+  line-height: 80px;
+  font-size: 60px;
+}
+
+.radio-btn .hobbies-icon h3 
+{
+  color: #555;
+  font-size: 14px;
+  font-weight: 300;padding:0px 10px 10px;
+  text-transform: uppercase;
+}
+
+.custom-radio input:checked + .radio-btn 
+{
+  border: 2px solid #007dc4;
+}
+
+.custom-radio input:checked + .radio-btn > .ion-icon
+{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }

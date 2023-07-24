@@ -6,6 +6,8 @@ import { TosterService } from '../api/toster.service';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { ChatService } from '../api/chat.service';
+
+
 @Component({
   selector: 'app-student',
   templateUrl: './student.page.html',
@@ -52,6 +54,7 @@ export class StudentPage implements OnInit {
     })
     await this.countNoti();
     await this.getTestPaperNoti();
+    
   }
 
   setOpen(isOpen: boolean) {
@@ -124,4 +127,5 @@ export class StudentPage implements OnInit {
       this.router.navigate(['student/support'])
     }
   }
+
 }

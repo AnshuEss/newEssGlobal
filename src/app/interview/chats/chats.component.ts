@@ -51,7 +51,7 @@ export class ChatsComponent  implements OnInit {
       this.chatService
         .getMessages()
         .subscribe((message: any) => {
-          console.log(message);
+          console.log('staff-hit',message);
           if (this.staff?.id == message.from_id && this.from_id == message.user_id) {
             this.messageList.push(message);
             this.ScrollToBottom()
@@ -194,6 +194,7 @@ export class ChatsComponent  implements OnInit {
     }
   
     play() {
+      console.log('staff play');
       var sound = new Howl({
         src: ['/assets/noti.wav'],
         html5: true

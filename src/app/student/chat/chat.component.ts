@@ -52,12 +52,14 @@ export class ChatComponent  implements OnInit {
     this.chatService
       .getMessages()
       .subscribe((message: any) => {
-        console.log('stu',message);
-        if(this.from_id==message.user_id && this.student?.file_no==message.from_id)
-        this.messageList.push(message);
-        this.play();
-        this.TypingDiv = false;
-        this.OnlineDiv = true;
+        console.log('stu-hit',message);
+        if(this.from_id==message.user_id && this.student?.file_no==message.from_id){
+          this.messageList.push(message);
+          this.play();
+          this.TypingDiv = false;
+          this.OnlineDiv = true;
+        }
+        
       });
 
       this.redAllUnreadMsg();
@@ -158,7 +160,7 @@ export class ChatComponent  implements OnInit {
   }
 
   play() {
-    //console.log('plau');
+    console.log('stu plau');
     //this.streamingMedia.playAudio('/assets/noti.wav');
     var sound = new Howl({
       src: ['/assets/noti.wav'],

@@ -19,7 +19,7 @@
 <ion-content class="ion-margin-top ion-padding-top">
   <ion-list lines="none" no-lines *ngFor="let item of chatList">
     <div>
-    <ion-item class="" *ngIf="item?.user_id==student?.file_no">
+    <ion-item  *ngIf="item?.user_id==student?.file_no">
       <div class="chat-first">
         <p>{{item?.message}}</p>
         <span class="time">{{item?.current_time}}</span>

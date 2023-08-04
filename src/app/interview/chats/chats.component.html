@@ -8,12 +8,12 @@
     </ion-avatar>
 
     <ion-label class="ion-padding-vertical">
-      <h2 class="ion-padding-start">{{name}}</h2>
+      <h2 class="ion-padding-start white-txt">{{name}}</h2>
       <p class="chat-txt ion-padding-start">
-        <ion-note *ngIf="OnlineDiv">Online</ion-note>
-        <ion-note *ngIf="TypingDiv">Typing...</ion-note>
+        <ion-note *ngIf="OnlineDiv" class="white-txt">Online</ion-note>
+        <ion-note *ngIf="TypingDiv" class="white-txt">Typing...</ion-note>
       </p>
-    </ion-label><ion-icon name="ellipsis-horizontal" slot="end"></ion-icon>
+    </ion-label>
 
   </ion-toolbar>
   <ion-toolbar color="success" *ngIf="secondryHeader">
@@ -35,20 +35,21 @@
 </ion-header>
 <ion-content [scrollEvents]="true" #IonContent>
   <ion-list lines="none" no-lines  *ngFor="let item of messageList">
-    <ion-item class="ion-padding-top" (click)="addDelMsg(item)">
-      <div class="chat-first" *ngIf="item?.user_id==staff?.id">
+    <ion-item>
+      <div class="chat-first" (click)="addDelMsg(item)" *ngIf="item?.user_id==staff?.id">
         <p>{{item?.message}} </p>
         <span class="time">{{item?.current_time}}</span>
       </div> 
-    </ion-item>
-    <ion-item class="ion-padding-top ion-text-end" (click)="addDelMsg(item)">
-      <div class="chat-sec" slot="end" *ngIf="item?.user_id!==staff?.id">
+      <div class="chat-sec" (click)="addDelMsg(item)" slot="end" *ngIf="item?.user_id!==staff?.id">
         <p> {{item?.message}}</p>
         <!-- <img src="assets/Rectangle 110.png" width="200" /> -->
         <br>
         <span class="time">{{item?.current_time}}</span>
       </div>
-    </ion-item> 
+    </ion-item>
+
+     
+ 
     
 <!--    
     <ion-item class="ion-padding-top ion-text-end" slot="end">

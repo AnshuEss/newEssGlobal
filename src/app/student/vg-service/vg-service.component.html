@@ -11,113 +11,115 @@
   <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
     <ion-row class="radio-buttons ion-padding-end ion-justify-content-center">
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" checked>
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-            <img src="assets/Accommodation.png" height="120">
-            <h3 class="">Accommodation</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Accommodation')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/Accommodation.png" height="120">
+              <h3 class="">Accommodation</h3>
+            </div>
+          </span>
+        </label>
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-            <img src="assets/college-change.png" height="120">
-            <h3 class="">College  Change</h3>
-          </div>
-        </span>
-      </label>     </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-            <img src="assets/health-insurance.png" height="120">
-            <h3 class="">Health Insurance</h3>
-          </div>
-        </span>
-      </label>     </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/education.png" height="120">
-            <h3 class="">Education Guidance</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('College Change')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/college-change.png" height="120">
+              <h3 class="">College Change</h3>
+            </div>
+          </span>
+        </label> 
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/jobassitance.png" height="120">
-            <h3 class="">Job Assistance</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Health Insurance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/health-insurance.png" height="120">
+              <h3 class="">Health Insurance</h3>
+            </div>
+          </span>
+        </label> 
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/prassistance.png" height="120">
-            <h3 class="">Pr Assistance</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Education Guidance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/education.png" height="120">
+              <h3 class="">Education Guidance</h3>
+            </div>
+          </span>
+        </label>
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/social.png" height="120">
-            <h3 class="">Social Insurance Number</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Job Assistance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/jobassitance.png" height="120">
+              <h3 class="">Job Assistance</h3>
+            </div>
+          </span>
+        </label>
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/study-permit.png" height="120">
-            <h3 class="">Study Permit/Extension</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/prassistance.png" height="120">
+              <h3 class="">Pr Assistance</h3>
+            </div>
+          </span>
+        </label>
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
-      <label class="custom-radio">
-        <input type="radio" name="radio" >
-        <span class="radio-btn">
-          <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
-          <div class="hobbies-icon">
-             <img src="assets/workvisa.png" height="120">
-            <h3 class="">Post Study Work Visa</h3>
-          </div>
-        </span>
-      </label>
+        <label class="custom-radio">
+          <input type="radio" name="radio">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/social.png" height="120">
+              <h3 class="">Social Insurance Number</h3>
+            </div>
+          </span>
+        </label>
       </ion-col>
-      </ion-row>
-    
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/study-permit.png" height="120">
+              <h3 class="">Study Permit/Extension</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/workvisa.png" height="120">
+              <h3 class="">Post Study Work Visa</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+    </ion-row>
+
     <ion-row>
       <ion-col size="12" class="ion-padding">
         <ion-input formControlName="remarks" label="Remarks" labelPlacement="floating"

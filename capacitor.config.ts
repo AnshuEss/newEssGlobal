@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.ess.global',
+  appId: 'io.ess.global',
   appName: 'Essglobal',
   webDir: 'www',
   bundledWebRuntime: false,

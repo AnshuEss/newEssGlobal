@@ -4,10 +4,10 @@
     <div class="overlay orange"></div>
   </div>
   <ion-toolbar class="ion-padding-vertical ion-text-center">
-    <ion-back-button defaultHref="/" slot="start">
+    <ion-back-button defaultHref="student/profile" slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-back-button>
-    <img src="assets/esslogo.png" width="140" alt="" class="ion-margin-top">
+    <img src="assets/esslogo.png" width="140" alt class="ion-margin-top">
   </ion-toolbar>
   <ion-text class="ion-text-center ion-margin-bottom">
     <h2>Student Timeline</h2>
@@ -16,47 +16,27 @@
     <h4>Name -Sukhvir Kaur</h4>
   </ion-text>
   <div class="box">
-    <ul id="first-list">
+    <ul id="first-list" *ngFor="let item of timeLineList">
       <li>
-        <span></span>
+       <!-- <span></span>  -->
 
-        <div class="info ion-padding-bottom">the best animation , the best toturials you would ever see . <br>
-          <ion-icon name="chatbox-ellipses-outline" [routerLink]="['/student/support']" class="ion-float-end ion-margin-bottom">
+        <div class="info ion-padding-bottom">support<br>
+          <ion-icon name="chatbox-ellipses-outline"
+            [routerLink]="['/student/support']"
+            class="ion-float-end ion-margin-bottom">
 
           </ion-icon>
         </div>
 
-        <div class="time">
-          <span>NR</span>
+        <div  class="time" *ngIf="item?.color=='green'">
+          <span style="background-color: green; border-radius: 50%; color: #fff; width: 40px; height: 40px; text-align: center; line-height: 40px;">{{item?.status}}</span>
+        </div>
+        <div  class="time" *ngIf="item?.color=='red'">
+          <span style="background-color: red;border-radius: 50%;color: #fff;  width: 40px; height: 40px;  text-align: center; line-height: 40px;">{{item?.status}}</span>
         </div>
       </li>
 
-      <li>
-        <span>
-
-        </span>
-
-        <div class="info ion-padding-bottom">Offer still to be process<br>
-          <ion-icon name="chatbox-ellipses-outline"  class="ion-float-end ion-margin-bottom" [routerLink]="['/student/support']">
-
-          </ion-icon>
-          </div>
-        <div class="time">
-          <span>OP</span>
-        </div>
-      </li>
-      <li>
-        <span></span>
-
-        <div class="info ion-padding-bottom">Offer processet on .<br><ion-icon name="chatbox-ellipses-outline"
-            class="ion-float-end ion-margin-bottom" [routerLink]="['/student/support']"></ion-icon>
-          </div>
-
-        <div class="time">
-          <span>OR</span>
-        </div>
-      </li>
-
+     
 
       <!-- <li>
         <span></span>
@@ -77,8 +57,6 @@
           <span>FAR</span>
         </div>
       </li> -->
-
-
 
     </ul>
     <!-- <ion-button color="primary" class="btn-sub" expand="block">Proceed <ion-icon

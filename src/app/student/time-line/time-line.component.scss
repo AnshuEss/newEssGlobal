@@ -75,6 +75,7 @@ ion-toolbar {
     left:-27px
 }
 
+.box ul li > .red-bg span:before{ background: red;}
 .box ul li > span:before{
     content: "";
     display: block; 

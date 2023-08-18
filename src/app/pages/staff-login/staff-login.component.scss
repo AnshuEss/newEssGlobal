@@ -1,8 +1,8 @@
 .ion-formbg {
     position: relative;
     z-index: 99;
-    --margin-top: -50px !important;
-    margin-top: -50px !important;
+    --margin-top: -170px !important;
+    margin-top: -170px !important;
     border-radius: 50px !important;
     --border-radius: 50px !important;
     --background-color: #fff;
@@ -26,13 +26,13 @@
 .ion-input {
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     width: 100%;
-    font-size: 16px;
-    color: #666; margin:10px 0px 2px;
+    font-size: 18px;
+    color: #666; margin:10px 0px 10px;
     padding: 0px;
 }
 
 .btn-sub {
-    width: 178px;
+    width: 178px; font-size: 18pxs;
     border-radius: 10px;
     --border-radius: 10px;
     height: 43px;
@@ -43,3 +43,7 @@ ion-item.border-no-bottom {
     border-bottom: 0px !important;
     --border-bottom: 0px !important;
 }
+body.keyboard-open.platform-ios ion-content {bottom:40px}
+ion-toobar
+{ --background:transparent !important;
+--ion-color-base:transparent !important}

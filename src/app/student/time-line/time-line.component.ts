@@ -8,7 +8,7 @@ import { CrmService } from 'src/app/api/crm.service';
 })
 export class TimeLineComponent  implements OnInit {
 student:any
-timeLineList:any[]=[];
+timeLineList: Array<any>=[];
   constructor(
     private storage:StorageService,
     private crm:CrmService) { }
@@ -32,8 +32,8 @@ timeLineList:any[]=[];
       ]
   }else if(this.student?.main_status=='OP'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'offer proceed'},
-      {status:'OP',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
       {status:'OR',color:'red'},
       {status:'FAIR',color:'red'},
       {status:'FAR',color:'red'},
@@ -47,9 +47,9 @@ timeLineList:any[]=[];
     ]
   }else if(this.student?.main_status=='OR'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'offer recieved'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
       {status:'FAIR',color:'red'},
       {status:'FAR',color:'red'},
       {status:'CoeP',color:'red'},
@@ -59,10 +59,10 @@ timeLineList:any[]=[];
     ]
   }else if(this.student?.main_status=='FAIR'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'gte recived'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
-      {status:'FAIR',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
+      {status:'FAIR',color:'green','text':'gte recived'},
       {status:'FAR',color:'red'},
       {status:'CoeP',color:'red'},
       {status:'CoeR',color:'red'},
@@ -71,11 +71,11 @@ timeLineList:any[]=[];
     ]
   }else if(this.student?.main_status=='FAR'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'Confirmation recived'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
-      {status:'FAIR',color:'green'},
-      {status:'FAR',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
+      {status:'FAIR',color:'green','text':'gte recived'},
+      {status:'FAR',color:'green','text':'Confirmation recived'},
       {status:'CoeP',color:'red'},
       {status:'CoeR',color:'red'},
       {status:'F@H',color:'red'},
@@ -83,41 +83,50 @@ timeLineList:any[]=[];
     ]
   }else if(this.student?.main_status=='CoeP'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'Confirmation process'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
-      {status:'FAIR',color:'green'},
-      {status:'FAR',color:'green'},
-      {status:'CoeP',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
+      {status:'FAIR',color:'green','text':'gte recived'},
+      {status:'FAR',color:'green','text':'Confirmation recived'},
+      {status:'CoeP',color:'green','text':'Confirmation process'},
       {status:'CoeR',color:'red'},
       {status:'F@H',color:'red'},
      
     ]
   }else if(this.student?.main_status=='CoeR'){
     this.timeLineList=[
-      {status:'NP',color:'green','text':'confirmation  recievd'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
-      {status:'FAIR',color:'green'},
-      {status:'FAR',color:'green'},
-      {status:'CoeP',color:'green'},
-      {status:'CoeR',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
+      {status:'FAIR',color:'green','text':'gte recived'},
+      {status:'FAR',color:'green','text':'Confirmation recived'},
+      {status:'CoeP',color:'green','text':'Confirmation process'},
+      {status:'CoeR',color:'green','text':'confirmation  recievd'},
       {status:'F@H',color:'red'},
       
     ]
   }else if(this.student?.main_status=='F@H'){
     this.timeLineList=[,
-      {status:'NP',color:'green','text':'file at high commission'},
-      {status:'OP',color:'green'},
-      {status:'OR',color:'green'},
-      {status:'FAIR',color:'green'},
-      {status:'FAR',color:'green'},
-      {status:'CoeP',color:'green'},
-      {status:'CoeR',color:'green'},
-      {status:'F@H',color:'green'},
+      {status:'NP',color:'green','text':'file not proceed'},
+      {status:'OP',color:'green','text':'offer proceed'},
+      {status:'OR',color:'green','text':'offer recieved'},
+      {status:'FAIR',color:'green','text':'gte recived'},
+      {status:'FAR',color:'green','text':'Confirmation recived'},
+      {status:'CoeP',color:'green','text':'Confirmation process'},
+      {status:'CoeR',color:'green','text':'confirmation  recievd'},
+      {status:'F@H',color:'green','text':'file at high commission'},
      
     ]
   }
+
+  this.timeLineList =  this.timeLineList.filter(element => {
+    if (Object.keys(element).length !== 0) {
+      return true;
+    }
+  
+    return false;
+  });
+  console.log("time",this.timeLineList);
  }
 
 }

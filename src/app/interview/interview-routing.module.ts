@@ -7,6 +7,7 @@ import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatsComponent } from './chats/chats.component';
 import { BannerComponent } from './banner/banner.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { GroupChatComponent } from './group-chat/group-chat.component';
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'chat/:id',
     component: ChatsComponent
+  },
+  {
+    path: 'group-chat/:id',
+    component: GroupChatComponent
   },
   {
     path: 'banner',

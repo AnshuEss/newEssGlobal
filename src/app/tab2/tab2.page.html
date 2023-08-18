@@ -1,22 +1,25 @@
-<ion-content [fullscreen]="true">
+<ion-header>
   <ion-toolbar class="ion-padding-vertical ">
     <ion-back-button defaultHref="/" slot="start" text="">
       <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
-    <img src="assets/esslogo.png" width="140" alt="" class="ion-margin-top">
+      <img src="assets/esslogo.png" width="140" alt="" class="ion-margin-top">
 
   </ion-toolbar>
+</ion-header>
 
+<ion-content>
   <ion-row>
-    
-    <ion-col size="12" class=" ion-margin-top ion-no-padding">
 
-      <ion-list class="ion-no-padding" lines="none" no-lines>
+    <ion-col size="12" class=" ion-margin-top ion-no-padding">
+      <!--*ngIf="role"-->
+      <ion-list class="ion-no-padding" lines="none" no-lines *ngIf="role">
         <ion-item>
           <ion-avatar slot="start">
             <ion-img src="assets/ess-ico.png" class="user-img user-img1"></ion-img>
           </ion-avatar>
           <ion-note class="label-text-area ion-float-end">
-            <ion-textarea name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here" required></ion-textarea>
+            <ion-textarea name="post" [(ngModel)]="post" class=" post-input" placeholder="Write Something Here"
+              required></ion-textarea>
           </ion-note>
 
 
@@ -42,7 +45,7 @@
           </ion-col>
         </ion-item>
       </ion-list>
-      <ion-list class="ion-no-padding" lines="none" no-lines  *ngFor="let item of postList">
+      <ion-list class="ion-no-padding" lines="none" no-lines *ngFor="let item of postList">
         <ion-item>
           <ion-avatar slot="start">
             <ion-img src="assets/ess-ico.png" class="user-img"></ion-img>
@@ -63,7 +66,7 @@
             <!-- <span (click) = "comment(item?._id)" class="ion-float-end" slot="end">1 
               <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
             </span> -->
-            <p>{{item?.posts}} </p> 
+            <p>{{item?.posts}} </p>
           </ion-label>
         </ion-item>
 
@@ -72,32 +75,4 @@
   </ion-row>
 
 
-  <ion-content class="ion-padding">
-    <ion-modal [isOpen]="isModalOpen">
-      <ng-template>
-        <ion-header>
-          <ion-toolbar color="primary">
-            <ion-title>comments</ion-title>
-            <ion-buttons slot="end">
-              <ion-button (click)="setOpen(false)">Close</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <ion-item>
-            <ion-avatar slot="start">
-              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-            </ion-avatar>
-            <ion-label> Avatar Item </ion-label>
-          </ion-item>       
-        </ion-content>
-        <ion-footer>
-          <ion-item>
-            <ion-textarea  (keydown.enter)="saveCm($event)" placeholder="Type something here"></ion-textarea>
-          </ion-item>
-        </ion-footer>
-      </ng-template>
-    </ion-modal>
-  </ion-content>
- 
 </ion-content>

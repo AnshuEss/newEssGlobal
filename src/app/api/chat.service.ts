@@ -48,10 +48,13 @@ export class ChatService {
     })
   }
 
+  sendGroupMessage(message:any) {
+    this.socket.emit('group-message', message);
+  }
+
   getGroupMessages = () => {
     return  new Observable((observer: Observer<any>)=>{
       this.socket.on('group-message', (message:string)=>{
-        console.log("group-message",message);
         observer.next(message)
       })
     })
@@ -64,6 +67,17 @@ export class ChatService {
   getTyping=()=>{
     return  new Observable((observer: Observer<any>)=>{
       this.socket.on('typing', (message:string)=>{
+        observer.next(message)
+      })
+    })
+  }
+  groupTyping(obj:any){
+    this.socket.emit('gtyping',obj);
+  }
+  
+  getGroupTyping=()=>{
+    return  new Observable((observer: Observer<any>)=>{
+      this.socket.on('gtyping', (message:string)=>{
         observer.next(message)
       })
     })
@@ -100,6 +114,10 @@ export class ChatService {
 
   getMyGroup(data:any){
     return this.httpClient.post(`${environment.chatUrl}/users/getMyGroup`,data);
+  }
+
+  getMyGropuDetail(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/getMyGropuDetail`,data);
   }
 
   
@@ -161,6 +179,10 @@ export class ChatService {
 
   saveComment(data:any){
     return this.httpClient.post(`${environment.chatUrl}/posts/saveComment`,data);
+  }
+
+  getMyGroupMess(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/getMyGroupMess`,data);
   }
 
 

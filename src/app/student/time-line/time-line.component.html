@@ -20,12 +20,8 @@
       <li>
        <!-- <span></span>  -->
 
-        <div class="info ion-padding-bottom">support<br>
-          <ion-icon name="chatbox-ellipses-outline"
-            [routerLink]="['/student/support']"
-            class="ion-float-end ion-margin-bottom">
-
-          </ion-icon>
+        <div  [routerLink]="['/student/support']" class="info ion-padding-bottom">{{item?.text}}<br>
+          <ion-icon name="chatbox-ellipses-outline" class="ion-float-end ion-margin-bottom"></ion-icon>
         </div>
 
         <div  class="time" *ngIf="item?.color=='green'">

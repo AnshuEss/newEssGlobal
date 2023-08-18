@@ -41,7 +41,8 @@ const routes: Routes = [
   {
     path: 'study-abroad',
     component:StudyAbroadComponent
-  }
+  },
+
 ];
 
 @NgModule({

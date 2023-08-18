@@ -62,6 +62,8 @@ export class ChatComponent  implements OnInit {
         
       });
 
+     
+
       this.redAllUnreadMsg();
   }
 

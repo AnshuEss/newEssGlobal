@@ -15,6 +15,7 @@ import { SupportComponent } from './support/support.component';
 import { VgServiceComponent } from './vg-service/vg-service.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
+import { GroupChatComponent } from './group-chat/group-chat.component';
 const routes: Routes = [
   {
     path: '',
@@ -55,7 +56,13 @@ const routes: Routes = [
   {
     path:'services',
     component:VgServiceComponent
-  }
+  },
+  {
+    path:'group-chat/:id',
+    component:GroupChatComponent
+  },
+ 
+ 
 ];
 
 @NgModule({

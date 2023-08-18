@@ -54,7 +54,7 @@ export class StudentPage implements OnInit {
     })
     await this.countNoti();
     await this.getTestPaperNoti();
-    
+    await this.openChat();
   }
 
   setOpen(isOpen: boolean) {
@@ -127,5 +127,16 @@ export class StudentPage implements OnInit {
       this.router.navigate(['student/support'])
     }
   }
+
+ async openChat(){
+  this.chat.getMytudentList({ from_id: this.student?.file_no }).subscribe((res: any) => {
+    if (res.status == 200) {
+      console.log("hit--",res.myFriList.length)
+        if(res.myFriList.length=='0'){
+          this.chatDiv=false; 
+        }
+    }
+  });
+ }
 
 }

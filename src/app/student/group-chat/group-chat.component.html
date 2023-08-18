@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary"  *ngIf="primaryHeader"> 
+    <ion-back-button defaultHref="/student/chat-list" slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-back-button>
+
+    <ion-avatar slot="start">
+      <img src="assets/user1.png" width="90" />
+    </ion-avatar>
+
+    <ion-label class="ion-padding-vertical">
+      <h2 class="ion-padding-start white-txt">{{groupName}}</h2>
+      <p class="chat-txt ion-padding-start" *ngIf="TypingDiv">
+        <ion-note  class="white-txt">{{typingUserName}} Typing...</ion-note>
+      </p>
+    </ion-label>
+
+  </ion-toolbar>
+  <ion-toolbar color="success" *ngIf="secondryHeader">
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="arrow-back-outline" (click)="backButton()"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{countdelMsg}}</ion-title>
+    <ion-buttons slot="secondary"  (click)="forword()">
+      <ion-button>
+        <ion-icon  slot="icon-only" name="arrow-redo-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary"  (click)="DelMsg()">
+      <ion-button>
+        <ion-icon  slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [scrollEvents]="true" #IonContent>
+  <ion-list lines="none" no-lines  *ngFor="let item of messageList">
+    <ion-item>
+      <ion-label>{{item?.username}}</ion-label>
+      <div class="chat-first" (click)="addDelMsg(item)">
+        <p>{{item?.message}} </p>
+        <span class="time">{{item?.current_time}}</span>
+      </div> 
+    </ion-item>
+
+     
+ 
+    
+<!--    
+    <ion-item class="ion-padding-top ion-text-end" slot="end">
+      <div class="chat-sec " slot="end">
+
+        <img src="assets/Rectangle 110.png" width="200" />
+        <br>
+        <span class="time">11:00 am</span>
+      </div> 
+    </ion-item> -->
+
+  </ion-list>
+
+</ion-content> 
+
+
+<ion-footer>
+  <ion-item class="ion-no-padding ">
+    <ion-textarea class="ion-textarea ion-margin-start ion-padding" [(ngModel)]="newMessage"  (keyup)="onKeyUp()" name="message" placeholder=" Type Something..."></ion-textarea>
+    <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
+    <ion-icon class="attach-outline" name="attach-outline"></ion-icon>
+    <ion-icon name="send-outline" class="plane-btn" slot="end"  (click)="sendMessage()"></ion-icon>
+ </ion-item>
+</ion-footer>
+
+
+
+

@@ -63,6 +63,7 @@ export class Tab2Page implements OnInit {
         this.toster.dismissLoader();
         if (res.status == 200) {
           this.privImgList = [];
+          this.post='';
           this.toster.success(res.msg);
         } else {
           this.toster.error(res.msg);

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent  implements OnInit {
 
   student:any;
+  showTimeLine:boolean=true;
   constructor(
     private router:Router,
     private storage:StorageService) { }
@@ -16,6 +17,9 @@ export class ProfileComponent  implements OnInit {
  async ngOnInit() {
     this.student=await this.storage.get('student');
     console.log("student",this.student);
+     if(this.student?.main_status=='V-R' || this.student?.main_status=='V-G'){
+       this.showTimeLine=false;
+     }
   }
 
 }

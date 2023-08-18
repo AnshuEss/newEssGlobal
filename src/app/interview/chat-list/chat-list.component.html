@@ -25,8 +25,12 @@
           <img src="assets/user1.png" />
         </ion-thumbnail>
 
-        <ion-label (click)="goToChat(item)">
+        <ion-label (click)="goToChat(item)" *ngIf="item?.type=='1'">
           <h2> {{item?.stu_name}} </h2>
+          <p class="chat-txt">{{item?.message}}</p>
+        </ion-label>
+        <ion-label (click)="goToChat(item)" *ngIf="item?.type=='2'">
+          <h2> {{item?.group_name}} </h2>
           <p class="chat-txt">{{item?.message}}</p>
         </ion-label>
         <ion-note slot="end" class="ion-text-center ion-note">{{item?.time}}</ion-note>
@@ -52,7 +56,7 @@
         <ion-label position="stacked">Your name</ion-label>
         <ion-input [(ngModel)]="groupName" name="groupName" placeholder="Your name"></ion-input>
       </ion-item>
-      <ion-button class="ion-margin-top" expand="full" shape="round" size="medium" (click)="creteGb()">Create new group</ion-button>
+      
      </ion-list>
      <ion-list *ngIf="hidecreateGroupDiv">
       <!-- <ion-item *ngFor="let fri of myfriList">

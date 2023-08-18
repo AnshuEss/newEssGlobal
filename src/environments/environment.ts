@@ -8,6 +8,7 @@ export const environment = {
   apiUrl:'https://one96opportunities.com/essApp/',
   crmUrl:'https://essglobal.com/ionicApi/',
   chatUrl:'https://essapp.in',  //43.204.232.143 
+  //chatUrl:'http://localhost:3000',
   firebase: {
     apiKey: "AIzaSyD4HLapqh4YXB9bUGTVRWmsJ8gKsVEEAiE",
     authDomain: "essglobal-b96dd.firebaseapp.com",

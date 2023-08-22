@@ -10,15 +10,15 @@ import { StorageService } from 'src/app/api/storage.service';
   templateUrl: './chat-list.component.html',
   styleUrls: ['./chat-list.component.scss'],
 })
-export class ChatListComponent  implements OnInit {
+export class ChatListComponent implements OnInit {
 
   myStudentList: any = [];
   myfriList: any = [];
   fileNo: any;
   users: any;
   groupName: any;
-  showcreateGroupDiv: boolean = true;
-  hidecreateGroupDiv: boolean = false;
+  showcreateGroupDiv: boolean = false;
+  hidecreateGroupDiv: boolean = true;
   showcNextDiv: boolean = false;
   groupArr: any = [];
   title = 'Create new group';
@@ -29,27 +29,30 @@ export class ChatListComponent  implements OnInit {
     private router: Router,
     private crmService: CrmService,
     private toster: TosterService,
-    private storage:StorageService) { }
- 
+    private storage: StorageService) { }
 
- async ngOnInit() {
-    this.users =await this.storage.get('staff'); 
+
+  async ngOnInit() {
+    this.users = await this.storage.get('staff');
     this.chatService.getMytudentList({ user_id: this.users?.id }).subscribe((res: any) => {
       if (res.status == 200) {
         this.myStudentList = res.data;
         this.myfriList = res.myFriList;
+        this.getMyGroup();
       } else if (res.status == 500) {
+
       }
     });
     this.subscription = this.chatService.getNotifyOnchatList().subscribe((user: any) => {
       if (user.chatType == 1) {
-        let obj = this.myStudentList.find((item:any) => item.from_id == user.user_id);
+        let obj = this.myStudentList.find((item: any) => item.from_id == user.user_id);
         obj.message = user.message;
-        this.myStudentList = this.myStudentList.filter((item:any) => item.from_id !== user.user_id);
+        this.myStudentList = this.myStudentList.filter((item: any) => item.from_id !== user.user_id);
         this.myStudentList.unshift(obj);
         this.filter();
       }
     });
+
   }
 
 
@@ -67,7 +70,7 @@ export class ChatListComponent  implements OnInit {
             sname: res.data.app_name //student name
           }
           this.chatService.addStudentOnMyChatList(stuObj).subscribe((res: any) => {
-           // console.log(res);
+            // console.log(res);
             this.toster.dismissLoader()
             if (res.status == 200) {
               this.ngOnInit();
@@ -91,8 +94,8 @@ export class ChatListComponent  implements OnInit {
   goToChat(item: any) {
     //console.log(item);
     if (item.type == 2) {
-      this.chatService.setData(item?.stu_name);
-      this.router.navigate(['/interview/group-chat/' + item?._id]);
+      this.chatService.setData(item?.group_name);
+      this.router.navigate(['/interview/group-chat/' + item?.id]);
     } else if (item.type == 1) {
       this.chatService.setData(item?.stu_name);
       this.router.navigate(['/interview/chat/' + item?.from_id])
@@ -105,30 +108,10 @@ export class ChatListComponent  implements OnInit {
     this.isModalOpen = isOpen;
   }
 
-  creteGb() {
-    if (this.groupName) {
-      this.chatService.creteGb({ user_id: this.users.id, name: this.groupName }).subscribe((res: any) => {
-        if (res.status == 200) {
-          let obj = {
-            _id: res?.data?._id,
-            user_id: this.users?.id,
-            message: this.groupName,
-            type: 2
-          }
-          this.title = this.groupName;
-          this.groupId = res?.data?._id;
-          this.myStudentList.unshift(obj);
-          this.showcreateGroupDiv = false;
-          this.hidecreateGroupDiv = true;
-          //this.isModalOpen = false;
-        }
-      })
-    }
-  }
-  
-  count=0
+
+  count = 0
   filter() {
-    console.log('hit',this.count++);
+    console.log('hit', this.count++);
     //let index = this.myStudentList.indexOf(obj);
     // this.myStudentList.fill(obj.message=user.message,obj.time=user.current_time, index, index++);
   }
@@ -136,14 +119,23 @@ export class ChatListComponent  implements OnInit {
   getMyGroup() {
     this.chatService.getMyGroup({ user_id: this.users.id }).subscribe((res: any) => {
       if (res.status == 200) {
-        this.myStudentList.push(res.data);
+        let data = res?.data;
+        for (let i = 0; i < data.length; i++) {
+             this.myStudentList.push({
+              group_name:data[i].group_name,
+              type:data[i].type,
+              user_id:data[i].user_id,
+              id:data[i]._id
+             })
+        }
+        console.log('this.myStudentList', this.myStudentList);
       } else if (res.status == 500) {
       }
     });
   }
 
-  chk(ev:any, item:any) {
-   // console.log('item', item);
+  chk(ev: any, item: any) {
+    // console.log('item', item);
     if (ev.detail.checked == true) {
       this.groupArr.push({
         group_id: this.groupId,
@@ -152,9 +144,10 @@ export class ChatListComponent  implements OnInit {
         date: this.formatDate(new Date())
       });
     } else if (ev.detail.checked == false) {
-      this.groupArr = this.groupArr.filter((item:any) => item.id !== item?._id);
+      this.groupArr = this.groupArr.filter((item: any) => item.id !== item?._id);
     }
     if (this.groupArr.length > 0) {
+      this.showcreateGroupDiv = true;
       this.showcNextDiv = true;
     } else {
       this.showcNextDiv = false;
@@ -163,17 +156,28 @@ export class ChatListComponent  implements OnInit {
 
   next() {
     this.isModalOpen = false;
-    this.chatService.addStudentOnGroup(this.groupArr).subscribe((res: any) => {
-      if (res.status == 200) {
-        let obj = {
-          id: this.groupName,
-          name: this.groupName
+    if (this.groupName) {
+      this.chatService.creteGb({ user_id: this.users.id, name: this.groupName }).subscribe((res: any) => {
+        if (res.status == 200) {
+          this.groupArr.map((ele:any)=> ele.group_id=res?.data?._id);
+          this.chatService.addStudentOnGroup(this.groupArr).subscribe((res: any) => {
+            if (res.status == 200) {
+              let obj = {
+                id: this.groupName,
+                name: this.groupName
+              }
+              this.chatService.setData(obj);
+              this.router.navigate(['/interview/group-chat']);
+            } else if (res.status == 500) {
+            }
+          });
+          this.isModalOpen = false;
         }
-        this.chatService.setData(obj);
-        this.router.navigate(['/interview/group-chat']);
-      } else if (res.status == 500) {
-      }
-    });
+      })
+    } else {
+      this.toster.error('Please enter group name');
+    }
+
   }
 
   private formatDate(date: any) {
@@ -186,12 +190,12 @@ export class ChatListComponent  implements OnInit {
     return [year, month, day].join('-');
   }
 
-  ionViewWillEnter(){
-    let data=this.chatService.getData();
+  ionViewWillEnter() {
+    let data = this.chatService.getData();
     //console.log('data',data);
-    if(data){
-      let index = this.myStudentList.find((item:any) => item.user_id == data.stf_id);
-      index.unreadyMsg=0;
+    if (data) {
+      let index = this.myStudentList.find((item: any) => item.user_id == data.stf_id);
+      index.unreadyMsg = 0;
       this.myStudentList[index];
     }
   }

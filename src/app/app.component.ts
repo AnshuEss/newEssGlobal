@@ -13,10 +13,10 @@ register();
 export class AppComponent {
   constructor(
     private storage: Storage,
-    public NotificationsService: NotificationsService,
-    private toster: TosterService) {
+    private toster:TosterService,
+    public NotificationsService:NotificationsService) {
     this.NotificationsService.initPush();
-    this.initializeApp()
+    this.initializeApp();
   }
 
   async ngOnInit() {
@@ -28,7 +28,7 @@ export class AppComponent {
   initializeApp() {
     Network.addListener('networkStatusChange', status => {
       console.log('Network status changed', status);
-      if (status.connected == false) {
+      if(status.connected==false){
         this.toster.error('Please check your internet connection');
       }
     });

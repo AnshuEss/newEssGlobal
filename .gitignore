@@ -77,5 +77,4 @@ Thumbs.db
 # ios
 /ios
 
-package-lock.json
-package.json
+capacitor.config.ts

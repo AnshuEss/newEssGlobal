@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {UserService} from '../../api/user.service';
+import { UserService } from '../../api/user.service';
 import { Router } from '@angular/router';
 import { TosterService } from 'src/app/api/toster.service';
 import { StorageService } from 'src/app/api/storage.service';
@@ -19,56 +19,62 @@ export class VgServiceComponent implements OnInit {
     user_id: new FormControl(false),
   });
   isSubmitted = false;
-  student:any;
+  student: any;
   constructor(
     private formBuilder: FormBuilder,
-    private service:UserService,
+    private service: UserService,
     private toster: TosterService,
-    private router:Router,
-    private storage:StorageService) { 
+    private router: Router,
+    private storage: StorageService) {
 
-    }
+  }
 
   async ngOnInit() {
-    this.student=await this.storage.get('student');
+    this.student = await this.storage.get('student');
 
-   
+
     this.ionicForm = this.formBuilder.group({
-      services: ['', Validators.required],
-      remarks: ['',Validators.required], //address
-      email: [this.student?.email,Validators.required], //address
-      mobile_vg: ['',Validators.required], //address
-      mobile: [this.student?.phone_one,Validators.required], //address
-      user_id:[this.student?.sno]
+      services: [''],
+      remarks: ['', Validators.required], //address
+      email: [this.student?.email, Validators.required], //address
+      mobile_vg: ['', Validators.required], //address
+      mobile: [this.student?.phone_one, Validators.required], //address
+      user_id: [this.student?.sno]
     });
   }
 
-  get errorControl():{ [key: string]: AbstractControl }  {
+  get errorControl(): { [key: string]: AbstractControl } {
     return this.ionicForm.controls;
   }
 
- 
- 
 
-  onSubmit(){
+
+
+  onSubmit() {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
       return false;
     } else {
       this.toster.showLoading();
-      this.service.addServices(this.ionicForm.value).subscribe((res:any) => {
-        if(res.status==200){
+      this.service.addServices(this.ionicForm.value).subscribe((res: any) => {
+        if (res.status == 200) {
           this.toster.success(res.msg);
           this.isSubmitted = false;
           this.toster.dismissLoader();
-          this.router.navigate(['/profile/student']);
-        }else{
+          this.router.navigate(['/student']);
+        } else {
           this.toster.dismissLoader();
           this.toster.error(res.msg);
         }
       })
       return true;
     }
+  }
+
+  clickSer(ser: any) {
+    this.ionicForm.patchValue({
+      services: ser,
+    })
   }
 
 }

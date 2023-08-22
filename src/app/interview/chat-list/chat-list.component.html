@@ -1,8 +1,11 @@
 <ion-header [translucent]="true" color="primary">
   <ion-toolbar color="primary" class="ion-text-center">
-
     <ion-back-button defaultHref="/interview" slot="start" text="">
-      <ion-icon name="chevron-back-outline"></ion-icon></ion-back-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-back-button>
+    <ion-buttons slot="end" (click)="setOpen(true)">
+      <ion-button><ion-icon name="people-outline" slot="end" size="large"></ion-icon> </ion-button>
+    </ion-buttons>
     <ion-title>Chat</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -22,8 +25,12 @@
           <img src="assets/user1.png" />
         </ion-thumbnail>
 
-        <ion-label (click)="goToChat(item)">
+        <ion-label (click)="goToChat(item)" *ngIf="item?.type=='1'">
           <h2> {{item?.stu_name}} </h2>
+          <p class="chat-txt">{{item?.message}}</p>
+        </ion-label>
+        <ion-label (click)="goToChat(item)" *ngIf="item?.type=='2'">
+          <h2> {{item?.group_name}} </h2>
           <p class="chat-txt">{{item?.message}}</p>
         </ion-label>
         <ion-note slot="end" class="ion-text-center ion-note">{{item?.time}}</ion-note>
@@ -32,4 +39,45 @@
       
 
   </ion-list>
+
+  <ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+     <ion-list *ngIf="showcreateGroupDiv">
+      <ion-item>
+        <ion-label position="stacked">Your name</ion-label>
+        <ion-input [(ngModel)]="groupName" name="groupName" placeholder="Your name"></ion-input>
+      </ion-item>
+      
+     </ion-list>
+     <ion-list *ngIf="hidecreateGroupDiv">
+      <!-- <ion-item *ngFor="let fri of myfriList">
+        <ion-label>
+          {{fri?.stu_name}}
+        </ion-label>
+      </ion-item> -->
+    
+        <ion-item *ngFor="let fri of myfriList">
+          <ion-avatar slot="start">
+            <img alt="Silhouette of a person's head" src="assets/avatar.svg" />
+          </ion-avatar>
+          <ion-label> {{fri?.stu_name}}</ion-label>
+          <ion-checkbox slot="end" (ionChange)="chk($event,fri)"></ion-checkbox>
+        </ion-item>
+      
+     </ion-list>
+    </ion-content>
+    <ion-footer *ngIf="showcNextDiv">
+      <ion-button expand="full" shape="round" (click)="next()">Next</ion-button>
+    </ion-footer>
+  </ng-template>
+</ion-modal>
 </ion-content>

@@ -11,5 +11,5 @@ export const environment = {
   production: true,
   apiUrl:'https://one96opportunities.com/essApp/',
   crmUrl:'https://essglobal.com/ionicApi/',
-  chatUrl:'http://43.204.232.143:3000',
+  chatUrl:'https://essapp.in',
 };

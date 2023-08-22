@@ -30,6 +30,13 @@
     color: #666;
     padding: 0px; margin-bottom: 10px;
 }
+.ion-input1 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    padding: 0px; margin-bottom: 10px;
+}
 
 .btn-sub {
     width: 178px;
@@ -46,3 +53,4 @@ ion-item.border-no-bottom {
 ion-toobar
 { --background:transparent !important;position: absolute !important;
 --ion-color-base:transparent !important}
+.ion-text-center { text-align: center; width: 100%;}

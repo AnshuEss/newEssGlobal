@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-login.component.scss'],
 })
 export class StudentLoginComponent  implements OnInit {
-
+  isModalOpen = false;
   fileNo:any;
   constructor(
     private userService:UserService,
@@ -52,6 +52,10 @@ export class StudentLoginComponent  implements OnInit {
     // this.crmService.updateToken({ token: token,id:id }).subscribe((res: any) => {
     //   console.log(res);
     // });
+  }
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
   }
 
 }

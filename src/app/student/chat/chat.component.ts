@@ -6,6 +6,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TosterService } from 'src/app/api/toster.service';
 import { Howl, Howler } from 'howler';
 import { StorageService } from 'src/app/api/storage.service';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { PhotoService } from 'src/app/api/photo.service';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -26,12 +29,35 @@ export class ChatComponent  implements OnInit {
   showDelDiv:boolean=false;
   delMsgArr: any[] = [];
   countdelMsg:Number=0;
+  result:any;
+  public actionSheetButtons = [
+    {
+      text: 'Camara',
+      data: {
+        action: 'camara',
+      },
+    },
+    {
+      text: 'Document',
+      data: {
+        action: 'document',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
   constructor(
     private chatService: ChatService,
     private router:Router,
     private toster:TosterService,
     private activatedRoute: ActivatedRoute,
-    private storage:StorageService
+    private storage:StorageService,
+    private photo:PhotoService
   ) { }
 
  async ngOnInit() {
@@ -185,5 +211,71 @@ export class ChatComponent  implements OnInit {
      console.log(res);
     });
   }
+
+  setResult(ev:any) {
+    if(ev.detail?.data?.action=='camara'){
+      this.addNewToGallery();
+    }
+   
+  }
+
+
+ async addNewToGallery() {
+    // Take a photo
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      source: CameraSource.Camera, // automatically take a new photo with the camera
+      quality: 100 // highest quality (0 to 100)
+    });
+  
+    // Save the picture and add it to photo collection
+    const savedImageFile = await this.photo.savePicture(capturedPhoto);
+    let file=`data:image/jpeg;base64,${capturedPhoto.base64String}`;
+
+   // const blobData = this.b64toBlob(capturedPhoto.base64String, `image/${capturedPhoto.format}`);
+    const imageName = savedImageFile.filepath;
+    console.log("savedImageFile",savedImageFile);
+    let obj = {
+      user_id: this.student?.file_no,
+      from_id: this.from_id,
+      message:'',
+      date: this.formatDate(new Date()),
+      current_time: this.DisplayCurrentTime(),
+      name: this.student?.app_name,
+      chatType:1,
+      image:savedImageFile?.webviewPath
+    }
+    console.log('obj',obj);
+    //this.chatService.sendMessage(obj);
+    this.messageList.push(obj);
+    //this.photos.unshift(savedImageFile);
+
+    this.uploadImage(file,savedImageFile.filepath);
+  }
+
+  async startUpload(file: any) {
+    //  const response = await fetch(file);
+    //  const blob = await response.blob();
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log("formData",formData)
+    this.chatService.uploadCameraImg(formData).subscribe((res:any)=>{
+     console.log(res);
+    })
+}
+
+uploadImage(blobData:any, name:any) {
+  const formData = new FormData();
+  formData.append('file', blobData);
+  formData.append('name', name);
+  console.log("form",formData);
+  this.chatService.uploadCameraImg(formData).subscribe((res:any)=>{
+     console.log(res);
+  });
+  //return this.http.post(`${this.url}/image`, formData);
+}
+
+
+
 
 }

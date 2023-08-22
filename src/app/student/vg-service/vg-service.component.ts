@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../api/user.service';
+import { CrmService } from 'src/app/api/crm.service';
 import { Router } from '@angular/router';
 import { TosterService } from 'src/app/api/toster.service';
 import { StorageService } from 'src/app/api/storage.service';
@@ -22,7 +22,7 @@ export class VgServiceComponent implements OnInit {
   student: any;
   constructor(
     private formBuilder: FormBuilder,
-    private service: UserService,
+    private service: CrmService,
     private toster: TosterService,
     private router: Router,
     private storage: StorageService) {
@@ -37,7 +37,7 @@ export class VgServiceComponent implements OnInit {
       services: [''],
       remarks: ['', Validators.required], //address
       email: [this.student?.email, Validators.required], //address
-      mobile_vg: ['', Validators.required], //address
+      file_no: [this.student?.file_no], //address
       mobile: [this.student?.phone_one, Validators.required], //address
       user_id: [this.student?.sno]
     });

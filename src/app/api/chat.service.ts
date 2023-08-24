@@ -186,6 +186,11 @@ export class ChatService {
   }
 
 
+  uploadCameraImg(data:any){
+    return this.httpClient.post(`${environment.chatUrl}/users/uploadCameraImg`,data);
+  }
+
+
 
 
 

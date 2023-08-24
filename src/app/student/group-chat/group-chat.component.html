@@ -57,15 +57,16 @@
     </ion-item> -->
 
   </ion-list>
-
+  <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
 </ion-content> 
 
 
 <ion-footer>
+  
   <ion-item class="ion-no-padding ">
     <ion-textarea class="ion-textarea ion-margin-start ion-padding" [(ngModel)]="newMessage"  (keyup)="onKeyUp()" name="message" placeholder=" Type Something..."></ion-textarea>
     <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
-    <ion-icon class="attach-outline" name="attach-outline"></ion-icon>
+    <ion-icon class="attach-outline" id="open-action-sheet" name="attach-outline"></ion-icon>
     <ion-icon name="send-outline" class="plane-btn" slot="end"  (click)="sendMessage()"></ion-icon>
  </ion-item>
 </ion-footer>

@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.ess.global',
-  appName: 'Student AOLCC',
+  appName: 'Ess Global',
   webDir: 'www',
   server: {
     androidScheme: 'https'

@@ -3,6 +3,8 @@ import { ChatService } from '../../api/chat.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/api/storage.service';
 import { Howl, Howler } from 'howler';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { PhotoService } from 'src/app/api/photo.service';
 @Component({
   selector: 'app-group-chat',
   templateUrl: './group-chat.component.html',
@@ -23,11 +25,39 @@ export class GroupChatComponent implements OnInit {
   student: any;
   primaryHeader: boolean = true;
   secondryHeader: boolean = false;
-  typingUserName:any;
+  typingUserName: any;
+
+
+
+
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
   constructor(
     private chatService: ChatService,
     private activatedRoute: ActivatedRoute,
     private storage: StorageService,
+    private photo :PhotoService
   ) { }
 
   async ngOnInit() {
@@ -45,13 +75,13 @@ export class GroupChatComponent implements OnInit {
         }
       });
 
-      this.chatService.getGroupTyping().subscribe((typing: any) => {
-         console.log('gtyping',typing)
-         if(this.group_id==typing.group_id && typing.id !==this.student?.file_no){
-            this.TypingDiv=true;
-            this.typingUserName=typing.username;
-         }
-      });
+    this.chatService.getGroupTyping().subscribe((typing: any) => {
+      console.log('gtyping', typing)
+      if (this.group_id == typing.group_id && typing.id !== this.student?.file_no) {
+        this.TypingDiv = true;
+        this.typingUserName = typing.username;
+      }
+    });
     this.getMyGroupMess();
   }
 
@@ -126,14 +156,14 @@ export class GroupChatComponent implements OnInit {
   onKeyUp() {
     this.typing = true
     if (this.typing == true) {
-       let obj={
-        id:this.student?.file_no,
-        username:this.student?.app_name,
-        group_id:this.group_id
-       }
+      let obj = {
+        id: this.student?.file_no,
+        username: this.student?.app_name,
+        group_id: this.group_id
+      }
       this.chatService.groupTyping(obj);
     }
-    
+
   }
 
 
@@ -153,6 +183,16 @@ export class GroupChatComponent implements OnInit {
       html5: true
     });
     sound.play();
+  }
+
+  takePicture = async () => {
+    const capturedPhoto = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+    const savedImageFile = await this.photo.savePicture(capturedPhoto);
+    console.log("savedImageFile",savedImageFile);
   }
 
 }

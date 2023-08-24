@@ -8,15 +8,6 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides class="slide" pager="true" [options]="slideOpts">
-    <ion-slide>
-      <h1>Slide 1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
-    </ion-slide>
-  </ion-slides>
+  <div id="fullscreen" slot="fixed"></div>
+  <ion-button (click)="playerPlay('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')">play</ion-button>
 </ion-content>

@@ -34,4 +34,8 @@ export class CrmService {
   timeline(data: any){
     return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=timeline', data);
   }
+
+  addServices(data: any) {
+    return this.httpClient.post(`${environment.crmUrl}` + 'api.php?tag=addServices', data);
+  }
 }

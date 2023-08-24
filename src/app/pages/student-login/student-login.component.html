@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
     <ion-buttons slot="start">
@@ -27,15 +25,15 @@
       <ion-col size="12" class="ion-text-center ion-no-padding">
         <ion-list lines="none" no-lines>
           <ion-item>
-            <ion-input  [(ngModel)]="fileNo" name="fileNo" class="ion-input" placeholder="Enter file no" required></ion-input>
+            <ion-input [(ngModel)]="fileNo" name="fileNo" class="ion-input" placeholder="Enter file no"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input   name="fileNo" class="ion-input" placeholder="DOB" required></ion-input>
+            <ion-input  [(ngModel)]="dob" name="dob" class="ion-input" (click)="openDateModel(true)" placeholder="DOB"></ion-input>
           </ion-item>
           <ion-item class="border-no-bottom">
             <ion-button color="primary" class="btn-sub" expand="block" (click)="stuLogin()">Login</ion-button>
-         </ion-item>   
-           <ion-item class="ion-text-center" (click)="setOpen(true)">
+          </ion-item>
+          <ion-item class="ion-text-center" (click)="setOpen(true)">
             <b class="ion-text-center">Trouble Logging In?</b>
           </ion-item>
         </ion-list>
@@ -56,18 +54,35 @@
       </ion-header>
       <ion-content class="ion-padding" color="dark">
         <ion-row>
-        <ion-col size="12" class="ion-text-start ion-no-padding">
-      
-              <ion-input  [(ngModel)]="fileNo" name="fileNo" class="ion-input1" placeholder="Enter file no" required></ion-input>
-      </ion-col>
-      <ion-col size="12" class="ion-text-start ion-no-padding">
-              <ion-input   name="fileNo" class="ion-input1" placeholder="DOB" required></ion-input>
-           
-            </ion-col>      
-            <ion-col size="12" class="ion-text-center ion-no-padding">
-            <ion-button color="primary" class="btn-sub">Login</ion-button>
+          <ion-col size="12" class="ion-text-start ion-no-padding">
+            <ion-input [(ngModel)]="fileNo" name="fileNo" class="ion-input1" placeholder="Enter file no" required></ion-input>
           </ion-col>
-          </ion-row>
+          <ion-col size="12" class="ion-text-start ion-no-padding">
+            <ion-input  [(ngModel)]="dob" name="dob" class="ion-input1" (click)="openDateModel(true)" placeholder="DOB"></ion-input>
+
+          </ion-col>
+          <ion-col size="12" class="ion-text-center ion-no-padding">
+            <ion-button color="primary" class="btn-sub" (click)="trouble()">Login</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [isOpen]="idDateModelOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-datetime [isDateEnabled]="isWeekday" [(ngModel)]="date"></ion-datetime>
       </ion-content>
     </ng-template>
   </ion-modal>

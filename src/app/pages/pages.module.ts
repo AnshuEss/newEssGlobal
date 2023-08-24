@@ -16,7 +16,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { OurBranchComponent } from './our-branch/our-branch.component';
 import { StudyAbroadComponent } from './study-abroad/study-abroad.component';
-
+import { PostLandingComponent } from './post-landing/post-landing.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +27,6 @@ import { StudyAbroadComponent } from './study-abroad/study-abroad.component';
   ],
   declarations: [PagesPage,OtpComponent,StudentLoginComponent,
     StaffLoginComponent,ContactUsComponent,AboutUsComponent, StudyAbroadComponent,
-    OurBranchComponent]
+    OurBranchComponent,PostLandingComponent]
 })
 export class PagesPageModule {}

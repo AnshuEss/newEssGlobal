@@ -14,7 +14,7 @@
       <p><ion-icon name="call"></ion-icon> +91-90419-90419</p>
       <p><ion-icon name="mail-open"></ion-icon> info@essglobal.com</p>
     </ion-col>
-  
+   <ion-row *ngIf="IndiaDiv">
     <ion-col size="12" size-sm="6" size-md="4">
       <ion-text class="count">01</ion-text>
       <ion-card class="ion-padding ion-card" color="dark">
@@ -242,7 +242,8 @@
         </ion-list>      
       </ion-card>
     </ion-col>
-    
+    </ion-row>
+    <ion-row *ngIf="CanadaDiv">
     <ion-col size="12" size-sm="6" size-md="4">
       <ion-text class="count">16</ion-text>
       <ion-card class="ion-padding ion-card" color="dark">
@@ -272,7 +273,11 @@
         </ion-list>      
       </ion-card>
     </ion-col>
-    
+  </ion-row>
+
+
+
+  <ion-row *ngIf="AusDiv">  
     <ion-col size="12" size-sm="6" size-md="4">
       <ion-text class="count">18</ion-text>
       <ion-card class="ion-padding ion-card" color="dark">
@@ -300,21 +305,22 @@
         </ion-list>      
       </ion-card>
     </ion-col>
+    </ion-row>
   </ion-row>
 
 </ion-content>
 
 
   <ion-tab-bar class="ion-tab-bar" slot="bottom">
-    <ion-tab-button class="tab-btn" tab="home">
+    <ion-tab-button class="tab-btn" tab="home" (click)="viewCty('india')">
   <img src="assets/indiaflag.jpg" class="flag-img" width="35">
   <b> India</b>
     </ion-tab-button>
-    <ion-tab-button class="tab-btn" tab="radio">
+    <ion-tab-button class="tab-btn" tab="radio" (click)="viewCty('canada')">
       <img src="assets/canadaflag.jpg" class="flag-img" width="35">
     <b> Canada </b> 
     </ion-tab-button>
-    <ion-tab-button class="tab-btn" tab="library">
+    <ion-tab-button class="tab-btn" tab="library" (click)="viewCty('aus')">
       <img src="assets/ausflag.jpg" class="flag-img" width="35">
     <b> Australia</b> 
     </ion-tab-button>

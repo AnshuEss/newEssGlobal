@@ -10,6 +10,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { OurBranchComponent } from './our-branch/our-branch.component';
 import { StudyAbroadComponent } from './study-abroad/study-abroad.component';
 import { PostLandingComponent } from './post-landing/post-landing.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { EmailLoginComponent } from './email-login/email-login.component';
 const routes: Routes = [
   {
     path: '',
@@ -18,6 +20,14 @@ const routes: Routes = [
   {
     path: 'student-login',
     component: StudentLoginComponent
+  },
+  {
+    path: 'email-login',
+    component: EmailLoginComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
   },
   {
     path: 'staff-login',

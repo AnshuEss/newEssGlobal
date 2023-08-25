@@ -1,3 +1,177 @@
-<p>
-  post-landing works!
-</p>
+<ion-header>
+  <ion-toolbar color="primary" class="ion-padding-end-10 header_tool">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-title-header">Our Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class=" full_bg ion-margin-top ion-padding-top">
+  <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
+    <ion-row class="radio-buttons ion-padding-end ion-justify-content-center">
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Accommodation')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/Accommodation.png" height="120">
+              <h3 class="">Accommodation</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('College Change')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/college-change.png" height="120">
+              <h3 class="">College Change</h3>
+            </div>
+          </span>
+        </label> 
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Health Insurance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/health-insurance.png" height="120">
+              <h3 class="">Health Insurance</h3>
+            </div>
+          </span>
+        </label> 
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Education Guidance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/education.png" height="120">
+              <h3 class="">Education Guidance</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Job Assistance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/jobassitance.png" height="120">
+              <h3 class="">Job Assistance</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Pr Assistance')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/prassistance.png" height="120">
+              <h3 class="">Pr Assistance</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Social Insurance Number')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/social.png" height="120">
+              <h3 class="">Social Insurance Number</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Study Permit/Extension')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/study-permit.png" height="120">
+              <h3 class="">Study Permit/Extension</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col> 
+      <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Post Study Work Visa')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/workvisa.png" height="120">
+              <h3 class="">Post Study Work Visa</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class="ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Collage suspension & Semester Drop')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/col.jpeg" height="120">
+              <h3 class="">Collage suspension & Semester Drop</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="showForm">
+      <ion-col size="12" class="ion-padding">
+        <ion-input formControlName="remarks" label="Remarks" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Remarks"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['remarks'].errors?.['required']">
+          Remarks is required.
+        </span>
+      </ion-col>
+      <ion-col size="12" class="ion-padding">
+        <ion-input formControlName="username" label="Remarks" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Enter your full name"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['username'].errors?.['required']">
+          username is required.
+        </span>
+      </ion-col>
+      <ion-col size="12" class="ion-padding">
+        <ion-input label="Email" formControlName="email" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Email"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
+          Email is required.
+        </span>
+
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors">
+          Email is invalid
+        </span>
+        
+      </ion-col>
+
+      
+
+      <ion-col size="12" class="ion-padding">
+        <ion-input label="Mobile" type="number" formControlName="mobile" labelPlacement="floating"
+          class="ion-form-control ion-padding-start" placeholder="Mobile india"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
+          Mobile is required.
+        </span>
+      </ion-col>
+      <ion-col size="12" class="ion-padding">
+        <ion-button type="submit" color="primary" expand="block">Request call back</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

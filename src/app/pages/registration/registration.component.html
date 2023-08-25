@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-top">
+  <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
+    <ion-item lines="full">
+      <ion-label position="floating">Full name</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl['username'].errors?.['required']">
+        Full name is required.
+      </span>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
+        Email name is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors">
+        Email is invalid
+      </span>
+      
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input type="text" formControlName="mobile"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
+        Mobile name is required.
+      </span>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
+        Password name is required.
+      </span>
+    </ion-item>
+    <ion-row class="ion-padding-top">
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" color="primary">Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

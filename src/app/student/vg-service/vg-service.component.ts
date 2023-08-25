@@ -11,6 +11,7 @@ import { StorageService } from 'src/app/api/storage.service';
 })
 export class VgServiceComponent implements OnInit {
   ionicForm: FormGroup = new FormGroup({
+    username: new FormControl(''),
     services: new FormControl(''),
     remarks: new FormControl(''),
     email: new FormControl(''),
@@ -34,6 +35,7 @@ export class VgServiceComponent implements OnInit {
 
 
     this.ionicForm = this.formBuilder.group({
+      username:[this.student?.app_name],
       services: [''],
       remarks: ['', Validators.required], //address
       email: [this.student?.email, Validators.required], //address
@@ -55,11 +57,16 @@ export class VgServiceComponent implements OnInit {
     if (!this.ionicForm.valid) {
       return false;
     } else {
-      this.toster.showLoading();
+     // this.toster.showLoading();
+      console.log("form",this.ionicForm.value.services);
+      if(this.ionicForm.value.services==''){
+        this.toster.error('Please select any one service');
+        return false;
+      }
       this.service.addServices(this.ionicForm.value).subscribe((res: any) => {
         if (res.status == 200) {
           this.toster.success(res.msg);
-          this.isSubmitted = false;
+          this.onReset();
           this.toster.dismissLoader();
           this.router.navigate(['/student']);
         } else {
@@ -69,6 +76,11 @@ export class VgServiceComponent implements OnInit {
       })
       return true;
     }
+  }
+
+  onReset(): void {
+    this.isSubmitted = false;
+    this.ionicForm.reset();
   }
 
   clickSer(ser: any) {

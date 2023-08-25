@@ -22,7 +22,6 @@ export class UserService {
     return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=contact', data);
   }
 
-
   getQuestion(data: any) {
     return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=question', data);
   }
@@ -283,6 +282,18 @@ export class UserService {
 
   activeDeative(data:any){
     return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=activeDeative', data);
+  }
+
+  trubleQry(data:any){
+    return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=trubleQry', data);
+  }
+
+  registration(data:any){
+    return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=registration', data);
+  }
+
+  loginWithEmail(data: any) {
+    return this.httpClient.post(`${environment.apiUrl}` + 'api.php?tag=loginWithEmail', data);
   }
 
 }

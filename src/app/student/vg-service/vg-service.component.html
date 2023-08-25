@@ -72,7 +72,7 @@
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
         <label class="custom-radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" (click)="clickSer('Pr Assistance')">
           <span class="radio-btn">
             <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
             <div class="hobbies-icon">
@@ -84,7 +84,7 @@
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
         <label class="custom-radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" (click)="clickSer('Social Insurance Number')">
           <span class="radio-btn">
             <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
             <div class="hobbies-icon">
@@ -96,7 +96,7 @@
       </ion-col>
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
         <label class="custom-radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" (click)="clickSer('Study Permit/Extension')">
           <span class="radio-btn">
             <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
             <div class="hobbies-icon">
@@ -105,15 +105,27 @@
             </div>
           </span>
         </label>
-      </ion-col>
+      </ion-col> 
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">
         <label class="custom-radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" (click)="clickSer('Post Study Work Visa')">
           <span class="radio-btn">
             <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
             <div class="hobbies-icon">
               <img src="assets/workvisa.png" height="120">
               <h3 class="">Post Study Work Visa</h3>
+            </div>
+          </span>
+        </label>
+      </ion-col>
+      <ion-col size="6" size-md="4" size-lg="3" class="ion-text-center ion-no-margin">
+        <label class="custom-radio">
+          <input type="radio" name="radio" (click)="clickSer('Collage suspension & Semester Drop')">
+          <span class="radio-btn">
+            <ion-icon name="checkmark-outline" class="ion-icon"></ion-icon>
+            <div class="hobbies-icon">
+              <img src="assets/col.jpeg" height="120">
+              <h3 class="">Collage suspension & Semester Drop</h3>
             </div>
           </span>
         </label>

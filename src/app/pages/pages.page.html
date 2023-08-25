@@ -22,8 +22,15 @@
           <ion-item class="border-no-bottom">
             <ion-button color="dark" class="btn-sub" expand="block" [routerLink]="['/pages/staff-login']"><ion-icon name="people"></ion-icon> &nbsp; Staff Login </ion-button>
           </ion-item>
+
+          <ion-item class="border-no-bottom" *ngIf="userDiv">
+            <ion-button color="light" class="btn-sub" expand="block" [routerLink]="['/pages/email-login']">&nbsp; Login with email </ion-button>
+          </ion-item>
         </ion-list>
       </ion-col>
 
     </ion-row>
   </form>
+
+ 
+  </ion-content>

@@ -82,10 +82,11 @@ export class MeetingPage implements OnInit {
   }
 
   async openBrowser(link:any) {
-    await Browser.open({ url:link });
-    Browser.addListener('browserFinished', () => {
-      console.log('browser finished');
-    });
+    window.open(link, '_system');
+    // await Browser.open({ url:link });
+    // Browser.addListener('browserFinished', () => {
+    //   console.log('browser finished');
+    // });
     
   }
 

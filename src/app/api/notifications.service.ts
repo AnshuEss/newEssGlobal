@@ -3,12 +3,16 @@ import { ActionPerformed, PushNotificationSchema, PushNotifications, Token } fro
 import { Capacitor } from '@capacitor/core';
 import { UserService } from './user.service';
 import { Router } from '@angular/router';
+import { StorageService } from './storage.service';
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationsService {
 
-  constructor(private service: UserService,private router: Router) { }
+  constructor(
+    private service: UserService,
+    private router: Router,
+    private storage:StorageService) { }
 
   initPush() {
     if (Capacitor.getPlatform() !== 'web') {
@@ -27,6 +31,7 @@ export class NotificationsService {
     PushNotifications.addListener('registration',
       (token: Token) => {
         this.service.setData(token.value);
+        this.storage.set("token",token.value);
         console.log('Push registration success, token: ' + token.value);
       }
     );

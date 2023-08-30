@@ -57,6 +57,7 @@ export class StudentLoginComponent implements OnInit {
 
   updateToken(id: any) {
     let token = this.userService.getData();
+    console.log("token",token);
     this.crmService.updateToken({ token: token, id: id }).subscribe((res: any) => {
       console.log(res);
     });

@@ -10,14 +10,14 @@
   <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
     <ion-item lines="full">
       <ion-label position="floating">Full name</ion-label>
-      <ion-input type="text" formControlName="username"></ion-input>
+      <ion-input type="text" aria-label="full name" formControlName="username"></ion-input>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl['username'].errors?.['required']">
         Full name is required.
       </span>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-input type="text" aria-label="email" formControlName="email"></ion-input>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
         Email name is required.
       </span>
@@ -28,14 +28,14 @@
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Mobile</ion-label>
-      <ion-input type="text" formControlName="mobile"></ion-input>
+      <ion-input type="text" aria-label="mobile" formControlName="mobile"></ion-input>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl['mobile'].errors?.['required']">
         Mobile name is required.
       </span>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
+      <ion-input type="password" aria-label="password" formControlName="password"></ion-input>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
         Password name is required.
       </span>

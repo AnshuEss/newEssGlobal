@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class=" full_bg ion-margin-top ion-padding-top">
+<ion-content fullscreen class=" full_bg ion-margin-top ion-padding-top" [scrollEvents]="true" #IonContent>
   <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()">
     <ion-row class="radio-buttons ion-padding-end ion-justify-content-center">
       <ion-col size="6" size-md="4" size-lg="3" class=" ion-text-center ion-no-margin">

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CrmService } from 'src/app/api/crm.service';
 import { Router } from '@angular/router';
 import { TosterService } from 'src/app/api/toster.service';
 import { StorageService } from 'src/app/api/storage.service';
-
+import { IonContent } from '@ionic/angular';
 @Component({
   selector: 'app-post-landing',
   templateUrl: './post-landing.component.html',
@@ -24,6 +24,7 @@ export class PostLandingComponent implements OnInit {
   isSubmitted = false;
   users: any;
   showForm: boolean = false;
+  @ViewChild(IonContent, { static: false }) content: IonContent | any;
   constructor(
     private formBuilder: FormBuilder,
     private service: CrmService,
@@ -36,7 +37,6 @@ export class PostLandingComponent implements OnInit {
   async ngOnInit() {
     this.users = await this.storage.get('serviceUser');
     if (this.users) this.showForm=true;
-
     this.ionicForm = this.formBuilder.group({
       username: [this.users?.username, Validators.required],
       services: [''],
@@ -103,13 +103,17 @@ export class PostLandingComponent implements OnInit {
       this.storage.set("service", ser);
       this.router.navigate(['pages/registration']);
     }
-
+    this.ScrollToBottom()
   }
 
   async ionViewWillEnter() {
     this.users = await this.storage.get('serviceUser');
     if (this.users) this.showForm=true;
     this.ngOnInit();
+  }
+
+  ScrollToBottom() {
+    this.content.scrollToBottom(1500);
   }
 
 }

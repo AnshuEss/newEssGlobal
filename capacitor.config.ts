@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.ess.global',
-  appName: 'Ess Global',
+  appId: 'io.ess.global',
+  appName: 'Essglobal',
   webDir: 'www',
   server: {
     androidScheme: 'https'

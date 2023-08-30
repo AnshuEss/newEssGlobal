@@ -30,11 +30,12 @@ export class MettingComponent  implements OnInit {
 
   async openBrowser(item:any) {
     console.log(item);
-    await Browser.open({ url:item?.link });
-    Browser.addListener('browserFinished', () => {
-      console.log('browser finished');
-    });
+    // await Browser.open({ url:item?.link });
+    // Browser.addListener('browserFinished', () => {
+    //   console.log('browser finished');
+    // });
     await this.addAttendance(item);
+    window.open(item?.link, '_system');
   }
 
   async closeBrowser() {

@@ -1,8 +1,13 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
+<<<<<<< HEAD
   appId: 'com.ess.global',
   appName: 'Ess Global',
+=======
+  appId: 'io.ess.global',
+  appName: 'Essglobal',
+>>>>>>> 6f49e53fe8094656c4b40a1484f231616ce04aed
   webDir: 'www',
   server: {
     androidScheme: 'https'
@@ -23,9 +28,12 @@ const config: CapacitorConfig = {
       "splashImmersive": true,
       "layoutName": "launch_screen",
       "useDialog": true
+<<<<<<< HEAD
     },
     "PushNotifications": {
       "presentationOptions": ["badge", "sound", "alert"]
+=======
+>>>>>>> 6f49e53fe8094656c4b40a1484f231616ce04aed
     }
   }
 };

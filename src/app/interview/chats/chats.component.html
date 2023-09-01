@@ -62,7 +62,7 @@
     </ion-item> -->
 
   </ion-list>
-
+  <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"  (didDismiss)="setResult($event)"></ion-action-sheet>
 </ion-content> 
 
 
@@ -70,6 +70,7 @@
   <ion-item class="ion-no-padding">
     <ion-textarea class="ion-textarea ion-padding" [(ngModel)]="newMessage"  (keyup)="onKeyUp(1)" name="message" placeholder=" Type Something..."></ion-textarea>
     <!-- <ion-button class="plane-btn" color="primary"><ion-icon (click)="sendMsg()" color="light" name="paper-plane"></ion-icon></ion-button> -->
+  <ion-icon class="attach-outline" id="open-action-sheet" name="attach-outline"></ion-icon>
   <ion-icon name="send-outline" class="plane-btn" slot="end"  (click)="sendMessage()"></ion-icon>
  </ion-item>
 </ion-footer>
